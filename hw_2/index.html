@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW 2</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0 0 80px;
+    }
+
+    .main_header {
+      position: fixed;
+      background-color: #868484;
+      color: #ffffff;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .main_header ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      column-gap: 1em;
+    }
+
+    .main_header a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .main_header a:hover {
+      text-decoration: underline;
+      color: rgb(0, 0, 238);
+    }
+
+    body > section {
+      padding-top: 50px;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 15px;
+      margin: auto;
+    }
+
+    .block_code {
+      background-color: #e6e6e6;
+      padding: 15px 10px;
+      padding-right: 0;
+    }
+
+    .block_code code {
+      background-color: #fff;
+      display: block;
+      border-left: 3px solid green;
+      padding: 7px 0;
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+
+    .block_code code span {
+      color: rgb(216, 78, 78);
+    }
+
+    .block_youtube {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="main_header">
+    <nav>
+      <ul>
+        <li><a href="#link-1">HTML5 Семантичні елементи</a></li>
+        <li><a href="#link-2">Підтримка браузерів</a></li>
+        <li><a href="#link-3">Нові семантичні елементи в HTML5</a></li>
+        <li><a href="#link-4">HTML5 <code>&lt;section&gt;</code> елемент</a></li>
+        <li><a href="#link-5">HTML5 <code>&lt;article&gt;</code> елемент</a></li>
+        <li><a href="#link-6">HTML5 <code>&lt;header&gt;</code> елемент</a></li>
+        <li><a href="#link-7">HTML5 <code>&lt;footer&gt;</code> елемент</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="link-1">
+    <div class="wrapper">
+      <h1>HTML5 Семантичні елементи</h1>
+      <p>Семантичний елемент чітко описує його значення як для браузера, так і для розробника.</p>
+      <p>Приклади <strong>не семантичних</strong> елементів: <code>&lt;div&gt;</code> і <code>&lt;span&gt;</code>- нічого не говорить про його вміст.</p>
+      <p>Приклади <strong>семантичних</strong> елементів: <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code> і <code>&lt;article&gt;</code> - чітко визначає його зміст</p>
+    </div>
+  </section>
+
+  <section id="link-2">
+    <div class="wrapper">
+      <h2>Підтримка браузерів</h2>
+      <div>
+        <img src="./images/icon-chrome.png" alt="Icon Chrome">
+        <img src="./images/icon-internet-explorer.png" alt="Icon Explorer">
+        <img src="./images/icon-mozilla.png" alt="Icon Mozilla">
+        <img src="./images/icon-safari.png" alt="Icon Safari">
+        <img src="./images/icon-opera.png" alt="Icon Opera">
+      </div>
+
+      <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
+      <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі елементи".</p>
+      <p>Прочитайте про це в <a href="https://www.browserstack.com/guide/html5-browser-compatibility-test#:~:text=HTML5%20is%20now%20compatible%20with,versions%20of%20Internet%20Explorer%20too." target="_blank">підтримці браузера HTML5</a>.</p>
+    </div>
+  </section>
+
+  <section id="link-3">
+    <div class="wrapper">
+      <h2>Нові семантичні елементи в HTML5</h2>
+      <ul>
+        <li><code>&lt;section&gt;</code></li>
+        <li><code>&lt;article&gt;</code></li>
+        <li><code>&lt;header&gt;</code></li>
+        <li><code>&lt;footer&gt;</code></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="link-4">
+    <div class="wrapper">
+      <h2>HTML5 <code>&lt;section&gt;</code> елемент</h2>
+      <p>Елемент <code>&lt;section&gt;</code> визначає розділ в документі.</p>
+      <p>Згідно з документацією в3к'с HTML5: "розділ представляє собою тематичну угруповання контенту, зазвичай з заголовком".</p>
+      <p>Домашня сторінка зазвичай може бути розділена на розділи для ознайомлення, змісту і контактної інформації.</p>
+
+      <div class="block_code">
+        <strong>Приклад</strong>
+        <code>
+          &lt;<span>section</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>h1</span>&gt;WWF&lt;<span>/h1</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>p</span>&gt;The World Wide Fund for Nature (WWF) is...&lt;<span>/p</span>&gt;<br>
+          &lt;<span>/section</span>&gt;
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <section id="link-5">
+    <div class="wrapper">
+      <h2>HTML5 <code>&lt;article&gt;</code> елемент</h2>
+      <p>Елемент <code>&lt;article&gt;</code> визначає незалежний, автономний вміст.</p>
+      <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість читати його незалежно від іншої частини веб-сайту.</p>
+      <p>Приклади того, де можна використовувати елемент <code>&lt;article&gt;</code>:</p>
+      <ul>
+        <li>Повідомлення на форумі</li>
+        <li>блозі</li>
+        <li>Газетна стаття</li>
+      </ul>
+      <div class="block_code">
+        <strong>Приклад</strong>
+        <code>
+          &lt;<span>article</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>h1</span>&gt;What Does WWF Do?&lt;<span>/h1</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>p</span>&gt;WWf`s mission is to stop the degradation of our planet`s natural environment, and build a future im which humans live in harmony with nature.&lt;<span>/p</span>&gt;<br>
+          &lt;<span>/article</span>&gt;
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <section id="link-6">
+    <div class="wrapper">
+      <h2>HTML5 <code>&lt;header&gt;</code> елемент</h2>
+      <p>Елемент <code>&lt;header&gt;</code> задає заголовок для документа або розділу.</p>
+      <p>Елемент <code>&lt;header&gt;</code> повинен використовуватися в якості контейнера для вступного змісту.</p>
+      <p>В одному документі може бути кілька елементів <code>&lt;header&gt;</code>.</p>
+      <p>У наступному прикладі визначається заголовок для статті:</p>
+      <div class="block_code">
+        <strong>Приклад</strong>
+        <code>
+          &lt;<span>article</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>header</span>&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span>h1</span>&gt;What Does WWF Do?&lt;<span>/h1</span>&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span>p</span>&gt;WWf`s mission:&lt;<span>/p</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>/header</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>p</span>&gt;WWf`s mission is to stop the degradation of our planet`s natural environment, and build a future im which humans live in harmony with nature.&lt;<span>/p</span>&gt;<br>
+          &lt;<span>/article</span>&gt;
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <section id="link-7">
+    <div class="wrapper">
+      <h2>HTML5 <code>&lt;footer&gt;</code> елемент</h2>
+      <p>Елемент <code>&lt;footer&gt;</code>вказує нижній колонтитул для документа або розділу.</p>
+      <p>Нижній колонтитул зазвичай містить автора документа, інформацію про авторське право, посилання на умови використання, контактні дані і т.д.</p>
+      <p>В одному документі може бути кілька елементів <code>&lt;footer&gt;</code>.</p>
+      <div class="block_code">
+        <strong>Приклад</strong>
+        <code>
+          &lt;<span>footer</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>p</span>&gt;Posted by: Hege Refsnes&lt;<span>/p</span>&gt;<br>
+          &nbsp;&nbsp;&lt;<span>p</span>&gt;Contact information: <a href="mailto:lev.kyryl@gmail.com">lev.kyryl@gmail.com</a>.&lt;<span>/p</span>&gt;<br>
+          &lt;<span>/footer</span>&gt;
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <section class="block_iframe">
+    <div class="wrapper">
+      <iframe src="../hw_1/index.html" frameborder="2" width="100%" height="300"></iframe>
+    </div>
+  </section>
+
+  <section class="block_youtube">
+    <div class="wrapper">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dEBVe8Ij7JU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>
+</body>
+</html>
