@@ -1,0 +1,215 @@
+@import 'vars';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/roboto-regular.eot);
+  src: url(../fonts/roboto-regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/roboto-regular.svg#roboto-regular) format('svg'),
+       url(../fonts/roboto-regular.ttf) format('truetype'),
+       url(../fonts/roboto-regular.woff) format('woff'),
+       url(../fonts/roboto-regular.woff2) format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/roboto-bold.eot);
+  src: url(../fonts/roboto-bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/roboto-bold.svg#roboto-bold) format('svg'),
+       url(../fonts/roboto-bold.ttf) format('truetype'),
+       url(../fonts/roboto-bold.woff) format('woff'),
+       url(../fonts/roboto-bold.woff2) format('woff2');
+  font-weight: bold;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $colorBackWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+.shoping_list {
+  max-width: 49.5625em;
+  width: 100%;
+  background-color: $colorBackDarkGray;
+  color: $colorWhite;
+
+  header.title {
+    background-color: $colorBackGray;
+    color: $colorRed;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.125em;
+    padding: 0.625em;
+    gap: 0.25em;
+
+    h1 {
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.166667;
+    }
+
+    h2 {
+      font-size: 1em;
+      line-height: 1.1875em;
+    }
+  }
+
+  .main {
+    padding: 1.25em 1.25em 2.8125em;
+
+    .items {
+      max-width: 33.375em;
+      width: 100%;
+      margin: auto;
+    }
+
+    input {
+      display: none;
+    }
+
+    .item {
+      background-color: $colorBackLightViolet;
+
+      &:nth-child(2n) {
+        background-color: $colorBackViolet;
+      }
+
+      label {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        font-size: 1.125em; //18px
+        padding: 0.722222em 0.666667em 0.777778em 2.611111em;
+        color: $colorWhite;
+        transition: all .1s ease-in;
+
+        &:hover {
+          background: linear-gradient(to bottom, $colorWhite 6.67%, $colorBackDarkViolet 6.67%, $colorBackDarkViolet 93.33%, $colorWhite 93.33%);
+        }
+
+        &:active {
+          background: linear-gradient(to bottom, $colorWhite 6.67%, $colorRed 6.67%, $colorRed 93.33%, $colorWhite 93.33%);
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          font-size: 0.888889em; //16px
+          top: 0.75em;
+          left: 0.75em;
+          width: 1.1875em;
+          height: 1.1875em;
+          background-color: $colorWhite;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          font-size: 0.888889em; //16px
+          top: 1.0625em;
+          left: 0.9375em;
+          width: 0.8125em;
+          height: 0.625em;
+          background: url("../images/icon-check.png") no-repeat;
+          background-size: cover;
+          opacity: 0;
+          transition: all .1s ease-in;
+        }
+
+        .block {
+          position: relative;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            transition: opacity .1s ease-in;
+            height: 1px;
+            width: 100%;
+            background-color: $colorDelViolet;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 0;
+            left: -9999px;
+          }
+
+          span {
+            position: relative;
+            font-size: 0.611111em; //11px
+            top: -0.181818em;
+  
+            &::before {
+              content: '(';
+            }
+  
+            &::after {
+              content: ')';
+            }
+  
+            &::before,
+            &::after {
+              display: inline-block;
+              
+            }
+          }
+        }
+      }
+
+      input:checked + label {
+        color: $colorDelViolet;
+        
+        .block::before {
+          opacity: 1;
+          left: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    button[type="submit"] {
+      display: block;
+      max-width: 29.667em;
+      width: 100%;
+      margin: 2.5em auto 0;
+      background-color: $colorBackGray;
+      color: $colorRed;
+      font-size: 1.125em;
+      line-height: 1.166667;
+      border: none;
+      padding: 0.667em 0.5em;
+      transition: all .1s ease-in;
+
+      &:hover {
+        color: $colorWhite;
+      }
+
+      &::after {
+        content: ':)';
+        display: inline-block;
+        position: relative;
+        padding-left: 0.27778em;
+        top: -0.055556em;
+      }
+    }
+  }
+}
