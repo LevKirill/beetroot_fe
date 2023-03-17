@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW_6 Form</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="site_main">
+    <form action="" method="get">
+      <fieldset>
+        <h2 class="title">Реєстрація</h2>
+        <div class="items_form">
+          <div class="item_form item--name">
+            <label for="input_name">Повне ім’я</label>
+            <input type="text" name="name" id="input_name">
+          </div>
+          <div class="item_form item--email">
+            <label for="input_email">Email</label>
+            <input type="email" name="email" id="input_email">
+          </div>
+          <div class="item_form item--password item--password-1">
+            <label for="input_password_1">Пароль</label>
+            <input type="password" name="password_1" id="input_password_1">
+          </div>
+          <div class="item_form item--password item--password-2">
+            <label for="input_password_2">Підтвердження пароля</label>
+            <input type="password" name="password_2" id="input_password_2">
+          </div>
+          <div class="item_form item--sex">
+            <p>Стать</p>
+            <label><input type="radio" name="sex" checked><span>Чоловіча</span></label>
+            <label><input type="radio" name="sex"><span>Жіноча</span></label>
+          </div>
+          <div class="item_form item--year">
+            <label for="input_year">Вік</label>
+            <input type="number" name="year" id="input_year" min="10" max="110">
+          </div>
+          <div class="item_form item--course">
+            <label for="select_course">Курс</label>
+            <select name="Курс" id="select_course">
+              <option value="" disabled selected>-=Виберіть курс=-</option>
+              <option value="Front-End">Front-End</option>
+              <option value="Back-End">Back-End</option>
+              <option value="Project Management">Project Management</option>
+              <option value="QA Manual">QA Manual</option>
+            </select>
+          </div>
+          <div class="item_form item--address">
+            <label for="textarea_address">Повна адреса проживання</label>
+            <textarea name="" id="textarea_address" cols="30" rows="10" placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
+          </div>
+          <div class="item_form item--accept">
+            <label><input type="checkbox" name="accept"> Я погоджуюсь з обробкою персональних даних</label>
+          </div>
+        </div>
+        <div class="btn">
+          <input type="reset" value="Очистити">
+          <input type="submit" value="Зареєструватись">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>

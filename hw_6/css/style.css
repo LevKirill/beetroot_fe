@@ -1,0 +1,85 @@
+.site_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  max-width: 550px;
+  width: 100%;
+}
+form fieldset {
+  background-color: #efefef;
+  padding: 30px;
+}
+form h2.title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+  padding-bottom: 30px;
+}
+form .items_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px 30px;
+  padding-bottom: 20px;
+}
+form .items_form .item_form {
+  width: calc(50% - 15px);
+}
+form .items_form .item_form:not(.item--sex) > label, form .items_form .item_form:not(.item--sex) > p {
+  display: block;
+  padding-bottom: 10px;
+}
+form .items_form .item_form.item--sex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+}
+form .items_form .item_form.item--sex p {
+  width: 100%;
+}
+form .items_form input:not([type=radio]):not([type=checkbox]) {
+  padding-left: 12px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+form .items_form .item--accept {
+  width: 100%;
+}
+form .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px 30px;
+}
+/*# sourceMappingURL=style.css.map */
