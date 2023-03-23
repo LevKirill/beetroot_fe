@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-regular.eot);
+  src: url(../font/montserrat-regular.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-regular.svg#montserrat-regular) format("svg"), url(../font/montserrat-regular.ttf) format("truetype"), url(../font/montserrat-regular.woff) format("woff"), url(../font/montserrat-regular.woff2) format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-semibold.eot);
+  src: url(../font/montserrat-semibold.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-semibold.svg#montserrat-semibold) format("svg"), url(../font/montserrat-semibold.ttf) format("truetype"), url(../font/montserrat-semibold.woff) format("woff"), url(../font/montserrat-semibold.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-bold.eot);
+  src: url(../font/montserrat-bold.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-bold.svg#montserrat-bold) format("svg"), url(../font/montserrat-bold.ttf) format("truetype"), url(../font/montserrat-bold.woff) format("woff"), url(../font/montserrat-bold.woff2) format("woff2");
+  font-weight: bold;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #FF9900;
+  border-radius: 0.25rem;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border: 1px solid #FF9900;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #ffffff;
+  color: #2F281E;
+  border-color: #BCD0E5;
+}
+.btn span {
+  font-size: 1rem;
+}
+
+.btn_white {
+  background-color: #ffffff;
+  color: #2F281E;
+  border-color: #BCD0E5;
+}
+.btn_white:hover {
+  color: #ffffff;
+  background-color: #FF9900;
+  border-color: #FF9900;
+}
+
+.main_header .wrapper {
+  text-align: center;
+  height: 5em;
+  padding: 1.0625em 0;
+}
+.main_header .logo, .main_header .menu, .main_header .menu li, .main_header .buttons {
+  display: inline-block;
+}
+.main_header .logo, .main_header .menu, .main_header .buttons {
+  vertical-align: middle;
+}
+.main_header .logo {
+  text-decoration: none;
+  font-size: 0;
+}
+.main_header .logo img {
+  max-width: 12.5rem;
+  width: 100%;
+  height: auto;
+}
+.main_header .menu {
+  font-size: 0;
+  width: calc(100% - 28.875rem);
+}
+.main_header .menu li {
+  padding: 0 10px;
+}
+.main_header .menu li:first-child {
+  padding-left: 0;
+}
+.main_header .menu li:last-child {
+  padding-right: 0;
+}
+.main_header .menu li a {
+  font-size: 1rem;
+  line-height: 1.75em;
+  color: #2F281E;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.main_header .menu li a:hover {
+  color: #FF9900;
+}
+.main_header .buttons {
+  font-size: 0;
+}
+.main_header .buttons .btn {
+  width: 6.875rem;
+  margin: 0 1rem;
+}
+.main_header .buttons .btn:first-child {
+  margin-left: 0;
+}
+.main_header .buttons .btn:last-child {
+  margin-right: 0;
+}
+
+.main_screen {
+  padding-top: 4.375em;
+}
+.main_screen .items {
+  text-align: justify;
+}
+.main_screen .items .item {
+  display: inline-block;
+  font-size: 0;
+}
+.main_screen .items .item_text {
+  max-width: 31.25rem;
+  width: 100%;
+  vertical-align: middle;
+}
+.main_screen .items .item_img {
+  width: calc(100% - 31.625rem);
+  text-align: right;
+}
+.main_screen .items .item_img img {
+  max-width: 40.25rem;
+  width: 100%;
+  height: auto;
+}
+.main_screen .items h1.title {
+  font-weight: bold;
+  line-height: 1.2273;
+}
+.main_screen .items h1.title span {
+  font-size: 2.75rem;
+}
+.main_screen .items p {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #544837;
+  line-height: 1.5556;
+  margin: 1.875em 0 1.25em;
+}
+.main_screen .items .btn {
+  max-width: 11.25rem;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
