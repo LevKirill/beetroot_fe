@@ -1,0 +1,122 @@
+@import '../css/reset';
+@import 'vars';
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/lato-regular.eot);
+  src: url(../fonts/lato-regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/lato-regular.svg#lato-regular) format('svg'),
+       url(../fonts/lato-regular.ttf) format('truetype'),
+       url(../fonts/lato-regular.woff) format('woff'),
+       url(../fonts/lato-regular.woff2) format('woff2');
+       font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/lato-light.eot);
+  src: url(../fonts/lato-light.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/lato-light.svg#lato-light) format('svg'),
+       url(../fonts/lato-light.ttf) format('truetype'),
+       url(../fonts/lato-light.woff) format('woff'),
+       url(../fonts/lato-light.woff2) format('woff2');
+       font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/lato-bold.eot);
+  src: url(../fonts/lato-bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/lato-bold.svg#lato-bold) format('svg'),
+       url(../fonts/lato-bold.ttf) format('truetype'),
+       url(../fonts/lato-bold.woff) format('woff'),
+       url(../fonts/lato-bold.woff2) format('woff2');
+       font-weight: bold;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: $colorBlack;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.1s ease;
+  &:hover {
+    color: $colorBlue;
+  }
+}
+
+nav.menu {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875em;
+    a {
+      font-size: 1.25em;
+      font-weight: normal;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+  }
+}
+
+nav.social {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.625em;
+      height: 2.625em;
+    }
+  }
+}
+
+.main_header {
+  border-bottom: 1px solid $colorGray;
+  background-color: $colorWhite;
+  padding: 0.5625em 0;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .btn {
+    border: 1px solid #3C3C3C;
+    background-color: $colorWhite;
+    padding: 0.5625em 1.0625em;
+    transition: 0.1s ease;
+    &:hover {
+      background-color: $colorBlue;
+      border-color: $colorBlue;
+      color: $colorWhite;
+    }
+    span {
+      font-size: 1.125em;
+      font-weight: normal;
+      line-height: 1.22;
+      text-transform: uppercase;
+    }
+  }
+}
