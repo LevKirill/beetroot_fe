@@ -87,6 +87,7 @@ nav.social {
       align-items: center;
       width: 2.625em;
       height: 2.625em;
+      transition: 0.1s ease;
     }
   }
 }
@@ -117,6 +118,132 @@ nav.social {
       font-weight: normal;
       line-height: 1.22;
       text-transform: uppercase;
+    }
+  }
+}
+
+.main_footer {
+  padding: 2.5em 0;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.75em;
+  }
+  nav.menu {
+    ul {
+      a {
+        font-size: 1.125em;
+        line-height: 1.222222em;
+      }
+    }
+  }
+  nav.social {
+    ul {
+      a {
+        border: 1px solid $colorBlue;
+        background-color: $colorWhite;
+        &:hover {
+          background-color: $colorBlue;
+          svg {
+            path {
+              fill: $colorWhite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main_screen {
+  background-color: $colorLightGray;
+  padding: 4em 0;
+  min-height: calc(100vh - 4.9375em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1.title {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    span {
+      font-size: 2.125em;
+      line-height: 1.206;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 2.8125em;
+      height: 0.25em;
+      background-color: $colorTitleBlock;
+      margin: 1.25em auto 0;
+    }
+  }
+  .desc {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+    max-width: 35.625em;
+    width: 0 auto;
+    line-height: 1.5;
+    margin: 2.5em auto 3.75em;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.875em;
+    .img {
+      position: relative;
+      .social {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $colorBlue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        left: -9999px;
+        top: 0;
+        transition: opacity 0.1s ease;
+        ul li a {
+          background-color: $colorLightBlue;
+          transition: 0.1s ease;
+          &:hover {
+            background-color: $colorWhite;
+            svg path {
+              fill: $colorBlue;
+            }
+          }
+        }
+      }
+      &:hover {
+        .social {
+          opacity: 1;
+          left: 0;
+        }
+      }
+    }
+    h3.subtitle {
+      font-size: 1em;
+      padding-top: 1.25em;
+      span {
+        font-size: 1.125em;
+        font-weight: bold;
+        line-height: 1.222222;
+        color: #282528;
+      }
+    }
+    .job_title {
+      font-size: 1.125em;
+      font-weight: 300;
+      line-height: 1.222222;
+      color: #646464;
     }
   }
 }

@@ -429,6 +429,8 @@ nav.social ul a {
           align-items: center;
   width: 2.625em;
   height: 2.625em;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
 }
 
 .main_header {
@@ -467,5 +469,159 @@ nav.social ul a {
   font-weight: normal;
   line-height: 1.22;
   text-transform: uppercase;
+}
+
+.main_footer {
+  padding: 2.5em 0;
+}
+.main_footer .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 1.75em;
+}
+.main_footer nav.menu ul a {
+  font-size: 1.125em;
+  line-height: 1.222222em;
+}
+.main_footer nav.social ul a {
+  border: 1px solid #18B5DC;
+  background-color: #ffffff;
+}
+.main_footer nav.social ul a:hover {
+  background-color: #18B5DC;
+}
+.main_footer nav.social ul a:hover svg path {
+  fill: #ffffff;
+}
+
+.main_screen {
+  background-color: #F6F6F6;
+  padding: 4em 0;
+  min-height: calc(100vh - 4.9375em);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main_screen h1.title {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.main_screen h1.title span {
+  font-size: 2.125em;
+  line-height: 1.206;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.main_screen h1.title::after {
+  content: "";
+  display: block;
+  width: 2.8125em;
+  height: 0.25em;
+  background-color: #DDDBDB;
+  margin: 1.25em auto 0;
+}
+.main_screen .desc {
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  max-width: 35.625em;
+  width: 0 auto;
+  line-height: 1.5;
+  margin: 2.5em auto 3.75em;
+}
+.main_screen .items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.875em 1fr 1.875em 1fr 1.875em 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.875em;
+}
+.main_screen .items > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.main_screen .items > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.main_screen .items > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+.main_screen .items > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+.main_screen .items .img {
+  position: relative;
+}
+.main_screen .items .img .social {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #18B5DC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  left: -9999px;
+  top: 0;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+.main_screen .items .img .social ul li a {
+  background-color: #5DCBE6;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+.main_screen .items .img .social ul li a:hover {
+  background-color: #ffffff;
+}
+.main_screen .items .img .social ul li a:hover svg path {
+  fill: #18B5DC;
+}
+.main_screen .items .img:hover .social {
+  opacity: 1;
+  left: 0;
+}
+.main_screen .items h3.subtitle {
+  font-size: 1em;
+  padding-top: 1.25em;
+}
+.main_screen .items h3.subtitle span {
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.222222;
+  color: #282528;
+}
+.main_screen .items .job_title {
+  font-size: 1.125em;
+  font-weight: 300;
+  line-height: 1.222222;
+  color: #646464;
 }
 /*# sourceMappingURL=style.css.map */
