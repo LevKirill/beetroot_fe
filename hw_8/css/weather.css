@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Lucida Sans Unicode";
+  src: url(../font/lucida-sans-unicode.eot);
+  src: url(../font/lucida-sans-unicode.eot?#iefix) format("embedded-opentype"), url(../font/lucida-sans-unicode.svg#lucida-sans-unicode) format("svg"), url(../font/lucida-sans-unicode.ttf) format("truetype"), url(../font/lucida-sans-unicode.woff) format("woff"), url(../font/lucida-sans-unicode.woff2) format("woff2");
+}
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans Unicode";
+  font-size: 16px;
+}
+
+.site_main {
+  background: #3399CC;
+  border: 25px solid #2B81AC;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2.3125em 15px;
+  color: #ffffff;
+}
+
+h1 {
+  max-width: 1166px;
+  width: 100%;
+  margin: 0 auto 2.375em;
+}
+h1 span {
+  font-size: 1.3125em;
+  line-height: 1.1905;
+}
+h1 i.wi {
+  font-size: 1.6875em;
+  line-height: 1.444;
+  margin-left: 4px;
+}
+
+.items {
+  max-width: 1166px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  text-align: center;
+  background-color: #ffffff;
+}
+.items .item {
+  display: inline-block;
+  width: 100%;
+  border: 2px solid #ffffff;
+  font-size: 16px;
+  border-left: none;
+  border-top: none;
+  padding: 1.625em 15px 1.6875em;
+  opacity: 0.7;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.items .item:hover {
+  opacity: 1;
+}
+.items .item:nth-child(1) {
+  background-color: #3399CC;
+}
+.items .item:nth-child(2) {
+  background-color: #33CCCC;
+}
+.items .item:nth-child(3) {
+  background-color: #996699;
+}
+.items .item:nth-child(4) {
+  background-color: #C24747;
+}
+.items .item:nth-child(5) {
+  background-color: #E2674A;
+}
+.items .item:nth-child(6) {
+  background-color: #FFCC66;
+}
+.items .item:nth-child(7) {
+  background-color: #99CC99;
+}
+.items .item:nth-child(8) {
+  background-color: #669999;
+}
+.items .item:nth-child(9) {
+  background-color: #CC6699;
+}
+.items .item:nth-child(10) {
+  background-color: #339966;
+}
+.items .item:nth-child(11) {
+  background-color: #666699;
+}
+.items .half {
+  width: 50%;
+}
+.items .quarter {
+  width: 25%;
+}
+.items h2, .items p {
+  font-size: 1.375em;
+  line-height: 1.18182;
+}
+.items p {
+  padding-top: 0.2273em;
+}
+.items i.wi {
+  font-size: 1.91em;
+  font-weight: 400;
+  line-height: 1.45;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+p.wish {
+  max-width: 1166px;
+  width: 100%;
+  margin: 2.1875em auto 0;
+  font-size: 1em;
+  line-height: 1.1875em;
+}
+/*# sourceMappingURL=weather.css.map */
