@@ -1,0 +1,386 @@
+@import 'vars';
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../font/montserrat-regular.eot);
+  src: url(../font/montserrat-regular.eot?#iefix) format('embedded-opentype'),
+       url(../font/montserrat-regular.svg#montserrat-regular) format('svg'),
+       url(../font/montserrat-regular.ttf) format('truetype'),
+       url(../font/montserrat-regular.woff) format('woff'),
+       url(../font/montserrat-regular.woff2) format('woff2');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../font/montserrat-medium.eot);
+  src: url(../font/montserrat-medium.eot?#iefix) format('embedded-opentype'),
+       url(../font/montserrat-medium.svg#montserrat-medium) format('svg'),
+       url(../font/montserrat-medium.ttf) format('truetype'),
+       url(../font/montserrat-medium.woff) format('woff'),
+       url(../font/montserrat-medium.woff2) format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../font/montserrat-semibold.eot);
+  src: url(../font/montserrat-semibold.eot?#iefix) format('embedded-opentype'),
+       url(../font/montserrat-semibold.svg#montserrat-semibold) format('svg'),
+       url(../font/montserrat-semibold.ttf) format('truetype'),
+       url(../font/montserrat-semibold.woff) format('woff'),
+       url(../font/montserrat-semibold.woff2) format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../font/montserrat-bold.eot);
+  src: url(../font/montserrat-bold.eot?#iefix) format('embedded-opentype'),
+       url(../font/montserrat-bold.svg#montserrat-bold) format('svg'),
+       url(../font/montserrat-bold.ttf) format('truetype'),
+       url(../font/montserrat-bold.woff) format('woff'),
+       url(../font/montserrat-bold.woff2) format('woff2');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../font/gotham-bold.eot);
+  src: url(../font/gotham-bold.eot?#iefix) format('embedded-opentype'),
+       url(../font/gotham-bold.svg#gotham-bold) format('svg'),
+       url(../font/gotham-bold.ttf) format('truetype'),
+       url(../font/gotham-bold.woff) format('woff'),
+       url(../font/gotham-bold.woff2) format('woff2');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(../font/poppins-bold.eot);
+  src: url(../font/poppins-bold.eot?#iefix) format('embedded-opentype'),
+       url(../font/poppins-bold.svg#poppins-bold) format('svg'),
+       url(../font/poppins-bold.ttf) format('truetype'),
+       url(../font/poppins-bold.woff) format('woff'),
+       url(../font/poppins-bold.woff2) format('woff2');
+  font-weight: bold;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background-color: $colorWhite;
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.btn {
+  display: inline-block;
+  font-size: 0;
+  font-weight: 600;
+  color: $colorWhite;
+  background-color: $colorOrange;
+  border-radius: 0.25rem;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border: 1px solid $colorOrange;
+  transition: all .1s ease-in;
+  text-align: center;
+  &:hover {
+    background-color: $colorWhite;
+    color: $colorBlack;
+    border-color: $colorBlue;
+  }
+  span {
+    font-size: 1rem;
+  }
+}
+.btn_white {
+  background-color: $colorWhite;
+  color: $colorBlack;
+  border-color: $colorBlue;
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorOrange;
+    border-color: $colorOrange;
+  }
+}
+.main_header {
+  .wrapper {
+    text-align: center;
+    height: 5em;
+    padding: 1.0625em 0;
+  }
+  .logo, .menu, .menu li, .buttons {
+    display: inline-block;
+  }
+  .logo, .menu, .buttons {
+    vertical-align: middle;
+  }
+  .logo {
+    text-decoration: none;
+    font-size: 0;
+
+    img {
+      max-width: 12.5rem;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .menu {
+    font-size: 0;
+    width: calc(100% - 28.875rem);
+
+    li {
+      padding: 0 10px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      a {
+        font-size: 1rem;
+        line-height: 1.75em;
+        color: $colorBlack;
+        text-decoration: none;
+        transition: all .1s ease-in;
+
+        &:hover {
+          color: $colorOrange;
+        }
+      }
+    }
+  }
+  .buttons {
+    font-size: 0;
+
+    .btn {
+      width: 6.875rem;
+      margin: 0 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.main_screen {
+  padding-top: 4.375em;
+  .items {
+    text-align: justify;
+    .item {
+      display: inline-block;
+      font-size: 0;
+    }
+    .item_text {
+      max-width: 31.25rem;
+      width: 100%;
+      vertical-align: middle;
+    }
+    .item_img {
+      width: calc(100% - 31.625rem);
+      text-align: right;
+      img {
+        max-width: 40.25rem;
+        width: 100%;
+        height: auto;
+      }
+    }
+    h1.title {
+      font-weight: bold;
+      line-height: 1.2273;
+      span {
+        font-size: 2.75rem;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      font-weight: normal;
+      color: $colorBrown;
+      line-height: 1.5556;
+      margin: 1.875em 0 1.25em;
+    }
+    .btn {
+      max-width: 11.25rem;
+      width: 100%;
+    }
+  }
+}
+.features {
+  position: relative;
+  padding: 6.1875em 0 4.625em;
+  background: url("../images/back-features.jpg") no-repeat center bottom;
+  background-size: 100% auto;
+  h2.title {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.222;
+    text-align: center;
+    color: $colorBlack;
+    max-width: 33.6875em;
+    width: 100%;
+    margin: 0 auto;
+    span {
+      font-size: 2.25em;
+    }
+  }
+  .items {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5em;
+    margin: 3.125em 0 4.375em;
+    .item {
+      max-width: 16.875em;
+      width: 100%;
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.125em;
+        height: 3.125em;
+        border-radius: 0.9375em;
+        color: $colorWhite;
+        &-1 {
+          background-color: #7752BE;
+        }
+        &-2 {
+          background-color: #FAB005;
+        }
+        &-3 {
+          background-color: #F03E3D;
+        }
+        &-4 {
+          background-color: #4DADF7;
+        }
+
+        .fa {
+          font-size: 1em;
+          font-weight: 1.125;
+        }
+      }
+      h3.subtitle {
+        font-size: 1em;
+        font-weight: 600;
+        color: $colorBlack;
+        padding: 1.875em 0 1em;
+        span {
+          font-size: 1.375em;
+        }
+      }
+      p {
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1.625;
+      }
+    }
+  }
+  .sign_up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    width: 11.25em;
+    height: 3.125em;
+    border: none;
+    border-radius: 0.25em;
+    color: $colorWhite;
+    background-color: $colorOrange;
+    margin: 0 auto;
+  }
+}
+
+.main_footer {
+  padding: 4.5625em 0 4.375em;
+  border-top: 1px solid rgba(188, 208, 229, 0.496913);
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+  .logo {
+    text-decoration: none;
+    img {
+      max-width: 12.5em;
+      width: 100%;
+      height: auto;
+    }
+  }
+  h3.title {
+    font-family: 'Gotham';
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $colorBlack;
+  }
+  .menu_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875em;
+    max-width: 8.4375em;
+    width: 100%;
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375em;
+      .item {
+        a {
+          font-size: 1em;
+          font-weight: 500;
+          line-height: 1.625;
+          color: $colorBrown;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .sign_up {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625em;
+    max-width: 21.25em;
+    width: 100%;
+
+    input {
+
+      &[type="text"] {
+        font-size: 1em;
+        font-weight: normal;
+        line-height: 1.25;
+        color: $colorBlue;
+        border: 1px solid $colorBlue;
+        border-radius: 0.25em;
+        height: 3.125em;
+        padding-left: 0.625em;
+
+        &::placeholder {
+          color: $colorBlue;
+        }
+      }
+
+      &[type="submit"] {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 1.5;
+        max-width: 11.25em;
+        width: 100%;
+        height: 3.125em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.25em;
+        border: none;
+        background-color: $colorOrange;
+        color: $colorWhite;
+      }
+    }
+  }
+}
