@@ -43,12 +43,14 @@ h2.title {
 }
 
 .block_text {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5em;
+  &, ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
 }
 
-p {
+p, li {
   font-size: 1.75em; //28px
   line-height: 1.7143;
   b, strong {
@@ -111,4 +113,8 @@ p {
   .logo {
     text-decoration: none;
   }
+}
+
+.main_screen {
+  padding-bottom: 5.625em;
 }

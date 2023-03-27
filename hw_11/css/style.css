@@ -44,7 +44,7 @@ h2.title sup {
   letter-spacing: 0.04em;
 }
 
-.block_text {
+.block_text, .block_text ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,21 +55,21 @@ h2.title sup {
   gap: 2.5em;
 }
 
-p {
+p, li {
   font-size: 1.75em;
   line-height: 1.7143;
 }
-p b, p strong {
+p b, p strong, li b, li strong {
   font-weight: 700;
 }
-p i {
+p i, li i {
   font-style: italic;
 }
-p u {
+p u, li u {
   font-family: "Hind", sans-serif;
   font-weight: 400;
 }
-p code {
+p code, li code {
   background-color: #dadada;
 }
 
@@ -134,5 +134,9 @@ p code {
 }
 .main_header .logo {
   text-decoration: none;
+}
+
+.main_screen {
+  padding-bottom: 5.625em;
 }
 /*# sourceMappingURL=style.css.map */
