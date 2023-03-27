@@ -1,0 +1,405 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-regular.eot);
+  src: url(../font/montserrat-regular.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-regular.svg#montserrat-regular) format("svg"), url(../font/montserrat-regular.ttf) format("truetype"), url(../font/montserrat-regular.woff) format("woff"), url(../font/montserrat-regular.woff2) format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-medium.eot);
+  src: url(../font/montserrat-medium.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-medium.svg#montserrat-medium) format("svg"), url(../font/montserrat-medium.ttf) format("truetype"), url(../font/montserrat-medium.woff) format("woff"), url(../font/montserrat-medium.woff2) format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-semibold.eot);
+  src: url(../font/montserrat-semibold.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-semibold.svg#montserrat-semibold) format("svg"), url(../font/montserrat-semibold.ttf) format("truetype"), url(../font/montserrat-semibold.woff) format("woff"), url(../font/montserrat-semibold.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/montserrat-bold.eot);
+  src: url(../font/montserrat-bold.eot?#iefix) format("embedded-opentype"), url(../font/montserrat-bold.svg#montserrat-bold) format("svg"), url(../font/montserrat-bold.ttf) format("truetype"), url(../font/montserrat-bold.woff) format("woff"), url(../font/montserrat-bold.woff2) format("woff2");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url(../font/gotham-bold.eot);
+  src: url(../font/gotham-bold.eot?#iefix) format("embedded-opentype"), url(../font/gotham-bold.svg#gotham-bold) format("svg"), url(../font/gotham-bold.ttf) format("truetype"), url(../font/gotham-bold.woff) format("woff"), url(../font/gotham-bold.woff2) format("woff2");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../font/poppins-bold.eot);
+  src: url(../font/poppins-bold.eot?#iefix) format("embedded-opentype"), url(../font/poppins-bold.svg#poppins-bold) format("svg"), url(../font/poppins-bold.ttf) format("truetype"), url(../font/poppins-bold.woff) format("woff"), url(../font/poppins-bold.woff2) format("woff2");
+  font-weight: bold;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #FF9900;
+  border-radius: 0.25rem;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border: 1px solid #FF9900;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #ffffff;
+  color: #2F281E;
+  border-color: #BCD0E5;
+}
+.btn span {
+  font-size: 1rem;
+}
+
+.btn_white {
+  background-color: #ffffff;
+  color: #2F281E;
+  border-color: #BCD0E5;
+}
+.btn_white:hover {
+  color: #ffffff;
+  background-color: #FF9900;
+  border-color: #FF9900;
+}
+
+.main_header .wrapper {
+  text-align: center;
+  height: 5em;
+  padding: 1.0625em 0;
+}
+.main_header .logo, .main_header .menu, .main_header .menu li, .main_header .buttons {
+  display: inline-block;
+}
+.main_header .logo, .main_header .menu, .main_header .buttons {
+  vertical-align: middle;
+}
+.main_header .logo {
+  text-decoration: none;
+  font-size: 0;
+}
+.main_header .logo img {
+  max-width: 12.5rem;
+  width: 100%;
+  height: auto;
+}
+.main_header .menu {
+  font-size: 0;
+  width: calc(100% - 28.875rem);
+}
+.main_header .menu li {
+  padding: 0 10px;
+}
+.main_header .menu li:first-child {
+  padding-left: 0;
+}
+.main_header .menu li:last-child {
+  padding-right: 0;
+}
+.main_header .menu li a {
+  font-size: 1rem;
+  line-height: 1.75em;
+  color: #2F281E;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.main_header .menu li a:hover {
+  color: #FF9900;
+}
+.main_header .buttons {
+  font-size: 0;
+}
+.main_header .buttons .btn {
+  width: 6.875rem;
+  margin: 0 1rem;
+}
+.main_header .buttons .btn:first-child {
+  margin-left: 0;
+}
+.main_header .buttons .btn:last-child {
+  margin-right: 0;
+}
+
+.main_screen {
+  padding-top: 4.375em;
+}
+.main_screen .items {
+  text-align: justify;
+}
+.main_screen .items .item {
+  display: inline-block;
+  font-size: 0;
+}
+.main_screen .items .item_text {
+  max-width: 31.25rem;
+  width: 100%;
+  vertical-align: middle;
+}
+.main_screen .items .item_img {
+  width: calc(100% - 31.625rem);
+  text-align: right;
+}
+.main_screen .items .item_img img {
+  max-width: 40.25rem;
+  width: 100%;
+  height: auto;
+}
+.main_screen .items h1.title {
+  font-weight: bold;
+  line-height: 1.2273;
+}
+.main_screen .items h1.title span {
+  font-size: 2.75rem;
+}
+.main_screen .items p {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #544837;
+  line-height: 1.5556;
+  margin: 1.875em 0 1.25em;
+}
+.main_screen .items .btn {
+  max-width: 11.25rem;
+  width: 100%;
+}
+
+.features {
+  position: relative;
+  padding: 6.1875em 0 4.625em;
+  background: url("../images/back-features.jpg") no-repeat center bottom;
+  background-size: 100% auto;
+}
+.features h2.title {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.222;
+  text-align: center;
+  color: #2F281E;
+  max-width: 33.6875em;
+  width: 100%;
+  margin: 0 auto;
+}
+.features h2.title span {
+  font-size: 2.25em;
+}
+.features .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2.5em;
+  margin: 3.125em 0 4.375em;
+}
+.features .items .item {
+  max-width: 16.875em;
+  width: 100%;
+}
+.features .items .item .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.125em;
+  height: 3.125em;
+  border-radius: 0.9375em;
+  color: #ffffff;
+}
+.features .items .item .icon-1 {
+  background-color: #7752BE;
+}
+.features .items .item .icon-2 {
+  background-color: #FAB005;
+}
+.features .items .item .icon-3 {
+  background-color: #F03E3D;
+}
+.features .items .item .icon-4 {
+  background-color: #4DADF7;
+}
+.features .items .item .icon .fa {
+  font-size: 1em;
+  font-weight: 1.125;
+}
+.features .items .item h3.subtitle {
+  font-size: 1em;
+  font-weight: 600;
+  color: #2F281E;
+  padding: 1.875em 0 1em;
+}
+.features .items .item h3.subtitle span {
+  font-size: 1.375em;
+}
+.features .items .item p {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.625;
+}
+.features .sign_up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  width: 11.25em;
+  height: 3.125em;
+  border: none;
+  border-radius: 0.25em;
+  color: #ffffff;
+  background-color: #FF9900;
+  margin: 0 auto;
+}
+
+.main_footer {
+  padding: 4.5625em 0 4.375em;
+  border-top: 1px solid rgba(188, 208, 229, 0.496913);
+}
+.main_footer .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.5em;
+}
+.main_footer .logo {
+  text-decoration: none;
+}
+.main_footer .logo img {
+  max-width: 12.5em;
+  width: 100%;
+  height: auto;
+}
+.main_footer h3.title {
+  font-family: "Gotham";
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #2F281E;
+}
+.main_footer .menu_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.875em;
+  max-width: 8.4375em;
+  width: 100%;
+}
+.main_footer .menu_footer .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.9375em;
+}
+.main_footer .menu_footer .items .item a {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.625;
+  color: #544837;
+  text-decoration: none;
+}
+.main_footer .sign_up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5625em;
+  max-width: 21.25em;
+  width: 100%;
+}
+.main_footer .sign_up input[type=text] {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.25;
+  color: #BCD0E5;
+  border: 1px solid #BCD0E5;
+  border-radius: 0.25em;
+  height: 3.125em;
+  padding-left: 0.625em;
+}
+.main_footer .sign_up input[type=text]::-webkit-input-placeholder {
+  color: #BCD0E5;
+}
+.main_footer .sign_up input[type=text]::-moz-placeholder {
+  color: #BCD0E5;
+}
+.main_footer .sign_up input[type=text]:-ms-input-placeholder {
+  color: #BCD0E5;
+}
+.main_footer .sign_up input[type=text]::-ms-input-placeholder {
+  color: #BCD0E5;
+}
+.main_footer .sign_up input[type=text]::placeholder {
+  color: #BCD0E5;
+}
+.main_footer .sign_up input[type=submit] {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 11.25em;
+  width: 100%;
+  height: 3.125em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.25em;
+  border: none;
+  background-color: #FF9900;
+  color: #ffffff;
+}
+/*# sourceMappingURL=style.css.map */
