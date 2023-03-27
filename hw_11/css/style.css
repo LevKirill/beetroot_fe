@@ -1,0 +1,142 @@
+@import '../css/reset.css';
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h2.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.625em;
+  padding: 4.375em 0 2.5em;
+}
+h2.title span:first-child {
+  font-family: "Francois One", sans-serif;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.333;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+h2.title sup {
+  font-family: "Farro", sans-serif;
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.block_text, .block_text ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.5em;
+}
+
+p, li {
+  font-size: 1.75em;
+  line-height: 1.7143;
+}
+p b, p strong, li b, li strong {
+  font-weight: 700;
+}
+p i, li i {
+  font-style: italic;
+}
+p u, li u {
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+}
+p code, li code {
+  background-color: #dadada;
+}
+
+.main_header {
+  padding: 0.75em 0;
+}
+.main_header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main_header .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3.125em;
+}
+.main_header .items .lang {
+  font-family: "Tourney", cursive;
+  font-weight: 600;
+  font-size: 1.375em;
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  color: #000000;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+          transform: matrix(1, 0, 0, 1, 0, 0);
+  text-transform: uppercase;
+}
+.main_header .items .breadcrumbs ul {
+  font-family: "Staatliches", cursive;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625em;
+}
+.main_header .items .breadcrumbs ul li {
+  font-size: 1.275em;
+  line-height: 1.27;
+  letter-spacing: 0.03em;
+  mix-blend-mode: normal;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+          transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.main_header .items .breadcrumbs ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+.main_header .logo {
+  text-decoration: none;
+}
+
+.main_screen {
+  padding-bottom: 5.625em;
+}
+/*# sourceMappingURL=style.css.map */
