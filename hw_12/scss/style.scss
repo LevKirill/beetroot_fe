@@ -19,11 +19,22 @@ body {
   margin: 0 auto;
 }
 
-h2.title {
+.title {
   display: flex;
   align-items: flex-start;
   gap: 0.625em;
   padding: 4.375em 0 2.5em;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3.125em;
+    left: 0;
+    width: 6.25em;
+    height: 0.5em;
+    background-color: #000000;
+  }
   span {
     &:first-child {
       font-family: 'Francois One', sans-serif;
@@ -51,26 +62,32 @@ h2.title {
   }
 }
 
-p, li {
-  font-size: 1.75em; //28px
-  line-height: 1.7143;
-  b, strong {
-    font-weight: 700;
-  }
-  i {
-    font-style: italic;
-  }
-  u {
-    font-family: 'Hind', sans-serif;
-    font-weight: 400;
-  }
-  code {
-    background-color: #dadada;
+.content {
+  p, li {
+    font-size: 1.75em; //28px
+    line-height: 1.7143;
+    b, strong {
+      font-weight: 700;
+    }
+    i {
+      font-style: italic;
+    }
+    u {
+      font-family: 'Hind', sans-serif;
+      font-weight: 400;
+    }
+    code {
+      background-color: #dadada;
+    }
   }
 }
 
-.main_header {
+header {
   padding: 0.75em 0;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 2;
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -91,31 +108,71 @@ p, li {
       text-transform: uppercase;
     }
     .breadcrumbs {
-      ul {
         font-family: 'Staatliches', cursive;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         gap: 0.625em;
-        li {
-          font-size: 1.275em;
-          line-height: 1.27;
-          letter-spacing: 0.03em;
-          mix-blend-mode: normal;
-          transform: matrix(1, 0, 0, 1, 0, 0);
-          a {
-            color: inherit;
-            text-decoration: none;
-          }
+        font-size: 1.275em;
+        line-height: 1.27;
+        letter-spacing: 0.03em;
+        mix-blend-mode: normal;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        a {
+        color: inherit;
+        text-decoration: none;
         }
-      }
     }
   }
   .logo {
     text-decoration: none;
+    color: #000000;
+    text-decoration: none;
+    i {
+      font-size: 3.375em;
+    }
   }
 }
 
 .main_screen {
   padding-bottom: 5.625em;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 24.0625em 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 1.875em;
+  }
+  .sidebar {
+    .menu {
+      position: sticky;
+      top: 8.75em;
+      padding: 0 0.625em;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 4.375em;
+      }
+      a {
+        display: block;
+        font-family: 'Francois One', sans-serif;
+        font-size: 2.25em;
+        font-weight: 400;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 1.33;
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid #BDBDBD;
+      }
+    }
+  }
+}
+
+.back_services {
+  position: fixed;
+  right: 0;
+  top: 150px;
+  font-size: 760px;
+  color: #EAEAEA;
+  z-index: -1;
 }
