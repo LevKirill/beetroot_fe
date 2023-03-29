@@ -342,14 +342,14 @@ textarea {
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons.eot?ulmv7f");
-  src: url("../fonts/icons.eot?ulmv7f#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?ulmv7f") format("truetype"), url("../fonts/icons.woff?ulmv7f") format("woff"), url("../fonts/icons.svg?ulmv7f#icons") format("svg");
+  src: url("../fonts/icons.eot?um5kkt");
+  src: url("../fonts/icons.eot?um5kkt#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?um5kkt") format("truetype"), url("../fonts/icons.woff?um5kkt") format("woff"), url("../fonts/icons.svg?um5kkt#icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 i {
-  /* use !important to prevent issues with browser extensions that change ../fonts */
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icons" !important;
   speak: never;
   font-style: normal;
@@ -368,6 +368,22 @@ i {
 
 .iconfont-logo:before {
   content: "\e901";
+}
+
+.iconfont-facebook:before {
+  content: "\e902";
+}
+
+.iconfont-instagram:before {
+  content: "\e903";
+}
+
+.iconfont-skype:before {
+  content: "\e917";
+}
+
+.iconfont-soundcloud:before {
+  content: "\e918";
 }
 
 body {
@@ -582,5 +598,125 @@ header .logo i {
   font-size: 760px;
   color: #EAEAEA;
   z-index: -1;
+}
+
+.layout__whos_using .brands {
+  padding-bottom: 4.375em;
+}
+.layout__whos_using .brands .title::before {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: auto 0.625em auto 0;
+}
+.layout__whos_using .brands .items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.875em 1fr 1.875em 1fr 1.875em 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr 1.875em 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.875em;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #BFBFBF;
+  padding: 20px 15px;
+}
+.layout__whos_using .brands .items > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.layout__whos_using .brands .items > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.layout__whos_using .brands .items > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+.layout__whos_using .brands .items > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+.layout__whos_using .brands .items > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.layout__whos_using .brands .items > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.layout__whos_using .brands .items > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+.layout__whos_using .brands .items > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+.layout__whos_using .brands .items .item {
+  width: 100%;
+  height: 11.25em;
+  cursor: pointer;
+}
+.layout__whos_using .brands .items .item .icon {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background-color: #E6E6E6;
+  color: #000000;
+  border-radius: 8px;
+}
+.layout__whos_using .brands .items .item .icon i {
+  display: block;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.layout__whos_using .brands .items .item .icon svg, .layout__whos_using .brands .items .item .icon path {
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+.layout__whos_using .brands .items .item .iconfont-facebook {
+  font-size: 40px;
+}
+.layout__whos_using .brands .items .item .iconfont-instagram {
+  font-size: 57px;
+  position: relative;
+  top: 6px;
+}
+.layout__whos_using .brands .items .item .iconfont-skype {
+  font-size: 62px;
+}
+.layout__whos_using .brands .items .item .iconfont-soundcloud {
+  font-size: 114px;
+}
+.layout__whos_using .brands .items .item:hover .icon {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  background-color: #1A1A1A;
+}
+.layout__whos_using .brands .items .item:hover .icon i, .layout__whos_using .brands .items .item:hover .icon svg {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+  color: #ffffff;
+}
+.layout__whos_using .brands .items .item:hover .icon i path[fill=black], .layout__whos_using .brands .items .item:hover .icon svg path[fill=black] {
+  fill: #ffffff;
+}
+.layout__whos_using .brands .items .item:hover .icon i path[fill=white], .layout__whos_using .brands .items .item:hover .icon i path[fill="#FFFFFE"], .layout__whos_using .brands .items .item:hover .icon svg path[fill=white], .layout__whos_using .brands .items .item:hover .icon svg path[fill="#FFFFFE"] {
+  fill: #1A1A1A;
+}
+.layout__whos_using .brands .items .item:hover .icon .iconfont-instagram {
+  top: -6px;
 }
 /*# sourceMappingURL=style.css.map */
