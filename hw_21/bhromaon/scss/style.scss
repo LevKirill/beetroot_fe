@@ -1,9 +1,24 @@
+@import 'vars';
 @import '../css/reset';
 @import '../css/icons-font';
+@import 'fonts';
 
 body {
-  font-family: 'Aleo', serif;
+  // font-family: 'Aleo', serif;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1350px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@import 'main-screen';

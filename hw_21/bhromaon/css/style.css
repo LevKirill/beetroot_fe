@@ -402,10 +402,116 @@ textarea {
   content: "\e90d";
 }
 
+@font-face {
+  font-family: "Aleo";
+  src: url(../fonts/aleo-regular.eot);
+  src: url(../fonts/aleo-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/aleo-regular.svg#aleo-regular) format("svg"), url(../fonts/aleo-regular.ttf) format("truetype"), url(../fonts/aleo-regular.woff) format("woff"), url(../fonts/aleo-regular.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(../fonts/josefinsans-light.eot);
+  src: url(../fonts/josefinsans-light.eot?#iefix) format("embedded-opentype"), url(../fonts/josefinsans-light.svg#josefinsans-light) format("svg"), url(../fonts/josefinsans-light.ttf) format("truetype"), url(../fonts/josefinsans-light.woff) format("woff"), url(../fonts/josefinsans-light.woff2) format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(../fonts/josefinsans-regular.eot);
+  src: url(../fonts/josefinsans-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/josefinsans-regular.svg#josefinsans-regular) format("svg"), url(../fonts/josefinsans-regular.ttf) format("truetype"), url(../fonts/josefinsans-regular.woff) format("woff"), url(../fonts/josefinsans-regular.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(../fonts/josefinsans-bold.eot);
+  src: url(../fonts/josefinsans-bold.eot?#iefix) format("embedded-opentype"), url(../fonts/josefinsans-bold.svg#josefinsans-bold) format("svg"), url(../fonts/josefinsans-bold.ttf) format("truetype"), url(../fonts/josefinsans-bold.woff) format("woff"), url(../fonts/josefinsans-bold.woff2) format("woff2");
+  font-weight: 700;
+}
 body {
-  font-family: "Aleo", serif;
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1350px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+header {
+  min-height: 100vh;
+  background: url("../images/background-header.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 5.25em;
+  grid-template-rows: 1fr 5.25em;
+}
+
+header > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+header > *:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+.navigation {
+  background-color: #5373FD;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.navigation .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+.navigation .logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: inherit;
+  line-height: 1.167;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.navigation .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.5em;
+  font-family: "Aleo", serif;
+}
+.navigation .menu ul a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.875em;
+  line-height: 1.43;
 }
 /*# sourceMappingURL=style.css.map */
