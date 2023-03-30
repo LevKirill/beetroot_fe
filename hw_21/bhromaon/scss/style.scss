@@ -4,7 +4,6 @@
 @import 'fonts';
 
 body {
-  // font-family: 'Aleo', serif;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -19,6 +18,41 @@ body {
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
+  @media screen and (max-width: 1360px) {
+    max-width: 1170px;
+  }
+  @media screen and (max-width: 1024px) {
+    max-width: 990px;
+  }
 }
 
+h2.title {
+  font-family: 'Aleo', serif;
+  font-size: 2.25em; //36px
+  font-weight: 400;
+  line-height: 1.11;
+  text-transform: capitalize;
+  color: $colorWhite;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Aleo', serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.25;
+  width: 13.3125em; //213px
+  height: 3.75em; //60px
+  background-color: $colorBlue;
+  color: $colorWhite;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+@import 'hamburger';
 @import 'main-screen';
+@import 'whoweare';

@@ -1,0 +1,101 @@
+.why {
+  background: url('../images/background-why.jpg');
+  min-height: 44em;
+  color: $colorWhite;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 980px) {
+    padding: 3.75em 0; //60px 0
+  }
+  @media screen and (max-width: 479px) {
+    font-size: 0.875em;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 40.5em 1fr; //648px 1fr
+    gap: 2em 1.5em; //32px 24px
+    @media screen and (max-width: 1360px) {
+      grid-template-columns: 34.875em 1fr; //558px 1fr
+    }
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 34.375em 1fr; //550px 1fr
+    }
+    @media screen and (max-width: 980px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .item_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    @media screen and (max-width: 980px) {
+      grid-row: 2/3;
+      h2.title {
+        text-align: center;
+      }
+      .btn {
+        margin: 0 auto;
+      }
+    }
+    .block_text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25em;
+      padding-bottom: 0.5em;
+      p {
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.75;
+        letter-spacing: 0.1em;
+        @media screen and (max-width: 980px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .item_img {
+    padding-left: 1.875em; //30px
+    @media screen and (max-width: 1360px) {
+      padding-left: 0;
+    }
+    @media screen and (max-width: 980px) {
+      grid-row: 1/2;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1em;
+      margin: 0 auto;
+      max-width: 26.5em; //424px
+      width: 100%;
+      @media screen and (max-width: 1360px) {
+        margin-right: 0;
+        margin-left: auto;
+        max-width: 28.75em; //460spx
+      }
+      @media screen and (max-width: 980px) {
+        // flex-direction: row;
+        // gap: 1.5em;
+        // margin: 0 auto;
+        // justify-content: center;
+        // align-items: center;
+        // max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+        max-width: 45.25em; //724px
+        margin: 0 auto;
+      }
+      img {
+        max-width: 21.875em;
+        width: 100%;
+        height: auto;
+        &:last-child {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
