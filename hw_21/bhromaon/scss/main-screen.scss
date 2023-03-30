@@ -1,23 +1,27 @@
-header {
-  min-height: 100vh;
+// header {
+//   min-height: 100vh;
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: 1fr 5.25em;
+//   @media screen and (max-width: 768px) and (min-width: 601px) {
+//     grid-template-rows: 1fr 8.5em;
+//   }
+// }
+
+.main_screen {
   background: url('../images/background-header.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 5.25em;
-  @media screen and (max-width: 768px) and (min-width: 601px) {
-    grid-template-rows: 1fr 8.5em;
-  }
-}
-
-.main_screen {
   color: $colorWhite;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 2.2%;
   padding-bottom: 6.6%;
+  height: calc(100vh - 5.25em);
+  @media screen and (max-width: 768px) and (min-width: 601px) {
+    height: calc(100vh - 8.5em);
+  }
   @media screen and (max-width: 500px) {
     font-size: 0.875em;
   }
@@ -104,14 +108,16 @@ header {
 }
 
 .navigation {
+  position: sticky;
+  top: -1px;
   background-color: $colorBlue;
   color: $colorWhite;
   display: flex;
   align-items: center;
-  // .block_sticky {
-  //   position: sticky;
-  //   top: 0;
-  // }
+  height: 5.25em;
+  @media screen and (max-width: 768px) and (min-width: 601px) {
+    height: 8.5em;
+  }
   .wrapper {
     position: relative;
     display: flex;
