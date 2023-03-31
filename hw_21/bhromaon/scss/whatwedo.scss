@@ -1,0 +1,61 @@
+.what {
+  background-color: $colorDarkGray;
+  color: $colorWhite;
+  font-family: 'Aleo', serif;
+  text-align: center;
+  padding: 7.6875em 0 3.6875em;
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.25em;
+      &:not(:last-child)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 27.625em;
+        height: 5.75em;
+        background: url('../images/line-1.png') no-repeat;
+        background-size: cover;
+        left: 50%;
+        top: -57px;
+        z-index: 1;
+      }
+      .iconfont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 6em;
+        height: 6em;
+        background-color: $colorDarkGray;
+        border-radius: 50%;
+        z-index: 2;
+        &::before {
+          font-size: 4em;
+        }
+        &-search::before {
+          color: $colorBlue;
+        }
+        &-check::before {
+          color: $colorRed;
+        }
+        &-thumbs-up::before {
+          color: $colorLightBlue;
+        }
+      }
+      span {
+        font-size: 2.25em;
+        font-weight: 400;
+        line-height: 1.11;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

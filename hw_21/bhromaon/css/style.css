@@ -967,4 +967,81 @@ h2.title {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+
+.what {
+  background-color: #333333;
+  color: #ffffff;
+  font-family: "Aleo", serif;
+  text-align: center;
+  padding: 7.6875em 0 3.6875em;
+}
+.what .items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.5em 1fr 1.5em 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+}
+.what .items .item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 0.25em;
+}
+.what .items .item:not(:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 27.625em;
+  height: 5.75em;
+  background: url("../images/line-1.png") no-repeat;
+  background-size: cover;
+  left: 50%;
+  top: -57px;
+  z-index: 1;
+}
+.what .items .item .iconfont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 6em;
+  height: 6em;
+  background-color: #333333;
+  border-radius: 50%;
+  z-index: 2;
+}
+.what .items .item .iconfont::before {
+  font-size: 4em;
+}
+.what .items .item .iconfont-search::before {
+  color: #5373FD;
+}
+.what .items .item .iconfont-check::before {
+  color: #FF6363;
+}
+.what .items .item .iconfont-thumbs-up::before {
+  color: #00A2FF;
+}
+.what .items .item span {
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.11;
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=style.css.map */
