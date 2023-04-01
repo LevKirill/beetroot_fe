@@ -679,7 +679,7 @@ a {
   margin: auto 0;
   height: 1em;
 }
-.main_screen .profile .block__img .iconfont-camera #img_photo {
+.main_screen .profile .block__img .iconfont-camera #img-photo {
   position: absolute;
   opacity: 0;
   left: -9999px;
@@ -711,3 +711,4 @@ a {
 .main_screen .profile .block__btn .btn {
   max-width: 10em;
 }
+/*# sourceMappingURL=style.css.map */
