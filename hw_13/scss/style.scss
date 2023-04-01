@@ -186,7 +186,7 @@ a {
     width: 100%;
     height: 2.53em;
     padding-left: 1em;
-    &:hover, &:focus {
+    &:focus {
       border-color: $colorBlue;
     }
     &__select {
