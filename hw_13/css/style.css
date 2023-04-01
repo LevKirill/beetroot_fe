@@ -557,9 +557,13 @@ a {
   border-color: #007BFF;
 }
 .main_screen .input__select {
+  -o-appearance: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+.main_screen .input__select::-ms-expand {
+  display: none;
 }
 .main_screen .block_radio .title__input {
   cursor: pointer;
@@ -707,4 +711,3 @@ a {
 .main_screen .profile .block__btn .btn {
   max-width: 10em;
 }
-/*# sourceMappingURL=style.css.map */

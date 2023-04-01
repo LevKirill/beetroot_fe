@@ -190,7 +190,11 @@ a {
       border-color: $colorBlue;
     }
     &__select {
+      -o-appearance: none;
       appearance: none;
+      &::-ms-expand {
+        display: none;
+      }
     }
   }
 
