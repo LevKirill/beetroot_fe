@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <section class="main_screen">
+      <div class="wrapper">
+        <div class="items">
+          <div class="item">
+            <form action="" class="create_ccount" method="GET">
+              <h2 class="title">Create an Account</h2>
+              <div class="grid">
+                <div class="block__first_name">
+                  <label for="first_name" class="title__input">First Name</label>
+                  <input type="text" name="first_name" class="input" id="first_name">
+                </div>
+                <div class="block__last_name">
+                  <label for="last_name" class="title__input">Last Name</label>
+                  <input type="text" name="last_name" class="input" id="last_name">
+                </div>
+              </div>
+              <div class="block__email">
+                <label for="email" class="title__input">E-mail</label>
+                <input type="email" name="email" class="input" id="email">
+                <p class="note">We'll never share your email with anyone else.</p>
+              </div>
+              <div class="grid grid_radio">
+                <div class="block_radio">
+                  <input type="radio" name="sex" id="radio_male" checked>
+                  <label for="radio_male" class="title__input"><span class="radio"></span>Male</label>
+                </div>
+                <div class="block_radio">
+                  <input type="radio" name="sex" id="radio_female">
+                  <label for="radio_female" class="title__input"><span class="radio"></span>Female</label>
+                </div>
+              </div>
+              <div class="grid">
+                <div class="block__country">
+                  <label for="country_1" class="title__input">Country</label>
+                  <div class="iconfont-arrow-select">
+                    <select name="country" id="country_1" class="input input__select">
+                      <option value="Select" selected disabled>Select</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Romania">Romania</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="block__city">
+                  <label for="city" class="title__input">City</label>
+                  <input type="text" name="city" id="city" class="input">
+                </div>
+              </div>
+              <div class="block__btn">
+                <input type="submit" value="Sign Up" class="btn">
+              </div>
+              <div class="block__note">
+                <p class="note">By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms&nbsp;of&nbsp;Use</a> and <a href="#">Privacy&nbsp;Policy</a>.</p>
+              </div>
+              <div class="block__have_account">
+                <p>Have an account?</p>
+                <a href="#">Log In</a>
+              </div>
+            </form>
+          </div>
+          <div class="item">
+            <form action="" class="profile" method="GET">
+              <h2 class="title">Profile</h2>
+              <div class="block__img">
+                <div class="img"><img src="./images/photo.jpg" alt="Photo User"></div>
+                <div class="block_download">
+                  <label class="iconfont-camera">
+                    <input  type="file" name="img_photo" id="img_photo"
+                            accept="image/png, image/jpeg">
+                  </label>
+                  <span id="reset_photo" class="iconfont-basket"></span>
+                  <p class="note">Up to 1 MB (300x300 px)</p>
+                </div>
+              </div>
+              <div class="grid">
+                <div class="block__name">
+                  <label for="name" class="title__input">Name</label>
+                  <input type="text" name="name" id="name" class="input">
+                </div>
+                <div class="block__email">
+                  <label for="email_registration" class="title__input">E-mail</label>
+                  <input type="email" name="email" id="email_registration" class="input">
+                </div>
+              </div>
+              <div class="grid">
+                <div class="block__country">
+                  <label for="country__registration" class="title__input">Country</label>
+                  <div class="iconfont-arrow-select">
+                    <select name="country" id="country__registration" class="input input__select">
+                      <option value="Select" selected disabled>Select</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Romania">Romania</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="block__city">
+                  <label for="city__registration" class="title__input">City</label>
+                  <input type="text" name="city" id="city__registration" class="input">
+                </div>
+              </div>
+              <div class="grid">
+                <div class="block__zip">
+                  <label for="zip_code" class="title__input">Zip Code</label>
+                  <input type="text" name="zip_code" id="zip_code" class="input">
+                </div>
+                <div class="block__phone">
+                  <label for="phone_number" class="title__input">Phone Number</label>
+                  <input type="tel" name="phone" id="phone_number" class="input">
+                </div>
+                <div class="block__btn">
+                  <input type="submit" value="Update" class="btn">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
