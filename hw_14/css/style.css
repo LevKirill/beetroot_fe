@@ -1,0 +1,14 @@
+.icon_svg {
+  --myColor1: #D1E7FF;
+  --myColor2: #E8F3FF;
+  --myColor3: #B9DCFF;
+  --myColor4: #007FFC;
+  --myColor5: #0D0D0D;
+}
+.icon_svg:hover {
+  --myColor1: #E1F4F5;
+  --myColor2: #F4FEFF;
+  --myColor3: #CAEFF2;
+  --myColor4: #52C29D;
+  --myColor5: #3DB370;
+}
