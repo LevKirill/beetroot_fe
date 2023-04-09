@@ -1,0 +1,29 @@
+@import 'vars';
+
+@mixin img_block ($img_width) {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__img {
+    max-width: $img_width;
+    width: 100%;
+    height: auto;
+  }
+  &__content {
+    position: relative;
+    max-width: 48.125em; //770px
+    width: 100%;
+    height: auto;
+    margin-left: calc(1170px - 770px - $img_width);
+    background-color: $colorMainDark;
+    opacity: 0.9;
+  }
+}
+@mixin text {
+  font-size: 1.125em;
+  line-height: 1.44;
+  opacity: 0.8;
+}

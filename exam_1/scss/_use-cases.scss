@@ -1,0 +1,61 @@
+@import 'vars';
+
+.use_cases {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125em;
+    max-width: 1000px;
+  }
+  &__tablet {
+    position: relative;
+    border: 1px solid $colorLightGrey;
+    border-radius: 2em;
+    padding: 1.9375em 1.875em;
+    padding-right: 4.375em;
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid $colorLightGrey;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:before {
+      width: 0.8125em;
+      height: 0.8125em;
+      left: 0.5em;
+    }
+    &:after {
+      width: 2.1875em;
+      height: 2.1875em;
+      right: 0.875em;
+    }
+    &--content {
+      position: relative;
+    }
+    &--img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5em;
+    }
+    &--play {
+      position: absolute;
+      display: block;
+      width: 7.5em;
+      height: 7.5em;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
