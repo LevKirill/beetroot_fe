@@ -342,6 +342,38 @@ textarea {
   padding: 0.2em 0;
 }
 
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/playfairdisplay-regular.eot);
+  src: url(../fonts/playfairdisplay-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/playfairdisplay-regular.svg#playfairdisplay-regular) format("svg"), url(../fonts/playfairdisplay-regular.ttf) format("truetype"), url(../fonts/playfairdisplay-regular.woff) format("woff"), url(../fonts/playfairdisplay-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/playfairdisplay-italic.eot);
+  src: url(../fonts/playfairdisplay-italic.eot?#iefix) format("embedded-opentype"), url(../fonts/playfairdisplay-italic.svg#playfairdisplay-italic) format("svg"), url(../fonts/playfairdisplay-italic.ttf) format("truetype"), url(../fonts/playfairdisplay-italic.woff) format("woff"), url(../fonts/playfairdisplay-italic.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/lato-light.eot);
+  src: url(../fonts/lato-light.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-light.svg#lato-light) format("svg"), url(../fonts/lato-light.ttf) format("truetype"), url(../fonts/lato-light.woff) format("woff"), url(../fonts/lato-light.woff2) format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/lato-regular.eot);
+  src: url(../fonts/lato-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-regular.svg#lato-regular) format("svg"), url(../fonts/lato-regular.ttf) format("truetype"), url(../fonts/lato-regular.woff) format("woff"), url(../fonts/lato-regular.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/lato-bold.eot);
+  src: url(../fonts/lato-bold.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-bold.svg#lato-bold) format("svg"), url(../fonts/lato-bold.ttf) format("truetype"), url(../fonts/lato-bold.woff) format("woff"), url(../fonts/lato-bold.woff2) format("woff2");
+  font-weight: 700;
+}
 /* Стили Гамбургера */
 .hamburger {
   display: none;
@@ -386,6 +418,93 @@ textarea {
 }
 #hamburger:checked ~ .hamburger .hamburger__icon::after {
   transform: translate3d(0, -28px, 0) rotate(-90deg);
+}
+
+.layout {
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  background-image: url("../img/first-screen-image-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+  color: #262A3F;
+  padding-top: 1.875em;
+}
+.layout__dark {
+  background-color: #161926;
+  background-image: url("../img/first-screen-image-dark.jpg");
+  color: #fff;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4.5px);
+  display: flex;
+  align-items: center;
+  height: 5em;
+  position: sticky;
+  top: 0;
+}
+.header__items {
+  display: grid;
+  grid-template-columns: 6.75em 1fr;
+}
+.header__items .logo svg {
+  width: 6.75em;
+  height: 2em;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__menu ul {
+  display: flex;
+  gap: 1.875em;
+}
+.header__menu ul a {
+  position: relative;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.71;
+  letter-spacing: 0.08em;
+  color: inherit;
+  text-decoration: unset;
+}
+.header__menu ul a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  font-size: 1.14em;
+  width: 0;
+  height: 0.1875em;
+  bottom: -0.4375em;
+  background-color: #F1897B;
+  opacity: 0.3;
+  transition: 0.1s ease;
+}
+.header__menu ul a:hover:after {
+  width: 100%;
+}
+
+.layout__dark .header {
+  background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, rgba(22, 25, 38, 0) 24.1%, rgba(22, 25, 38, 0) 47.19%), rgba(22, 25, 38, 0.02);
+}
+.layout__dark .header__menu ul a:after {
+  background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
 }
 
 /*# sourceMappingURL=style.css.map */
