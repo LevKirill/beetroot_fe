@@ -8,6 +8,8 @@
   height: 5em;
   position: sticky;
   top: 0;
+  z-index: 10;
+  transition: $transition;
 
   &__items {
     display: grid;
@@ -17,6 +19,22 @@
       svg {
         width: 6.75em;
         height: 2em;
+        --logoColor: #fff;
+        transition: $transition;
+      }
+    }
+  }
+
+  &.sticky {
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.644636) 24.1%, rgba(255, 255, 255, 4.3) 47.19%), rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -1px 16px rgba($color: #000, $alpha: 0.05);
+
+    .header__items {
+
+      .logo {
+        svg {
+          --logoColor: #d7d5d5;
+        }
       }
     }
   }
@@ -25,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     ul {
       display: flex;
       gap: 1.875em;
@@ -37,6 +56,7 @@
         letter-spacing: 0.08em;
         color: inherit;
         text-decoration: unset;
+
         &:after {
           content: '';
           display: block;
@@ -49,6 +69,7 @@
           opacity: 0.3;
           transition: $transition;
         }
+
         &:hover:after {
           width: 100%;
         }
@@ -60,11 +81,26 @@
 .layout__dark {
   .header {
     background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, rgba(22, 25, 38, 0) 24.1%, rgba(22, 25, 38, 0) 47.19%), rgba(22, 25, 38, 0.02);
+
     &__menu {
       ul {
         a {
           &:after {
             background: linear-gradient(96.73deg, $colorOrangeDark 6.73%, rgba($color: $colorOrangeDark, $alpha: 0) 116.9%);
+          }
+        }
+      }
+    }
+
+    &.sticky {
+      background: linear-gradient(270deg, rgba(22, 25, 38, 0.9) 0%, rgba(22, 25, 38, 0.4) 24.1%, rgba(22, 25, 38, 0.4) 47.19%), rgba(22, 25, 38, 0.32);
+      box-shadow: 0 -1px 16px rgba($color: #fff, $alpha: 0.05);
+
+      .header__items {
+
+        .logo {
+          svg {
+            --logoColor: #fff;
           }
         }
       }

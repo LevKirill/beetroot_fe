@@ -7,12 +7,14 @@
     gap: 3.125em;
     max-width: 1000px;
   }
+
   &__tablet {
     position: relative;
     border: 1px solid $colorLightGrey;
     border-radius: 2em;
     padding: 1.9375em 1.875em;
     padding-right: 4.375em;
+
     &:before, &:after {
       content: '';
       display: block;
@@ -22,26 +24,30 @@
       top: 50%;
       transform: translateY(-50%);
     }
+
     &:before {
       width: 0.8125em;
       height: 0.8125em;
       left: 0.5em;
     }
+
     &:after {
       width: 2.1875em;
       height: 2.1875em;
       right: 0.875em;
     }
+
     &--content {
       position: relative;
     }
-    &--img {
-      display: block;
+
+    .youtube {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 539px;
       border-radius: 0.5em;
+      background-size: cover;
     }
+
     &--play {
       position: absolute;
       display: block;
@@ -51,6 +57,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
+
       svg {
         display: block;
         width: 100%;
