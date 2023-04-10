@@ -2,7 +2,8 @@
 @import "mixins";
 
 .quote {
-  padding-bottom: 7.5em;
+  padding-bottom: $sectionPadding;
+
   &__wrapper {
     background: url("../img/quote-background.jpg") no-repeat;
     background-size: cover;
@@ -12,12 +13,14 @@
     display: flex;
     align-items: center;
   }
+
   blockquote {
     position: relative;
     margin-left: 10em;
     display: flex;
     flex-direction: column;
     gap: 2.5em;
+
     svg {
       position: absolute;
       display: block;
@@ -27,12 +30,14 @@
       left: -59px;
     }
   }
+
   &__text {
     font-size: 2em;
     font-weight: 400;
     line-height: 1.44;
     letter-spacing: 0.04em;
   }
+
   &__author {
     font-size: 1.25em;
     font-weight: 400;

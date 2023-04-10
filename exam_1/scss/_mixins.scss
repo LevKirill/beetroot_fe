@@ -1,6 +1,6 @@
 @import 'vars';
 
-@mixin img_block ($img_width) {
+@mixin img_block($img_width) {
   &__items {
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +11,10 @@
     max-width: $img_width;
     width: 100%;
     height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
   &__content {
     position: relative;
@@ -22,8 +26,9 @@
     opacity: 0.9;
   }
 }
-@mixin text {
-  font-size: 1.125em;
-  line-height: 1.44;
-  opacity: 0.8;
+
+@mixin text ($fontSize: 1.125em, $lineHeight: 1.44, $opacity: 0.8) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  opacity: $opacity;
 }

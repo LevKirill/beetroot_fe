@@ -2,7 +2,7 @@
 @import "mixins";
 
 .about {
-  padding-bottom: 7.5em;
+  padding-bottom: $sectionPadding;
   @include img_block(35.625em);
 
   &__content {

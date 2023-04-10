@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
-<div class="layout">
+<div class="layout  layout__dark">
   <header class="header">
     <div class="wrapper  header__items">
       <a href="#" class="logo">
@@ -37,7 +37,7 @@
       <div class="wrapper">
         <h1 class="title">A peer-to-peer stablecoin <span>clearinghouse</span> for the new economy</h1>
         <p class="desc">We are bringing real solutions to the payments world by leveraging public blockchains.</p>
-        <div class="btn"><a href="#">JOIN NOW</a></div>
+        <div class="btn"><a href="#" class="btn__link">JOIN NOW</a></div>
       </div>
     </section>
     <section class="about">
@@ -64,7 +64,7 @@
               clearing house for stablecoins that seeks to promote the next phase of the market’s development.</p>
             <p>The API-enabled, centralized platform addresses the key issues of inconsistent liquidity, stability
               and accessibility which are currently preventing the stablecoin market from reaching critical mass.</p>
-            <div class="btn"><a href="#contacts">Contact sales</a></div>
+            <div class="btn"><a href="#contacts" class="btn__link">Contact sales</a></div>
           </div>
         </div>
       </div>
@@ -124,8 +124,6 @@
       <div class="wrapper use_cases__wrapper">
         <div class="use_cases__tablet">
           <div class="use_cases__tablet--content">
-<!--            <iframe width="870" height="539" src="https://www.youtube.com/embed/vnbN9V_2Guk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
-<!--            <img src="./img/screensaver-video.png" class="use_cases__tablet&#45;&#45;img" alt="Screensaver video">-->
             <div class="youtube" id="vnbN9V_2Guk">
               <div class="use_cases__tablet--play">
                 <svg class="icon">
@@ -169,60 +167,66 @@
               <li>LBTC / Lightning and other sidechain swaps</li>
             </ul>
           </div>
-          <div class="button"><a href="#"><span>JOIN NOW</span></a></div>
+          <a href="#" class="btn button"><div class="btn__link"><span>JOIN NOW</span></div></a>
         </div>
       </div>
     </section>
     <section class="reviews">
-      <div class="wrapper">
-        <h2 class="title">Client <span>reviews</span></h2>
-        <p class="desc">Happy clients, happy us. Read our client reviews about the work process and results.</p>
+      <div class="wrapper reviews__wrapper">
+        <div class="reviews__block">
+          <h2 class="title">Client <span>reviews</span></h2>
+          <p class="reviews__desc">Happy clients, happy us. Read our client reviews about the work process and results.</p>
+        </div>
         <div class="reviews__items">
-          <div class="item item_1">
-            <p class="review_content">Solis did a great job. Whether providing direct development support or giving
+          <div class="item item__1">
+            <p class="reviews__content">Solis did a great job. Whether providing direct development support or giving
               us the opportunity to make our development updates, Solis's web design expertise and support services
               were top notch! It didn't take long to stand up our website, and we were pleased with the design and
               layout of the graphics and information.</p>
-            <p class="author">Dr. Jamika Burge</p>
+            <p class="reviews__author">Dr. Jamika Burge</p>
           </div>
-          <div class="item item_2">
-            <p class="review_content">Solis is a cutting edge company and knows the importance of excellence.
+          <div class="item item__2">
+            <p class="reviews__content">Solis is a cutting edge company and knows the importance of excellence.
               Having been in business for 21 years, I know when I’ve found a competent professional and more
               importantly a company with integrity. I highly recommend this company and am available for further
               reference if needed.</p>
-            <p class="author">Evie-Rose Prosse</p>
+            <p class="reviews__author">Evie-Rose Prosse</p>
           </div>
-          <div class="item item_3">
-            <p class="review_content">Text</p>
-            <p class="author">Elvis Mooney</p>
+          <div class="item item__3">
+            <p class="reviews__content">I can’t say enough about how knowledgeable Toinette Rorie is in the area
+              of Web Development. She indeed is a developer and can build a site from scratch. She understands
+              functionality and is great at constructing a site that is robust and fully functioning.</p>
+            <p class="reviews__author">Elvis Mooney</p>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="footer__contacts">
-    <div class="wrapper footer__items">
-      <div class="item item_1">
+  <footer class="footer_contacts">
+    <div class="wrapper footer_contacts__wrapper">
+      <div class="footer_contacts__item footer_contacts__item_1">
         <h2 class="title">Contact <span>our sales team</span></h2>
         <p>
           Our team is happy to answer your sales questions.Fill out the form and we’ll be in touch as soon as possible.
         </p>
       </div>
-      <div class="item item_2">
-        <form action="" method="GET">
-          <input type="text" name="name" placeholder="Your name" />
-          <input type="email" name="email" placeholder="Email" />
-          <input type="tel" name="phone" placeholder="Tell more" />
-          <button class="btn" type="submit">Send Request</button>
+      <div class="footer_contacts__item footer_contacts__item_2">
+        <form action="" method="GET" class="footer_contacts__form">
+          <fieldset>
+            <input type="text" class="footer_contacts__input" name="name" placeholder="Your name" />
+            <input type="email" class="footer_contacts__input" name="email" placeholder="Email" />
+            <input type="tel" class="footer_contacts__input" name="phone" placeholder="Tell more" />
+            <button class="btn" type="submit"><span class="btn__link">Send Request</span></button>
+          </fieldset>
         </form>
       </div>
     </div>
   </footer>
   <footer class="footer_copyright">
-    <div class="wrapper">
-      <p class="copyright">© 2020 Solisgroup. All Rights Reserved.</p>
-      <p class="made">made by <a href="#">Zgraya.digital</a></p>
-      <nav class="footer__menu">
+    <div class="wrapper footer_copyright__wrapper">
+      <p class="footer_copyright__copyright">© 2020 Solisgroup. All Rights Reserved.</p>
+      <p class="footer_copyright__made"><span>made by</span><a href="#">Zgraya.digital</a></p>
+      <nav class="footer_copyright__menu">
         <ul>
           <li><a href="#">User Agreement</a></li>
           <li><a href="#">Privacy Policy</a></li>

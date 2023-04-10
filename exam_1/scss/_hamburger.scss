@@ -10,14 +10,14 @@ $hamburgerColor: #000000; //Цвет полосок
 /* Стили Гамбургера */
 
 .hamburger {
-	display: none;
-	position: absolute;
-	top: $positionTop;
-	left: $positionLeft;
-	// right: $positionLeft;
-	z-index: 1000;
-	width: $width;
-	height: $height;
+  display: none;
+  position: absolute;
+  top: $positionTop;
+  left: $positionLeft;
+  // right: $positionLeft;
+  z-index: 1000;
+  width: $width;
+  height: $height;
   cursor: pointer;
 }
 
@@ -41,13 +41,21 @@ $hamburgerColor: #000000; //Цвет полосок
     transition-timing-function: ease;
   }
 
-  & {top: 0;}
-  &::before {top: $topTwo;}
-  &::after {top: $topThree;}
+  & {
+    top: 0;
+  }
+
+  &::before {
+    top: $topTwo;
+  }
+
+  &::after {
+    top: $topThree;
+  }
 }
 
 #hamburger:checked ~ .hamburger {
-  
+
   .hamburger__icon {
     transform: translate3d(0, $topTwo, 0) rotate(45deg);
 

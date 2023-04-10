@@ -1,6 +1,9 @@
 @import 'vars';
+@import 'mixins';
 
 .use_cases {
+  padding-bottom: $sectionPadding;
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -46,6 +49,7 @@
       height: 539px;
       border-radius: 0.5em;
       background-size: cover;
+      border: 1px solid $colorLightGrey;
     }
 
     &--play {
@@ -64,6 +68,16 @@
         width: 100%;
         height: 100%;
       }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+
+    p {
+      @include text;
     }
   }
 }
