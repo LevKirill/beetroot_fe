@@ -14,6 +14,7 @@
   &__items {
     display: grid;
     grid-template-columns: 6.75em 1fr;
+    align-items: center;
 
     .logo {
       svg {
@@ -47,6 +48,12 @@
     ul {
       display: flex;
       gap: 1.875em;
+
+      @media screen and (max-width: $widthTablet) {
+        flex-direction: column;
+        font-size: 1.8em;
+        gap: 0.8em;
+      }
 
       a {
         position: relative;
@@ -105,5 +112,40 @@
         }
       }
     }
+  }
+}
+
+
+
+@media screen and (max-width: $widthTablet) {
+  .header {
+    backdrop-filter: unset;
+  }
+
+  .header__menu {
+    position: fixed;
+    max-width: 330px;
+    width: 100%;
+    height: 100%;
+    right: -2000px;
+    top: 0;
+    opacity: 0;
+    background-color: $colorBackDark;
+    color: $colorMainDark;
+    justify-content: flex-start;
+    padding: 1.875em;
+    transition: $transition;
+  }
+
+  #hamburger:checked ~ .header__menu {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-height: $widthMobileL) {
+  .header__menu {
+    align-items: flex-start;
+    overflow-y: auto;
   }
 }

@@ -1,24 +1,31 @@
-$width: 40px; //Ширина Гамбургера
-$height: 30px; //Высота Гамбургера
+$width: 30px; //Ширина Гамбургера
+$height: 20px; //Высота Гамбургера
 $positionTop: 10px; //Позиция Гамбургера сверху
 $positionLeft: 10px; //Позиция Гамбургера справа или слева
 $spanHeight: 2px; //Высота одной полоски
-$topTwo: calc($height / 2 - $spanHeight); //Отступ второй полоски сверху
+$topTwo: calc($height / 2 - $spanHeight + 1px); //Отступ второй полоски сверху
 $topThree: calc($height - $spanHeight); //Отступ третьей полоски сверху
-$hamburgerColor: #000000; //Цвет полосок
+$hamburgerColor: #262A3F; //Цвет полосок
+$hamburgerColorDark: #fff; //Цвет полосок
 
 /* Стили Гамбургера */
 
+#hamburger {
+  display: none;
+}
+
 .hamburger {
   display: none;
-  position: absolute;
-  top: $positionTop;
-  left: $positionLeft;
-  // right: $positionLeft;
+  position: relative;
+  margin-left: auto;
   z-index: 1000;
   width: $width;
   height: $height;
   cursor: pointer;
+
+  @media screen and (max-width: $widthTablet) {
+    display: block;
+  }
 }
 
 .hamburger__icon {
@@ -57,6 +64,12 @@ $hamburgerColor: #000000; //Цвет полосок
 #hamburger:checked ~ .hamburger {
 
   .hamburger__icon {
+    &, &:before, &:after {
+      background: $hamburgerColorDark;
+    }
+  }
+
+  .hamburger__icon {
     transform: translate3d(0, $topTwo, 0) rotate(45deg);
 
     &::before {
@@ -67,5 +80,11 @@ $hamburgerColor: #000000; //Цвет полосок
     &::after {
       transform: translate3d(0, -$topThree, 0) rotate(-90deg);
     }
+  }
+}
+
+.layout__dark {
+  .hamburger__icon, .hamburger__icon::before, .hamburger__icon::after {
+    background: $hamburgerColorDark;
   }
 }

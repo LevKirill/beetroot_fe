@@ -11,6 +11,7 @@
     max-width: $img_width;
     width: 100%;
     height: auto;
+
     img {
       width: 100%;
       height: auto;
@@ -27,7 +28,7 @@
   }
 }
 
-@mixin text ($fontSize: 1.125em, $lineHeight: 1.44, $opacity: 0.8) {
+@mixin text($fontSize: 1.125em, $lineHeight: 1.44, $opacity: 0.8) {
   font-size: $fontSize;
   line-height: $lineHeight;
   opacity: $opacity;

@@ -39,9 +39,17 @@
   }
 
   &__author {
+    font-family: 'Playfair Display', serif;
     font-size: 1.25em;
     font-weight: 400;
     font-style: italic;
     line-height: 1;
+    letter-spacing: 0.08em;
+  }
+}
+
+.layout__dark {
+  .quote blockquote svg stop {
+    stop-color: #53F3CD;
   }
 }

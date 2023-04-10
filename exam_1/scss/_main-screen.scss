@@ -17,3 +17,15 @@
     padding: 1.11em 0 2.78em; //20px 0 50px
   }
 }
+
+@media screen and (max-width: $widthMobileL) {
+  .main_screen {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .main_screen {
+    font-size: 12px;
+  }
+}

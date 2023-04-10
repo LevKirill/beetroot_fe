@@ -46,6 +46,7 @@
     line-height: 1.11;
     letter-spacing: 0.08em;
     color: rgba($color: $colorMain, $alpha: 0.5);
+    background-color: transparent;
 
     &::placeholder {
       color: inherit;
@@ -97,6 +98,16 @@
           color: inherit;
         }
       }
+    }
+  }
+}
+
+.layout__dark {
+  .footer_contacts__input {
+    color: rgba($color: $colorMainDark, $alpha: 0.5);
+    border-color: rgba($color: $colorMainDark, $alpha: 0.1);
+    &::placeholder {
+      color: rgba($color: $colorMainDark, $alpha: 0.5);
     }
   }
 }

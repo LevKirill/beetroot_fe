@@ -67,6 +67,8 @@
         display: block;
         width: 100%;
         height: 100%;
+        --colorPlayBack: #586291;
+        --colorPlayTriangle: #262A3F;
       }
     }
   }
@@ -79,5 +81,19 @@
     p {
       @include text;
     }
+  }
+}
+
+.layout__dark {
+  .use_cases__tablet,
+  .use_cases__tablet:before,
+  .use_cases__tablet:after,
+  .use_cases__tablet .youtube {
+    border-color: $colorBorderDark;
+  }
+
+  .use_cases__tablet--play svg {
+    --colorPlayBack: #689FF2;
+    --colorPlayTriangle: #689FF2;
   }
 }

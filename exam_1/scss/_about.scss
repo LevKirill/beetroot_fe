@@ -73,3 +73,13 @@
     }
   }
 }
+
+.layout__dark {
+  .about__content {
+    background-color: $colorBackDark;
+
+    .statistics .currency_sum span {
+      color: $colorMainDark;
+    }
+  }
+}
