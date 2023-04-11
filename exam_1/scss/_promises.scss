@@ -52,3 +52,39 @@
     background-color: #161926;
   }
 }
+
+@media screen and (max-width: $widthContent) {
+  .promises {
+    @include img_block_laptop;
+
+    &__content {
+      padding: 1.5em 0.9375em;
+    }
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .promises {
+    &__content {
+      gap: 3em 2em;
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .promises {
+    font-size: 0.875em;
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .promises {
+    padding-bottom: 3.5em;
+
+    &__content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      text-align: center;
+    }
+  }
+}

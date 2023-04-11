@@ -31,9 +31,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 1.3em;
       position: relative;
       width: 100%;
-      height: 21.25em;
+      min-height: 21.25em;
       background-repeat: no-repeat;
       background-size: cover;
       padding: 1.875em 2.5em; //30px 40px
@@ -74,5 +75,35 @@
     font-style: italic;
     line-height: 1;
     letter-spacing: 0.08em;
+  }
+}
+
+@media screen and (max-width: $widthLaptop) {
+  .reviews__items {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 48.125em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .reviews__items {
+    grid-template-columns: 1fr;
+    max-width: 23.125em;
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .reviews {
+    padding-bottom: 5em;
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .reviews__items {
+    .item {
+      font-size: 0.875em;
+    }
   }
 }

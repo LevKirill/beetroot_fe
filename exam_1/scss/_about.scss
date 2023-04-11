@@ -83,3 +83,66 @@
     }
   }
 }
+
+@media screen and (max-width: $widthContent) {
+  .about {
+    @include img_block_laptop;
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .about__content {
+    grid-template-columns: 1fr;
+
+    .statistics {
+      flex-direction: row;
+      gap: 1em;
+      text-align: center;
+      justify-content: space-around;
+      padding: 0 0 3.125em;
+      font-size: 0.875em;
+
+      &__item {
+        &_1:after, &_2:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .about__content {
+
+    .statistics {
+      font-size: 0.75em;
+    }
+
+    .about__desc {
+      padding-left: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .about {
+    padding-bottom: 3.5em;
+
+    &__content {
+
+      .statistics {
+        flex-direction: column;
+
+        .currency_sum {
+          font-size: 3.72em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .about__content {
+    font-size: 0.875em;
+  }
+}
