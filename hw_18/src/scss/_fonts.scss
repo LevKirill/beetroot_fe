@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Lato';
+  src: url(../../fonts/lato-regular.eot);
+  src: url(../../fonts/lato-regular.eot?#iefix) format('embedded-opentype'),
+  url(../../fonts/lato-regular.svg#lato-regular) format('svg'),
+  url(../../fonts/lato-regular.woff) format('woff'),
+  url(../../fonts/lato-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src:  url(../../fonts/redhatdisplay-regular.eot);
+  src:  url(../../fonts/redhatdisplay-regular.eot?#iefix) format('embedded-opentype'),
+        url(../../fonts/redhatdisplay-regular.svg#redhatdisplay-regular) format('svg'),
+        url(../../fonts/redhatdisplay-regular.woff) format('woff'),
+        url(../../fonts/redhatdisplay-regular.woff2) format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src:  url(../../fonts/redhatdisplay-semibold.eot);
+  src:  url(../../fonts/redhatdisplay-semibold.eot?#iefix) format('embedded-opentype'),
+        url(../../fonts/redhatdisplay-semibold.svg#redhatdisplay-semibold) format('svg'),
+        url(../../fonts/redhatdisplay-semibold.woff) format('woff'),
+        url(../../fonts/redhatdisplay-semibold.woff2) format('woff2');
+  font-weight: 600;
+}
