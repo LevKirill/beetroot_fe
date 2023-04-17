@@ -576,11 +576,15 @@ textarea {
   content: "\e913";
 }
 
+.iconfont-arrow:before {
+  content: "\e914";
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url(../../fonts/montserrat-regular.eot);
   src: url(../../fonts/montserrat-regular.eot?#iefix) format("embedded-opentype"), url(../../fonts/montserrat-regular.svg#montserrat-regular) format("svg"), url(../../fonts/montserrat-regular.ttf) format("truetype"), url(../../fonts/montserrat-regular.woff) format("woff"), url(../../fonts/montserrat-regular.woff2) format("woff2");
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
@@ -604,10 +608,79 @@ textarea {
   font-weight: bold;
 }
 
-aside {
+.sidebar {
   grid-area: sidebar;
-  background-color: green;
-  color: #fff;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  padding: 0 15px;
+}
+
+.sidebar .block__logo_btn {
+  position: relative;
+}
+
+.sidebar .block__logo_btn .logo {
+  color: #392C72;
+  text-decoration: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  transition: 0.1s ease;
+}
+
+.sidebar .block__logo_btn .logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar .block__logo_btn .logo span {
+  position: absolute;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  overflow: hidden;
+  width: 0;
+  transition: 0.1s ease;
+  opacity: 0;
+}
+
+.sidebar .block__logo_btn .sidebar__btn {
+  position: absolute;
+  font-size: 20px;
+  color: #392C72;
+  transition: 0.1s ease;
+  right: -25px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+.sidebar .block__logo_btn .sidebar__btn:before {
+  display: inline-block;
+  transition: 0.1s ease;
+}
+
+.sidebar__active .block__logo_btn .logo {
+  justify-content: flex-start;
+}
+
+.sidebar__active .block__logo_btn .logo span {
+  position: relative;
+  width: 104px;
+  opacity: 1;
+}
+
+.sidebar__active .block__logo_btn .sidebar__btn {
+  right: 0;
+}
+
+.sidebar__active .block__logo_btn .sidebar__btn:before {
+  transform: scaleY(-1);
 }
 
 .header {
@@ -621,18 +694,80 @@ aside {
   height: 80px;
   background-color: #fff;
   margin: 30px 25px 0;
+  display: flex;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
 .header__items {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-self: center;
   gap: 0.5em;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.header__item {
+  display: flex;
+  align-items: center;
+}
+
+.header__item--1 {
+  gap: 20px;
+}
+
+.header__item--2 {
+  gap: 50px;
+}
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #4F4F4F;
+  font-size: 18px;
+  font-weight: 1.22;
+  text-decoration: none;
+  transition: 0.1s ease;
+  padding-right: 10px;
+}
+
+.header__lang:hover {
+  color: #9E8CFC;
 }
 
 .header__lang svg {
   width: 26px;
   height: 26px;
+}
+
+.header .btn__service {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header .btn__service .iconfont-change-theme {
+  padding-right: 4px;
+}
+
+.header .avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.header .avatar,
+.header .avatar img {
+  border-radius: 50%;
+}
+
+.header .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main {
@@ -647,7 +782,10 @@ main img {
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
   background-color: #E5E5E5;
+  background-color: #fff;
+  font-weight: 400;
 }
 
 .layout {
@@ -664,4 +802,17 @@ body {
 
 .layout__active {
   grid-template-columns: 220px 1fr;
+}
+
+.btn__icon {
+  padding: 0;
+  background-color: unset;
+  border: unset;
+  font-size: 26px;
+  color: #4F4F4F;
+  transition: 0.1s ease;
+}
+
+.btn__icon:hover {
+  color: #9E8CFC;
 }

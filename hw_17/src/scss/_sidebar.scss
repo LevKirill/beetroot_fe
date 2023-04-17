@@ -1,5 +1,80 @@
-aside {
+@import 'vars';
+
+.sidebar {
   grid-area: sidebar;
-  background-color: green;
-  color: #fff;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  padding: 0 15px;
+
+  .block__logo_btn {
+    position: relative;
+
+    .logo {
+      color: $colorPurpleDark;
+      text-decoration: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      transition: 0.1s ease;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      span {
+        position: absolute;
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.22;
+        overflow: hidden;
+        width: 0;
+        transition: 0.1s ease;
+        opacity: 0;
+      }
+    }
+
+    .sidebar__btn {
+      position: absolute;
+      font-size: 20px;
+      color: $colorPurpleDark;
+      transition: 0.1s ease;
+      right: -25px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 20px;
+      cursor: pointer;
+      transition: 0.1s ease;
+
+      &:before {
+        display: inline-block;
+        transition: 0.1s ease;
+      }
+    }
+  }
+
+  &__active {
+    .block__logo_btn {
+      .logo {
+        justify-content: flex-start;
+
+        span {
+          position: relative;
+          width: 104px;
+          opacity: 1;
+        }
+      }
+
+      .sidebar__btn {
+        right: 0;
+
+        &:before {
+          transform: scaleY(-1);
+        }
+      }
+    }
+  }
 }
