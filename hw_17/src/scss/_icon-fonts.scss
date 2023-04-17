@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('../../fonts/icons.eot?ch5egx');
+  src:  url('../../fonts/icons.eot?ch5egx#iefix') format('embedded-opentype'),
+    url('../../fonts/icons.ttf?ch5egx') format('truetype'),
+    url('../../fonts/icons.woff?ch5egx') format('woff'),
+    url('../../fonts/icons.svg?ch5egx#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconfont-"]:before, [class*=" iconfont-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-bubble:before {
+  content: "\e900";
+}
+.iconfont-calendar:before {
+  content: "\e901";
+}
+.iconfont-change-theme:before {
+  content: "\e902";
+}
+.iconfont-dashboard:before {
+  content: "\e903";
+}
+.iconfont-eye:before {
+  content: "\e904";
+}
+.iconfont-lab:before {
+  content: "\e905";
+}
+.iconfont-location:before {
+  content: "\e906";
+}
+.iconfont-lock:before {
+  content: "\e907";
+}
+.iconfont-log-out:before {
+  content: "\e908";
+}
+.iconfont-mail:before {
+  content: "\e909";
+}
+.iconfont-news:before {
+  content: "\e90a";
+}
+.iconfont-page:before {
+  content: "\e90b";
+}
+.iconfont-pen:before {
+  content: "\e90c";
+}
+.iconfont-profile:before {
+  content: "\e90d";
+}
+.iconfont-search:before {
+  content: "\e90e";
+}
+.iconfont-set:before {
+  content: "\e90f";
+}
+.iconfont-stack:before {
+  content: "\e910";
+}
+.iconfont-star:before {
+  content: "\e911";
+}
+.iconfont-study:before {
+  content: "\e912";
+}
+.iconfont-vallet:before {
+  content: "\e913";
+}

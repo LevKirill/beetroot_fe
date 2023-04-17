@@ -1,0 +1,28 @@
+@import 'reset';
+@import 'vars';
+@import 'icon-fonts';
+@import 'fonts';
+@import 'sidebar';
+@import 'header';
+@import 'main';
+
+body {
+  background-color: #E5E5E5;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:  'sidebar header'
+                        'sidebar main';
+  gap: 68px 0;
+  min-height: 100vh;
+  transition: 0.1s ease;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__active {
+    grid-template-columns: 220px 1fr;
+  }
+}

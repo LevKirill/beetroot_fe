@@ -1,0 +1,27 @@
+.header {
+  grid-area: header;
+  //padding-top: 30px;
+
+  &__wrapper {
+    background-color: blue;
+    height: 100%;
+    box-sizing: border-box;
+    height: 80px;
+    background-color: #fff;
+    margin: 30px 25px 0;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  &__lang {
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
