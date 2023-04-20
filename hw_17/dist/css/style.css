@@ -612,7 +612,7 @@ textarea {
   grid-area: sidebar;
   background: #FFFFFF;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  padding: 0 15px;
+  padding: 30px 15px 0;
 }
 
 .sidebar .block__logo_btn {
@@ -657,12 +657,11 @@ textarea {
   margin: auto;
   height: 20px;
   cursor: pointer;
-  transition: 0.1s ease;
 }
 
 .sidebar .block__logo_btn .sidebar__btn:before {
   display: inline-block;
-  transition: 0.1s ease;
+  transition: 0.2s ease;
 }
 
 .sidebar__active .block__logo_btn .logo {
@@ -680,7 +679,7 @@ textarea {
 }
 
 .sidebar__active .block__logo_btn .sidebar__btn:before {
-  transform: scaleY(-1);
+  transform: scaleX(-1);
 }
 
 .header {
