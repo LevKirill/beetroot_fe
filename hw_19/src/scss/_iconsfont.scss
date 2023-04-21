@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'icons';
+  src: url('../../fonts/icons.eot?8x0tt');
+  src: url('../../fonts/icons.eot?8x0tt#iefix') format('embedded-opentype'),
+  url('../../fonts/icons.ttf?8x0tt') format('truetype'),
+  url('../../fonts/icons.woff?8x0tt') format('woff'),
+  url('../../fonts/icons.svg?8x0tt#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconfont-"]:after, [class*=" iconfont-"]:after {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-suit-clubs:after {
+  content: "\e900";
+}
+
+.iconfont-suit-diamond:after {
+  content: "\e901";
+}
+
+.iconfont-suit-heart:after {
+  content: "\e902";
+}
+
+.iconfont-suit-spade:after {
+  content: "\e903";
+}
