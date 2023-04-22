@@ -1,0 +1,148 @@
+@import "vars";
+@import "mixins";
+
+.about {
+  padding-bottom: $sectionPadding;
+  @include img_block(35.625em);
+
+  &__content {
+    padding: 2.8125em 0; //45px 0
+    display: grid;
+    grid-template-columns: 23.125em 1fr;
+
+    .statistics {
+      padding: 0 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 5em;
+
+      &__item {
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75em;
+
+        &_1, &_2 {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 6.25em;
+            height: 1px;
+            background-color: $colorGreen;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -2.625em;
+          }
+        }
+      }
+
+      .currency_sum {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-size: 4.25em; //68px
+        line-height: 1.08;
+
+        span {
+          display: inline-block;
+          font-size: 0.59em;
+          line-height: 1.25;
+          color: $colorLightGrey;
+          margin-right: 0.25em;
+        }
+      }
+
+      .currency_desc {
+        @include text;
+      }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+
+    p {
+      @include text;
+    }
+
+    .btn a {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+.layout__dark {
+  .about__content {
+    background-color: $colorBackDark;
+
+    .statistics .currency_sum span {
+      color: $colorMainDark;
+    }
+  }
+}
+
+@media screen and (max-width: $widthContent) {
+  .about {
+    @include img_block_laptop;
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .about__content {
+    grid-template-columns: 1fr;
+
+    .statistics {
+      flex-direction: row;
+      gap: 1em;
+      text-align: center;
+      justify-content: space-around;
+      padding: 0 0 3.125em;
+      font-size: 0.875em;
+
+      &__item {
+        &_1:after, &_2:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .about__content {
+
+    .statistics {
+      font-size: 0.75em;
+    }
+
+    .about__desc {
+      padding-left: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .about {
+    padding-bottom: 3.5em;
+
+    &__content {
+
+      .statistics {
+        flex-direction: column;
+
+        .currency_sum {
+          font-size: 3.72em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .about__content {
+    font-size: 0.875em;
+  }
+}

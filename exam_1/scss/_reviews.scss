@@ -1,0 +1,109 @@
+@import "vars";
+@import "mixins";
+
+.reviews {
+  padding-bottom: $sectionPadding;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125em;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+  }
+
+  &__desc {
+    @include text;
+    max-width: 22.22em;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875em;
+    color: $colorMainDark;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.3em;
+      position: relative;
+      width: 100%;
+      min-height: 21.25em;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 1.875em 2.5em; //30px 40px
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(25, 28, 41, 0.6);
+        z-index: 1;
+      }
+
+      @for $i from 1 through 3 {
+        &__#{$i} {
+          background-image: url("../img/review-image-" + $i + ".jpg");
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    @include text(1em, 1.62);
+    font-weight: 400;
+  }
+
+  &__author {
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25em;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media screen and (max-width: $widthLaptop) {
+  .reviews__items {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 48.125em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .reviews__items {
+    grid-template-columns: 1fr;
+    max-width: 23.125em;
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .reviews {
+    padding-bottom: 5em;
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .reviews__items {
+    .item {
+      font-size: 0.875em;
+    }
+  }
+}
