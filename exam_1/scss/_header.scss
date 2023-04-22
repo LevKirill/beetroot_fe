@@ -101,7 +101,7 @@
     }
 
     &.sticky {
-      background: linear-gradient(270deg, rgba(22, 25, 38, 0.9) 0%, rgba(22, 25, 38, 0.4) 24.1%, rgba(22, 25, 38, 0.4) 47.19%), rgba(22, 25, 38, 0.32);
+      background: $colorBackDark;
       box-shadow: 0 -1px 16px rgba($color: #fff, $alpha: 0.05);
 
       .header__items {
