@@ -92,7 +92,7 @@
 
     &__menu {
       ul {
-        a {
+        .header__menu--link {
           &:after {
             background: linear-gradient(96.73deg, $colorOrangeDark 6.73%, rgba($color: $colorOrangeDark, $alpha: 0) 116.9%);
           }
