@@ -1,0 +1,56 @@
+@import 'vars';
+
+@mixin img_block($img_width) {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__img {
+    max-width: $img_width;
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    position: relative;
+    max-width: 48.125em; //770px
+    width: 100%;
+    height: auto;
+    margin-left: calc(1170px - 770px - $img_width);
+    background-color: $colorMainDark;
+    opacity: 0.9;
+  }
+}
+
+@mixin img_block_laptop {
+  &__items {
+    justify-content: center;
+  }
+
+  &__img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__content {
+    margin-left: 0;
+    max-width: 49.125em;
+  }
+
+  &__desc {
+    padding-right: 1em;
+  }
+}
+
+@mixin text($fontSize: 1.125em, $lineHeight: 1.44, $opacity: 0.8) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  opacity: $opacity;
+}

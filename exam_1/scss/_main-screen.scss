@@ -1,0 +1,31 @@
+@import 'vars';
+@import 'mixins';
+
+.main_screen {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  padding-bottom: 2.5em;
+
+  .title {
+    max-width: 11.89em;
+  }
+
+  .desc {
+    @include text;
+    max-width: 24.39em;
+    padding: 1.11em 0 2.78em; //20px 0 50px
+  }
+}
+
+@media screen and (max-width: $widthMobileL) {
+  .main_screen {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .main_screen {
+    font-size: 12px;
+  }
+}

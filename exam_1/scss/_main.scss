@@ -1,0 +1,119 @@
+@import 'vars';
+
+.layout {
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  background-image: url("../img/first-screen-image-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+  color: $colorMain;
+  padding-top: 1.875em;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75em; //44px
+  font-weight: 400;
+  line-height: 1.18;
+
+  span {
+    font-style: italic;
+    color: $colorGreen;
+  }
+}
+
+.btn {
+  padding: 0;
+  background: none;
+  border-width: 0;
+  border-color: $colorLightGrey;
+  border-style: solid;
+  transition: $transition;
+  text-decoration: unset;
+
+  .btn__link {
+    display: inline-block;
+    position: relative;
+    font-size: 1.25em; //20px
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: unset;
+    color: $colorOrange;
+    transition: $transition;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 0.65em; //13px
+      background-color: $colorOrange;
+      opacity: 0.3;
+      bottom: -0.2em; //-4px
+      right: -0.35em; //-7px
+      transition: $transition;
+    }
+  }
+
+  &:hover {
+    border-color: $colorOrangeHover;
+
+    .btn__link {
+      color: $colorOrangeHover;
+
+      &:after {
+        background-color: $colorOrangeHover;
+      }
+    }
+  }
+}
+
+.layout__dark {
+  background-color: #161926;
+  background-image: url("../img/first-screen-image-dark.jpg");
+  color: $colorMainDark;
+
+  .title span {
+    color: $colorGreenDark;
+  }
+
+  .btn {
+    border-color: $colorBorderDark;
+
+    .btn__link {
+      color: $colorOrangeDark;
+
+      &:after {
+        background-color: $colorOrangeDark;
+      }
+    }
+
+    &:hover {
+      border-color: $colorOrangeDarkHover;
+
+      .btn__link {
+        color: $colorOrangeDarkHover;
+
+        &:after {
+          background-color: $colorOrangeDarkHover;
+        }
+      }
+    }
+  }
+}
