@@ -1,0 +1,213 @@
+@import '../../css/reset';
+@import 'vars';
+@import 'fonts';
+@import 'overwrites';
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.wrapper {
+  max-width: $widthWrapper;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375em;
+  }
+
+  .subtitle {
+    font-size: 1.125em;
+    font-weight: 500;
+    line-height: 1.33;
+    text-transform: uppercase;
+    color: $colorSubText;
+  }
+
+  .title {
+    font-family: $fontTitle;
+    font-size: 3.75em;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: $colorGold;
+  }
+
+  .strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.375em;
+    padding: 1.0625em 0 2.5625em;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      width: 13.125em;
+      height: 1px;
+      background-color: $colorGold;
+    }
+
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+}
+
+.main_screen {
+  .items__team {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+
+    .strip {
+      background-color: $colorGold;
+    }
+
+    & > .item {
+      padding: 4em 0;
+
+      &_photo {
+        .photo {
+          position: relative;
+          display: inline-block;
+
+          .photo__border {
+            &:before, &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 6.25em;
+              height: 6.25em;
+              border: 1px solid $colorGold;
+              z-index: 0;
+            }
+
+            &:before {
+              left: -0.9375em; //15px
+              border-right: none;
+            }
+
+            &:after {
+              right: -0.9375em; //15px
+              border-left: none;
+            }
+
+            &--top {
+              &:before, &:after {
+                border-bottom: none;
+                top: -0.9375em;
+              }
+            }
+
+            &--bottom {
+              &:before, &:after {
+                border-top: none;
+                bottom: -0.9375em;
+              }
+            }
+          }
+
+          img {
+            max-width: 25em;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+          }
+        }
+      }
+
+      &_desc {
+
+        .title {
+          font-family: $fontTitle;
+          font-size: 2.25em;
+          font-weight: 900;
+          line-height: 1.17;
+          color: $colorGray;
+          text-transform: capitalize;
+
+          &:after {
+            content: '';
+            display: block;
+            font-size: 0.44em; //16px
+            width: 6.25em;
+            height: 1px;
+            background-color: $colorGold;
+            margin: 1.3125em auto 1.875em;
+          }
+        }
+
+        .title_profession {
+          font-size: 1.5em;
+          font-weight: 400;
+          line-height: 1.5;
+          color: $colorGray;
+          text-transform: capitalize;
+        }
+
+        .items_social {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.3125em;
+          padding: 1.25em 0 3.0625em;
+          svg {
+            width: 1.875em;
+            height: 1.875em;
+          }
+        }
+
+        .desc {
+          max-width: 26.875em;
+          margin: 0 auto;
+          font-size: 0.875em;
+          font-weight: 500;
+          line-height: 1.71;
+          text-align: center;
+          color: $colorText;
+          &:after {
+            content: '';
+            display: block;
+            font-size: 1.14em; //16px
+            width: 3.125em;
+            height: 0.25em;
+            background: linear-gradient(to right,
+                            $colorGold 0.625em, //10xp
+                            transparent 0.625em, //10px
+                            transparent 0.9375em, //15px
+                            $colorGold 0.9375em, //15px
+                            $colorGold 2.1875em, //35px
+                            transparent 2.1875em, //35px
+                            transparent 2.5em, //40px
+                            $colorGold 2.5em); //40px
+            margin: 0.9375em auto 1.5625em; //15px auto 25px
+          }
+        }
+
+        .btn {
+          font-family: $fontBtn;
+          font-size: 0.875em;
+          font-weight: 700;
+          line-height: 1;
+          text-transform: uppercase;
+          text-align: center;
+          text-decoration: none;
+          color: $colorGray;
+          border: 1px solid $colorGold;
+          padding: 0.357em 0.714em;
+        }
+      }
+    }
+  }
+}
