@@ -1,0 +1,60 @@
+$width: 30px; //Ширина Гамбургера
+$height: 22px; //Высота Гамбургера
+$positionTop: 10px; //Позиция Гамбургера сверху
+$positionLeft: 10px; //Позиция Гамбургера справа или слева
+$spanHeight: 2px; //Высота одной полоски
+$topTwo: calc($height / 2 - $spanHeight); //Отступ второй полоски сверху
+$topThree: calc($height - $spanHeight); //Отступ третьей полоски сверху
+$hamburgerColor: #000000; //Цвет полосок
+
+/* Стили Гамбургера */
+
+.hamburger {
+	display: none;
+	position: relative;
+	z-index: 1000;
+	width: $width;
+	height: $height;
+  cursor: pointer;
+}
+
+.hamburger__icon {
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &,
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $spanHeight;
+    background: $hamburgerColor;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  & {top: 0;}
+  &::before {top: $topTwo;}
+  &::after {top: $topThree;}
+}
+
+.hamburger--active {
+  
+  .hamburger__icon {
+    transform: translate3d(0, $topTwo, 0) rotate(45deg);
+
+    &::before {
+      transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+      opacity: 0;
+    }
+
+    &::after {
+      transform: translate3d(0, -$topThree, 0) rotate(-90deg);
+    }
+  }
+}
