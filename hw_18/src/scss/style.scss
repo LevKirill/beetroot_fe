@@ -1,0 +1,260 @@
+@import 'reset';
+@import 'vars';
+@import 'icons-font';
+@import 'fonts';
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $colorText;
+}
+
+main {
+  padding-bottom: 5.625em;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: $fontRHD;
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.05em;
+  color: $colorBlack;
+  padding-bottom: 1.46em;
+}
+
+.title {
+  font-family: $fontRHD;
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1.66;
+  letter-spacing: 0.1em;
+  color: $colorBlack;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+.block_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875em;
+  padding-bottom: 1.25em;
+
+  p {
+    font-family: $fontLato;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1875em;
+    line-height: 1.68;
+    letter-spacing: 0.05em;
+    color: $colorText;
+  }
+}
+
+img {
+  display: block;
+  max-width: 1170px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 1.25em;
+}
+
+.header {
+  height: 6.25em;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    color: $colorBlack;
+    text-decoration: none;
+    font-size: 1em;
+  }
+}
+
+.footer {
+  background-color: $colorBackFoo;
+  color: $colorBlack;
+  padding: 4.375em 0 1.875em;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 'contacts social'
+                         'copyright copyright';
+    gap: 1.625em;
+
+    .item {
+      &__contacts {
+        grid-area: contacts;
+      }
+
+      &__social {
+        grid-area: social;
+        align-self: center;
+      }
+
+      &__copyright {
+        grid-area: copyright;
+        text-align: center;
+
+        p {
+          font-size: 0.75em;
+          font-weight: 400;
+          line-height: 1.66;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-family: $fontRHD;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1.33;
+    letter-spacing: 0.05em;
+    color: $colorBlack;
+  }
+
+  .list {
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375em;
+      padding-top: 1.875em;
+
+      a {
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.66;
+        letter-spacing: 0.1em;
+        color: $colorBlack;
+        text-decoration: unset;
+      }
+    }
+
+    &__social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.4375em;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.125em;
+        height: 3.125em;
+        border: 1px solid $colorText;
+        color: $colorText;
+        text-decoration: none;
+        transition: 0.1s ease;
+
+        &:hover {
+          color: $colorWhite;
+          background-color: $colorText;
+        }
+
+        &:before {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 3.75em;
+  }
+
+  h1 {
+    font-size: 2.0625em;
+    line-height: 1.52;
+    padding: 1.52em 0;
+  }
+
+  .title {
+    padding-top: 50px;
+  }
+
+  img {
+    max-width: 700px;
+    margin: 3.125em auto 1.25em;
+  }
+
+  .footer {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        "contacts"
+        "social"
+        "copyright";
+      text-align: center;
+    }
+
+    .list__contacts {
+      padding-top: 1.25em;
+    }
+
+    .list__social {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    padding-bottom: 4.375em;
+  }
+
+  h1 {
+    font-size: 1.875em;
+    line-height: 1.67;
+    padding: 0 0 1.33em;
+  }
+
+  .title {
+    font-size: 1.625em;
+    padding-bottom: 40px;
+  }
+
+  .block_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.67em;
+
+    p {
+      font-size: 1em;
+      line-height: 2;
+    }
+  }
+
+  img {
+    max-width: 300px;
+    margin-top: 2.5em;
+  }
+
+  .footer__title {
+    font-size: 2em;
+    line-height: 1.31;
+  }
+
+  .footer .list__contacts a {
+    font-size: 1.125em;
+  }
+
+  .footer__wrapper .item__copyright p {
+    font-size: 1em;
+  }
+}
