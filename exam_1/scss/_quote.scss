@@ -1,0 +1,86 @@
+@import "vars";
+@import "mixins";
+
+.quote {
+  padding-bottom: $sectionPadding;
+
+  &__wrapper {
+    background: url("../img/quote-background.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 25em;
+    color: $colorMainDark;
+    display: flex;
+    align-items: center;
+    padding: 1.875em 15px;
+  }
+
+  blockquote {
+    position: relative;
+    margin-left: 10em;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+
+    svg {
+      position: absolute;
+      display: block;
+      width: 6.25em;
+      height: 5.0625em;
+      top: -1.75em;
+      left: -3.6875em;
+    }
+  }
+
+  &__text {
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.44;
+    letter-spacing: 0.04em;
+  }
+
+  &__author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25em;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 0.08em;
+  }
+}
+
+.layout__dark {
+  .quote blockquote svg stop {
+    stop-color: #53F3CD;
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .quote blockquote {
+    margin-left: 3.25em;
+  }
+}
+
+@media screen and (max-width: $widthMobileM) {
+  .quote blockquote {
+    font-size: 0.875em;
+  }
+}
+
+@media screen and (max-width: $widthMobileL) {
+  .quote blockquote {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: $widthMobileLBig) {
+  .quote {
+    padding-bottom: 4.5em;
+  }
+}
+
+@media screen and (max-width: $widthMobileS) {
+  .quote blockquote {
+    font-size: 0.6875em;
+  }
+}
