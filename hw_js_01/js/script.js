@@ -43,6 +43,7 @@ let oneForm = document.querySelector('.one_form');
 oneForm.onsubmit = function(evt) {
   evt.preventDefault();
   helloName.textContent = 'Привіт ' +  inputFirstName.value;
+  inputFirstName.value = '';
 };
 
 
@@ -61,6 +62,7 @@ twoForm.onsubmit = function(evt) {
   evt.preventDefault();
   yearsOld -= inputYear.value;
   textYear.textContent = 'Тобі ' + yearsOld + ' років';
+  inputYear.value = '';
 };
 
 
@@ -74,6 +76,7 @@ threeForm.onsubmit = function(evt) {
   evt.preventDefault();
   perimeter = inputSideSquare.value * 4;
   textSideSquare.textContent = 'Периметр квадрату дорівнює ' + perimeter + ' см.';
+  inputSideSquare.value = '';
 };
 
 /*MAX*/
@@ -88,6 +91,7 @@ fourForm.onsubmit = function(evt) {
   evt.preventDefault();
   square = PI * inputRadius.value * inputRadius.value;
   textRadius.textContent = 'Площа окружності дорівнює ' + Math.round(square);
+  inputRadius.value = '';
 };
 
 
@@ -104,7 +108,9 @@ let kmHour;
 fiveForm.onsubmit = function(evt) {
   evt.preventDefault();
   kmHour = inputKm.value / inputHour.value;
-  textKmHour.textContent = 'Треба їхати зі швидкістю ' + Math.round(kmHour) + ' км/год';
+  textKmHour.textContent = 'Щоб проїхати '+ inputKm.value + ' км за ' + inputHour.value + ' годин, треба їхати зі швидкістю ' + Math.round(kmHour) + ' км/год';
+  inputKm.value = '';
+  inputHour.value = '';
 };
 
 
@@ -120,4 +126,5 @@ const USD_TO_EUR = 0.91;
 sixForm.onsubmit = function(evt) {
   evt.preventDefault();
   textEUR.textContent = inputUSD.value + '$ = ' + (inputUSD.value * USD_TO_EUR) + '€ (Курс ' + USD_TO_EUR + ')';
+  inputUSD.value = '';
 }
