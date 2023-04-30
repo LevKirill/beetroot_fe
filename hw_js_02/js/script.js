@@ -92,7 +92,7 @@ btnNorm2Answer.onclick = function (evt) {
   let answerNorm2;
 
   if (EnterNumber.value >= 100 && EnterNumber.value < 1000) {
-    let a, b, c;
+    let a, b;
 
     textNorm2Answer.classList.remove('error');
 
@@ -104,9 +104,7 @@ btnNorm2Answer.onclick = function (evt) {
     answerNorm2 = 'Будь ласка, введіть число від 100 до 999';
   }
 
-
   textNorm2Answer.textContent = answerNorm2;
-
   EnterNumber.value = '';
 }
 
@@ -136,7 +134,6 @@ btnMaxAnswer1.onclick = function (evt) {
     textMax1Answer.textContent = "Введіть значення";
   }
 
-
   enterAmountContribution.value = '';
 }
 
@@ -147,7 +144,6 @@ btnMaxAnswer1.onclick = function (evt) {
 * 2 || 0 || 3
 * 2 && 0 || 3
 */
-
 let max2Answer1 = document.querySelector('.max2Answer1'),
   max2Answer2 = document.querySelector('.max2Answer2'),
   max2Answer3 = document.querySelector('.max2Answer3'),
@@ -155,14 +151,6 @@ let max2Answer1 = document.querySelector('.max2Answer1'),
   max2Question2 = 2 || 0 || 3,
   max2Question3 = 2 && 0 || 3;
 
-max2Answer1.onclick = function () {
-  max2Answer1.textContent = (max2Question1) ? 'true' : 'false';
-}
-
-max2Answer2.onclick = function () {
-  max2Answer2.textContent = (max2Question2) ? 'true' : 'false';
-}
-
-max2Answer3.onclick = function () {
-  max2Answer3.textContent = (max2Question3) ? 'true' : 'false';
-}
+max2Answer1.onclick = function () {max2Answer1.textContent = (max2Question1) ? 'true' : 'false';}
+max2Answer2.onclick = function () {max2Answer2.textContent = (max2Question2) ? 'true' : 'false';}
+max2Answer3.onclick = function () {max2Answer3.textContent = (max2Question3) ? 'true' : 'false';}
