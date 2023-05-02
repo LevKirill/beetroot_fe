@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Основи JavaScript</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!--MINIMUM 01
+  Створи HTML-файл, в ньому пропиши всі можливі способи використання JS;-->
+  <script>
+    console.log('Hello World!');
+  </script>
+</head>
+<body>
+<main>
+  <section class="home_norm">
+    <div class="wrapper">
+      <h2 class="title">Норма</h2>
+      <div class="block_1">
+        <h2>01 - Запитай ім’я користувача та виведи у відповідь “Привіт, *ім’я*”;</h2>
+        <form action="" method="POST" class="one_form">
+          <input type="text" name="name" id="firstName" placeholder="Напишить Ім'я" required>
+          <input type="submit" value="Відправити">
+        </form>
+        <p class="hello_name"></p>
+      </div>
+      <div class="block_2">
+        <h2>02 - Запитай рік народження користувача, порахуй його/її вік і виведи результат. Поточний рік вкажи в коді як константу;</h2>
+        <form action="" method="POST" class="two_form">
+          <input type="number" name="year" id="year" placeholder="Напишить рік народження" required>
+          <input type="submit" value="Відправити">
+        </form>
+        <p class="text_year"></p>
+      </div>
+      <div class="block_3">
+        <h2>03 - Запитай у користувача довжину сторони квадрату і виведи периметр цього квадрата</h2>
+        <form action="" method="POST" class="three_form">
+          <input type="number" name="side_square" id="side_square" placeholder="Довжина, см" required>
+          <input type="submit" value="Відправити">
+        </form>
+        <p class="text_side_square"></p>
+      </div>
+    </div>
+  </section>
+  <section class="home_max">
+    <div class="wrapper">
+      <h2 class="title">Максимум</h2>
+      <div class="block_1">
+        <h2>01 - Запитай у користувача радіус кола і виведи площу такої окружності.</h2>
+        <form action="" method="POST" class="four_form">
+          <input type="number" name="radius" id="input_radius" placeholder="радіус кола" required>
+          <input type="submit" value="Відправити">
+        </form>
+        <p class="text_radius"></p>
+      </div>
+      <div class="block_2">
+        <h2>02 - Запитай у користувача відстань в кілометрах між двома містами і за скільки годин він хоче дістатися.
+          Порахуй швидкість, з якою необхідно рухатися, щоб встигнути вчасно.</h2>
+        <form action="" method="POST" class="five_form">
+          <input type="number" name="km" id="input_km" placeholder="відстань в кілометрах" required>
+          <input type="number" name="hour" id="input_hour" placeholder="за скільки годин дістатися" required>
+          <input type="submit" value="Відправити">
+        </form>
+        <p class="text_km_hour"></p>
+      </div>
+      <div class="block_2">
+        <h2>03 - Реалізуй конвертор валют. Користувач вводить долари, програма переводить їх в євро.
+          Курс валют зберігається в константі.</h2>
+        <form action="" method="POST" class="six_form">
+          <input type="number" name="USD" id="input_USD" placeholder="USD" required>
+          <input type="submit" value="Конвертувати">
+        </form>
+        <p class="text_EUR"></p>
+      </div>
+    </div>
+  </section>
+</main>
+<!--MINIMUM 01
+  Створи HTML-файл, в ньому пропиши всі можливі способи використання JS;-->
+<script src="./js/script.js"></script>
+</body>
+</html>
