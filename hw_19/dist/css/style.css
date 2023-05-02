@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap");
+
+@font-face {
+  font-family: "icons";
+  src: url("../../fonts/icons.eot?8x0tt");
+  src: url("../../fonts/icons.eot?8x0tt#iefix") format("embedded-opentype"), url("../../fonts/icons.ttf?8x0tt") format("truetype"), url("../../fonts/icons.woff?8x0tt") format("woff"), url("../../fonts/icons.svg?8x0tt#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=iconfont-]:after,
+[class*=" iconfont-"]:after {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-suit-clubs:after {
+  content: "\e900";
+}
+
+.iconfont-suit-diamond:after {
+  content: "\e901";
+}
+
+.iconfont-suit-heart:after {
+  content: "\e902";
+}
+
+.iconfont-suit-spade:after {
+  content: "\e903";
+}
+
+@keyframes card-back {
+  0%, 100% {
+    transform: rotateY(0);
+  }
+
+  50% {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes card-front {
+  0%, 100% {
+    transform: rotateY(-180deg);
+  }
+
+  50% {
+    transform: rotateY(0);
+  }
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site_main {
+  width: 100%;
+}
+
+.card_deck {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 10px;
+}
+
+.card_deck__wrapper {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.card_deck__card {
+  position: relative;
+  height: 170px;
+  color: #000;
+}
+
+.card_deck__card--diamonds,
+.card_deck__card--hearts {
+  color: #f00;
+}
+
+.card_deck__card--front {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(-180deg);
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #000;
+  border-radius: 10px;
+  animation-name: card-front;
+  animation-duration: 1.5s;
+}
+
+.card_deck__card--front:after {
+  font-size: 6em;
+}
+
+.card_deck__card--name {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2em;
+}
+
+.card_deck__card--name-1 {
+  top: 0.3125em;
+  left: 0.3125em;
+}
+
+.card_deck__card--name-2 {
+  transform: rotate(180deg);
+  bottom: 0.3125em;
+  right: 0.3125em;
+}
+
+.card_deck__card--name:after {
+  font-size: 0.7em;
+}
+
+.card_deck__card--back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: 0.3s ease;
+  transform: rotateY(0);
+  overflow: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #000;
+  border-radius: 10px;
+  animation-name: card-back;
+  animation-duration: 1.5s;
+}
+
+.card_deck__card--back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card_deck__card:hover .card_deck__card--front {
+  transform: rotateY(0);
+}
+
+.card_deck__card:hover .card_deck__card--back {
+  transform: rotateY(-180deg);
+}
+
+.card_deck__card:nth-child(7) .card_deck__card--front,
+.card_deck__card:nth-child(7) .card_deck__card--back {
+  animation-delay: 2s;
+}
+
+.card_deck__card:nth-child(6) .card_deck__card--front,
+.card_deck__card:nth-child(6) .card_deck__card--back {
+  animation-delay: 4s;
+}
+
+.card_deck__card:nth-child(28) .card_deck__card--front,
+.card_deck__card:nth-child(28) .card_deck__card--back {
+  animation-delay: 6s;
+}
+
+.card_deck__card:nth-child(23) .card_deck__card--front,
+.card_deck__card:nth-child(23) .card_deck__card--back {
+  animation-delay: 8s;
+}
+
+.card_deck__card:nth-child(17) .card_deck__card--front,
+.card_deck__card:nth-child(17) .card_deck__card--back {
+  animation-delay: 10s;
+}
+
+.card_deck__card:nth-child(4) .card_deck__card--front,
+.card_deck__card:nth-child(4) .card_deck__card--back {
+  animation-delay: 12s;
+}
+
+.card_deck__card:nth-child(2) .card_deck__card--front,
+.card_deck__card:nth-child(2) .card_deck__card--back {
+  animation-delay: 14s;
+}
+
+.card_deck__card:nth-child(26) .card_deck__card--front,
+.card_deck__card:nth-child(26) .card_deck__card--back {
+  animation-delay: 16s;
+}
+
+.card_deck__card:nth-child(35) .card_deck__card--front,
+.card_deck__card:nth-child(35) .card_deck__card--back {
+  animation-delay: 18s;
+}
+
+.card_deck__card:nth-child(15) .card_deck__card--front,
+.card_deck__card:nth-child(15) .card_deck__card--back {
+  animation-delay: 20s;
+}
+
+.card_deck__card:nth-child(22) .card_deck__card--front,
+.card_deck__card:nth-child(22) .card_deck__card--back {
+  animation-delay: 22s;
+}
+
+.card_deck__card:nth-child(5) .card_deck__card--front,
+.card_deck__card:nth-child(5) .card_deck__card--back {
+  animation-delay: 24s;
+}
+
+.card_deck__card:nth-child(9) .card_deck__card--front,
+.card_deck__card:nth-child(9) .card_deck__card--back {
+  animation-delay: 26s;
+}
+
+.card_deck__card:nth-child(24) .card_deck__card--front,
+.card_deck__card:nth-child(24) .card_deck__card--back {
+  animation-delay: 28s;
+}
+
+.card_deck__card:nth-child(31) .card_deck__card--front,
+.card_deck__card:nth-child(31) .card_deck__card--back {
+  animation-delay: 30s;
+}
+
+.card_deck__card:nth-child(11) .card_deck__card--front,
+.card_deck__card:nth-child(11) .card_deck__card--back {
+  animation-delay: 32s;
+}
+
+.card_deck__card:nth-child(3) .card_deck__card--front,
+.card_deck__card:nth-child(3) .card_deck__card--back {
+  animation-delay: 34s;
+}
+
+.card_deck__card:nth-child(30) .card_deck__card--front,
+.card_deck__card:nth-child(30) .card_deck__card--back {
+  animation-delay: 36s;
+}
+
+.card_deck__card:nth-child(34) .card_deck__card--front,
+.card_deck__card:nth-child(34) .card_deck__card--back {
+  animation-delay: 38s;
+}
+
+.card_deck__card:nth-child(27) .card_deck__card--front,
+.card_deck__card:nth-child(27) .card_deck__card--back {
+  animation-delay: 40s;
+}
+
+.card_deck__card:nth-child(21) .card_deck__card--front,
+.card_deck__card:nth-child(21) .card_deck__card--back {
+  animation-delay: 42s;
+}
+
+.card_deck__card:nth-child(14) .card_deck__card--front,
+.card_deck__card:nth-child(14) .card_deck__card--back {
+  animation-delay: 44s;
+}
+
+.card_deck__card:nth-child(8) .card_deck__card--front,
+.card_deck__card:nth-child(8) .card_deck__card--back {
+  animation-delay: 46s;
+}
+
+.card_deck__card:nth-child(1) .card_deck__card--front,
+.card_deck__card:nth-child(1) .card_deck__card--back {
+  animation-delay: 48s;
+}
+
+.card_deck__card:nth-child(32) .card_deck__card--front,
+.card_deck__card:nth-child(32) .card_deck__card--back {
+  animation-delay: 50s;
+}
+
+.card_deck__card:nth-child(18) .card_deck__card--front,
+.card_deck__card:nth-child(18) .card_deck__card--back {
+  animation-delay: 52s;
+}
+
+.card_deck__card:nth-child(36) .card_deck__card--front,
+.card_deck__card:nth-child(36) .card_deck__card--back {
+  animation-delay: 54s;
+}
+
+.card_deck__card:nth-child(13) .card_deck__card--front,
+.card_deck__card:nth-child(13) .card_deck__card--back {
+  animation-delay: 56s;
+}
+
+.card_deck__card:nth-child(29) .card_deck__card--front,
+.card_deck__card:nth-child(29) .card_deck__card--back {
+  animation-delay: 58s;
+}
+
+.card_deck__card:nth-child(25) .card_deck__card--front,
+.card_deck__card:nth-child(25) .card_deck__card--back {
+  animation-delay: 60s;
+}
+
+.card_deck__card:nth-child(16) .card_deck__card--front,
+.card_deck__card:nth-child(16) .card_deck__card--back {
+  animation-delay: 62s;
+}
+
+.card_deck__card:nth-child(19) .card_deck__card--front,
+.card_deck__card:nth-child(19) .card_deck__card--back {
+  animation-delay: 64s;
+}
+
+.card_deck__card:nth-child(12) .card_deck__card--front,
+.card_deck__card:nth-child(12) .card_deck__card--back {
+  animation-delay: 66s;
+}
+
+.card_deck__card:nth-child(20) .card_deck__card--front,
+.card_deck__card:nth-child(20) .card_deck__card--back {
+  animation-delay: 68s;
+}
+
+.card_deck__card:nth-child(10) .card_deck__card--front,
+.card_deck__card:nth-child(10) .card_deck__card--back {
+  animation-delay: 70s;
+}
+
+.card_deck__card:nth-child(33) .card_deck__card--front,
+.card_deck__card:nth-child(33) .card_deck__card--back {
+  animation-delay: 72s;
+}
