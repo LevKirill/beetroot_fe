@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrapper">
+    <h1>Типи даних та оператори</h1>
+  </div>
+</header>
+<main>
+  <section class="minimum">
+    <div class="wrapper">
+      <h2>Мінімум</h2>
+      <ol>
+        <li>0,1 + 0,2 = <span class="min1">Переглянути видповідь</span></li>
+        <li>'1' + 2 = <span class="min2">Переглянути видповідь</span></li>
+        <li>
+          <form class="form_min_1" action="" method="POST">
+            <input type="number" name="amount_memory" id="AmountMemory" placeholder="Обсяг флешки в Гб"
+                   required>
+            <button type="submit">Переглянути видповідь</button>
+          </form>
+          <p class="min1Answer"></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="norm">
+    <div class="wrapper">
+      <h2>Норма</h2>
+      <ol>
+        <li>
+          <form action="" method="POST" class="form_norm_1">
+            <input type="number" name="amount_money" id="amountMoney" placeholder="Сума грошей в гаманці"
+                   required>
+            <input type="number" name="cost_chocolate" id="costChocolate"
+                   placeholder="Ціна однієї шоколадки" required>
+            <button type="submit">Переглянути відповідь</button>
+          </form>
+          <p class="norm1Answer"></p>
+        </li>
+        <li>
+          <form action="" method="POST" class="form_norm_2">
+            <label for="threeDigitNumber">Введіть тризначне число</label>
+            <input type="number" name="three_digit_number" id="threeDigitNumber" min="100" max="999" required>
+            <button type="submit">Переглянути відповідь</button>
+          </form>
+          <p class="norm2Answer"></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="max">
+    <div class="wrapper">
+      <h2>Максимум</h2>
+      <ol>
+        <li>
+          <form action="" method="POST" class="form_max_1">
+            <label for="amountContribution">Введіть суму вкладу в банк</label>
+            <input type="number" name="amount_contribution" id="amountContribution" required>
+            <button type="submit">Переглянути відповідь</button>
+          </form>
+          <p class="max1Answer"></p>
+        </li>
+        <li>Що повернуть вирази:
+          <ul>
+            <li>2 && 0 && 3 = <span class="max2Answer1">Переглянути відповідь</span></li>
+            <li>2 || 0 || 3 = <span class="max2Answer2">Переглянути відповідь</span></li>
+            <li>2 && 0 || 3 = <span class="max2Answer3">Переглянути відповідь</span></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+<script src="./js/script.js"></script>
+</body>
+</html>

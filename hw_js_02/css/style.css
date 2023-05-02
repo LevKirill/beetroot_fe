@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+ol, ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+ul {
+  margin-top: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+span, p {
+  font-size: 18px;
+  color: green;
+  cursor: pointer;
+}
+span.error, p.error {
+  color: red;
+}
+
+span {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
