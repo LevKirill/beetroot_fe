@@ -141,3 +141,64 @@ btn5.onclick = (evt) => {
   numDivider.value = '';
 }
 
+/*
+* Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+*/
+let numPalindrome = document.querySelector('#numPalindrome'),
+  btn6 = document.querySelector('.form6 button'),
+  answer6 = document.querySelector('.answer6');
+
+btn6.onclick = (evt) => {
+  evt.preventDefault();
+  let val = numPalindrome.value;
+  answer6.classList.remove('error');
+
+  if (isNaN(val)) {
+    answer6.classList.add('error');
+    answer6.textContent = 'Вы ввели не число';
+  } else if (parseInt(val) != val || val <= 0) {
+    answer6.classList.add('error');
+    answer6.textContent = 'Вы ввели не натуральное число';
+  } else {
+    let j = 0, le = val.length - 1, pal = true;
+    while (j <= le - j) {
+      pal = pal && (val.charAt(j) == val.charAt(le - j));
+      j++
+    }
+    answer6.textContent = 'Введённое число ' + val + (pal ? ' ' : ' не ') + 'является палиндромом';
+    numPalindrome.value = '';
+  }
+}
+
+/*
+* Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+* від 200 до 300 - знижка буде 3%;
+* від 300 до 500 - 5%;
+* від 500 і вище - 7%.
+*/
+let sumPurchase = document.querySelector('#sumPurchase'),
+  btn7 = document.querySelector('.form7 button'),
+  answer7 = document.querySelector('.answer7');
+
+btn7.onclick = (evt) => {
+  evt.preventDefault();
+  let sum = sumPurchase.value,
+    percent,
+    discountedAmount;
+
+  if (sum >= 200 && sum < 300) {
+    percent = 0.03;
+  } else if (sum >= 300 && sum < 500) {
+    percent = 0.05;
+  } else if (sum >= 500) {
+    percent = 0.07;
+  } else {
+    percent = 0;
+  }
+
+  discountedAmount = sum - sum * percent;
+
+  answer7.textContent = `Ви здійснили покупку на суму ${sum}, ваша знижка складає ${Math.round(percent * 100)}%. 
+    Сума зі знижкою: ${discountedAmount}`;
+  sumPurchase.value = '';
+}
