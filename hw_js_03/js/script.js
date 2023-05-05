@@ -202,3 +202,79 @@ btn7.onclick = (evt) => {
     Сума зі знижкою: ${discountedAmount}`;
   sumPurchase.value = '';
 }
+
+/*
+* Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів.
+* При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран.
+* Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+*/
+let num = document.getElementById('num'),
+  btn8 = document.querySelector('.form8 button'),
+  answer8 = document.querySelector('.answer8');
+
+btn8.onclick = (evt) => {
+  evt.preventDefault();
+  let listNum = num.value,
+    result = listNum.split(','),
+    evenNum = 0, oddNum = 0, zeroNum = 0,
+    answer;
+
+  answer8.classList.remove ('error');
+
+  for (let i = 0; i < result.length; i++) {
+
+    if (listNum) {
+      if (Number(result[i]) || result[i] == 0) {
+        if (result[i] == 0) {
+          zeroNum++;
+        } else if (result[i] % 2) {
+          oddNum++;
+        } else {
+          evenNum++;
+        }
+        answer = `Ви ввели <b>${listNum}</b>, з них:<br>
+                Кількість нульових чисел: <b>${zeroNum}</b><br>
+                Додатніх чисел: <b>${evenNum}</b><br>
+                Від\’ємних чисел: <b>${oddNum}</b>`;
+      }
+      else {
+        answer8.classList.add ('error');
+        answer = 'Вибачте, треба вводити тільки цифри';
+      }
+    } else {
+      answer8.classList.add ('error');
+      answer = 'Вибачте, треба щось ввести';
+    }
+
+  }
+  answer8.innerHTML = answer;
+  num.value = '';
+}
+
+/*
+* Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір,
+* поки користувач натискає OK.
+*/
+let days = [
+  'Неділя',
+  'Понеділок',
+  'Вівторок',
+  'Середа',
+  'Четвер',
+  'П\'ятниця',
+  'Субота'
+],
+  d = new Date(),
+  n = d.getDay(),
+  dayWeek = document.querySelector('.day_week'),
+  btnDayWeek = document.getElementById('dayWeek');
+
+dayWeek.textContent = days[n];
+
+btnDayWeek.onclick = () => {
+  n++;
+  if (n > 6) {
+    n = 0;
+  }
+  dayWeek.textContent = days[n];
+}
