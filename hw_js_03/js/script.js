@@ -278,3 +278,21 @@ btnDayWeek.onclick = () => {
   }
   dayWeek.textContent = days[n];
 }
+
+/*
+*
+*/
+
+let multiplicationTable = document.querySelector('.multiplication_table'),
+  resultTable = '',
+  result = '';
+
+for (let i = 2; i <= 10;  i += 1) {
+  for (let j = 1; j <= 10; j += 1) {
+    resultTable += `<p>${i} x ${j} = ${i * j};</p>`;
+  }
+  result += `<td>${resultTable}</td>`;
+  resultTable = '';
+};
+
+multiplicationTable.innerHTML = `<table><tbody><tr>${result}</tr></tbody></table>`;
