@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+code {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+
+  .orange {
+    color: orange;
+  }
+
+  .gray {
+    color: gray;
+  }
+
+  .violet {
+    color: #9640e7;
+  }
+
+  .yellow {
+    color: #ead131;
+  }
+
+  .green {
+    color: green;
+  }
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.answer {
+  color: #f30404;
+}
