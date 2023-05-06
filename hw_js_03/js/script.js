@@ -11,15 +11,19 @@ btn1.onclick = (evt) => {
   evt.preventDefault();
   answer1.classList.remove('error');
 
-  if (age.value <= 11) {
-    textAnswer1 = `Вам ${age.value} років, ви дитина.`;
-  } else if (age.value >= 12 && age.value <= 17) {
-    textAnswer1 = `Вам ${age.value} років, ви підліток.`;
-  }
-  if (age.value >= 18 && age.value <= 59) {
-    textAnswer1 = `Вам ${age.value} років, ви доросла людина.`;
-  } else if (age.value >= 60 && age.value <= 100) {
-    textAnswer1 = `Вам ${age.value} років, ви пенсіонер.`;
+  if (Number(age.value)) {
+    if (age.value >= 0 && age.value <= 11) {
+      textAnswer1 = `Вам ${age.value} років, ви дитина.`;
+    } else if (age.value >= 12 && age.value <= 17) {
+      textAnswer1 = `Вам ${age.value} років, ви підліток.`;
+    } else if (age.value >= 18 && age.value <= 59) {
+      textAnswer1 = `Вам ${age.value} років, ви доросла людина.`;
+    } else if (age.value >= 60 && age.value <= 100) {
+      textAnswer1 = `Вам ${age.value} років, ви пенсіонер.`;
+    } else {
+      answer1.classList.add('error');
+      textAnswer1 = `Вік повинен бути від 0 до 100`;
+    }
   } else {
     answer1.classList.add('error');
     textAnswer1 = `Вік повинен бути від 0 до 100`;
@@ -66,26 +70,32 @@ btn3.onclick = (evt) => {
   let textAnswer3 = 0;
   answer3.classList.remove('error')
 
-  if (minNum.value <= 100 && maxNum.value <= 100) {
+  if (Number(minNum.value) && Number(maxNum.value)) {
+    if (minNum.value <= 100 && maxNum.value <= 100) {
 
-    if (minNum.value <= maxNum.value) {
-      x = minNum.value;
-      y = maxNum.value;
+      if (minNum.value <= maxNum.value) {
+        x = minNum.value;
+        y = maxNum.value;
+      } else {
+        x = maxNum.value;
+        y = minNum.value;
+      }
+
+      while (x <= y) {
+        textAnswer3 += +x;
+        x++;
+      }
+
+      answer3.textContent = `Сума чисел діапазону дорівнює ${textAnswer3}`;
     } else {
-      x = maxNum.value;
-      y = minNum.value;
+      answer3.classList.add('error');
+      answer3.textContent = 'Вибачте, числа повинни бути меньше, або дорівнювати 100';
     }
-
-    while (x <= y) {
-      textAnswer3 += +x;
-      x++;
-    }
-
-    answer3.textContent = `Сума чисел діапазону дорівнює ${textAnswer3}`;
   } else {
     answer3.classList.add('error');
-    answer3.textContent = 'Вибачте, числа повинни бути меньше, або дорівнювати 100';
+    answer3.textContent = 'Вибачте, одне чи оба поля не заповнени';
   }
+
   maxNum.value = minNum.value = '';
 }
 
@@ -185,21 +195,28 @@ btn7.onclick = (evt) => {
   let sum = sumPurchase.value,
     percent,
     discountedAmount;
+  answer7.classList.remove('error');
 
-  if (sum >= 200 && sum < 300) {
-    percent = 0.03;
-  } else if (sum >= 300 && sum < 500) {
-    percent = 0.05;
-  } else if (sum >= 500) {
-    percent = 0.07;
-  } else {
-    percent = 0;
+  if (Number(sum)) {
+    if (sum >= 200 && sum < 300) {
+      percent = 0.03;
+    } else if (sum >= 300 && sum < 500) {
+      percent = 0.05;
+    } else if (sum >= 500) {
+      percent = 0.07;
+    } else {
+      percent = 0;
+    }
+    discountedAmount = Math.round(sum - sum * percent);
+    answer7.textContent = `Ви здійснили покупку на суму ${sum}, ваша знижка складає ${Math.round(percent * 100)}%. 
+    Сума зі знижкою: ${discountedAmount}`;
+  }
+  else {
+    answer7.classList.add('error');
+    answer7.textContent = `Ви не ввели суму покупки`;
   }
 
-  discountedAmount = sum - sum * percent;
 
-  answer7.textContent = `Ви здійснили покупку на суму ${sum}, ваша знижка складає ${Math.round(percent * 100)}%. 
-    Сума зі знижкою: ${discountedAmount}`;
   sumPurchase.value = '';
 }
 
@@ -280,7 +297,7 @@ btnDayWeek.onclick = () => {
 }
 
 /*
-*
+* Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
 */
 
 let multiplicationTable = document.querySelector('.multiplication_table'),
@@ -296,3 +313,78 @@ for (let i = 2; i <= 10;  i += 1) {
 };
 
 multiplicationTable.innerHTML = `<table><tbody><tr>${result}</tr></tbody></table>`;
+
+/*
+* Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом:
+* кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача
+* «Ваше число > N, < N або == N?». Залежно від того що вказав користувач, зменшуй діапазон.
+* Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число > 50,
+* то зміни діапазон на від 50 до 100.
+* І так до тих пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний пошук").
+*/
+let numGuess = document.getElementById('num_guess'),
+  btnGuess = document.querySelector('.form9 button'),
+  answerGuess = document.querySelector('.answer_guess'),
+  numHiddenNumber = document.getElementById('number'),
+  hiddenNumber,
+  guessedNumber = 0,
+  numberGreater = document.querySelector('.number_greater'),
+  numberLess = document.querySelector('.number_less'),
+  numberIs = document.querySelector('.number_is'),
+  answerError = document.querySelector('.answer_error');
+
+btnGuess.onclick = (evt) => {
+  evt.preventDefault();
+  hiddenNumber = numGuess.value;
+  answerGuess.classList.add('none');
+  answerGuess.classList.remove('error');
+
+  if (hiddenNumber >= 0 && hiddenNumber <= 100) {
+    guessedNumber = Math.round(100 / 2);
+    /*answerGuess.innerHTML = `Число ${guessedNumber} <button class="number_greater">більше</button>,
+      <button class="number_less">менше</button> чи <button class="number_is">дорівнює</button> загаданому вами числу?`;*/
+    numHiddenNumber.textContent = guessedNumber;
+  } else {
+    answerGuess.classList.add('error');
+    answerGuess.classList.remove('none');
+    answerGuess.textContent = 'Введіть число від 0 до 100';
+  }
+  numGuess.value = '';
+}
+
+numberGreater.onclick = () => {
+  answerError.classList.add('none');
+  guessedNumber += Math.round(guessedNumber - (guessedNumber / 2));
+  numHiddenNumber.textContent = guessedNumber;
+}
+
+numberLess.onclick = () => {
+  answerError.classList.add('none');
+  guessedNumber = Math.round(guessedNumber / 2);
+  numHiddenNumber.textContent = guessedNumber;
+}
+
+numberIs.onclick = () => {
+  if (guessedNumber == hiddenNumber) {
+    answerGuess.textContent = `Загадане вами число дорівнює ${guessedNumber}`;
+  } else {
+    answerError.classList.remove('none');
+    answerError.textContent = `Вибачте, але загадане вами число не дорівнює ${guessedNumber}`;
+  }
+}
+
+/*
+* Запитай дату (день, місяць, рік) і виведи наступну за нею дату.
+* Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+*/
+let myDate = document.getElementById('myDate'),
+  btn10 = document.querySelector('.form10 button'),
+  answer10 = document.querySelector('.answer10');
+
+btn10.onclick = (evt) => {
+  evt.preventDefault();
+  const nextWeek = new Date(myDate.value);
+  nextWeek.setDate(new Date(myDate.value).getDate() + 1);
+  // console.log(nextWeek);
+  answer10.textContent = nextWeek;
+}

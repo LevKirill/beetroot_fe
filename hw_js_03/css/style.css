@@ -13,16 +13,31 @@ body {
   margin: 0 auto;
 }
 
-table, th, td {
+table {
+  margin-top: 20px;
+}
+table, table th, table td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-
-td {
+table p {
   padding: 6px 10px;
+  margin: 0;
 }
-td p {
-  margin: 3px 0;
+table p:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+table p:nth-child(2n-1) {
+  background-color: #e5e3e3;
+}
+
+.none {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

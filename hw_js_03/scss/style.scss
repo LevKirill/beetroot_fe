@@ -13,15 +13,40 @@ body {
   margin: 0 auto;
 }
 
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-td {
-  padding: 6px 10px;
+table {
+  margin-top: 20px;
+  &, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
 
   p {
-    margin: 3px 0;
+    padding: 6px 10px;
+    margin: 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid black;
+    }
+
+    &:nth-child(2n-1) {
+      background-color: #e5e3e3;
+    }
   }
+}
+
+//table td {
+//  padding: 6px 10px;
+//
+//  p {
+//    margin: 3px 0;
+//  }
+//}
+
+.none {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }

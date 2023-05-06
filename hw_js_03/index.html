@@ -95,11 +95,27 @@
       <div class="wrapper">
         <h2>Максимум</h2>
         <ol>
-          <li></li>
-          <li class="multiplication_table">
-
+          <li>
+            <p class="strong">Загадайте число від 0 до 100</p>
+            <form action="" class="form9">
+              <input type="number" name="" id="num_guess">
+              <button type="submit">Загадати</button>
+            </form>
+            <p class="answer_error error none"></p>
+            <p class="answer_guess none">Число <span id="number"></span> <button class="number_greater">більше</button>,
+              <button class="number_less">менше</button>
+              чи <button class="number_is">дорівнює</button> загаданому вами числу?
+            </p>
           </li>
-          <li></li>
+          <li class="multiplication_table"></li>
+          <li>
+            <p class="strong">Введіть будь яку дату</p>
+            <form action="" method="POST" class="form10">
+              <input type="date" name="date" id="myDate">
+              <button type="submit">Отримати відповідь</button>
+            </form>
+            <p class="answer10"></p>
+          </li>
         </ol>
       </div>
     </section>
