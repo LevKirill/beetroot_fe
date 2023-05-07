@@ -13,7 +13,7 @@ const car = {
 
 
 //Мінімум 1
-function showCarModel () {
+function showCarModel() {
   return `Модель автомобіля ${car.manufacturer} ${car.model}`;
 }
 
@@ -21,7 +21,7 @@ console.log(showCarModel());
 
 
 //Мінімум 2
-function addDriver (name) {
+function addDriver(name) {
   let size = Object.keys(car.drivers).length + 1;
   car.drivers[`driver_${size}`] = name;
   return car.drivers;
@@ -33,7 +33,7 @@ console.log(addDriver('Антон'));
 
 
 // Мінімум 3
-function checkDriver (name) {
+function checkDriver(name) {
   let nameDriver;
   for (let key in car.drivers) {
     let driver = car.drivers[key];
@@ -55,7 +55,7 @@ console.log(checkDriver('Максим'));
 
 
 // Мінімум 4
-function calcTimeFuel (distance) {
+function calcTimeFuel(distance) {
   let time = Math.round(distance / car.average_speed),
     fuel = distance / 100 * car.fuel_consumption,
     restDriver;
@@ -78,46 +78,49 @@ let times = {
   seconds: data.getSeconds()
 }
 
-function calcTimeSeconds (addSeconds) {
+function calcHour24(TimeHour) {
+  for (let i = TimeHour; i >= 24; i -= TimeHour) {
+    if (TimeHour >= 24) {
+      TimeHour -= 24;
+    }
+    return TimeHour;
+  }
+}
+
+function calcTimeSeconds(addSeconds) {
   let hour = times.hour * 3600,
     minutes = times.minutes * 60,
     seconds = times.seconds;
-    sum = hour + minutes + times.seconds + addSeconds;
-    hour = Math.floor(sum / 3600);
-    minutes = Math.floor((sum - hour * 3600) / 60);
-    seconds = Math.floor(sum - hour * 3600 - minutes * 60);
-    for (let i = hour; i >= 24; i -= hour) {
-      if (hour >= 24) {
-        hour -= 24;
-      }
-    }
-    return `Було - ${times.hour}:${times.minutes}:${times.seconds}. Якщо додати ${addSeconds} секунд, стане ${hour}:${minutes}:${seconds}`
+
+  sum = hour + minutes + times.seconds + addSeconds;
+  hour = Math.floor(sum / 3600);
+  minutes = Math.floor((sum - hour * 3600) / 60);
+  seconds = Math.floor(sum - hour * 3600 - minutes * 60);
+  hour = calcHour24(hour);
+
+  return `Було - ${times.hour}:${times.minutes}:${times.seconds}. Якщо додати ${addSeconds} секунд, стане ${hour}:${minutes}:${seconds}`
 }
 
-function calcTimeMinutes (addMinutes) {
+function calcTimeMinutes(addMinutes) {
   let hour = times.hour * 60,
     minutes,
     sum = hour + times.minutes + addMinutes;
-    hour = Math.floor(sum / 60);
-    minutes = Math.floor(sum - hour * 60);
-    for (let i = hour; i >= 24; i -= hour) {
-      if (hour >= 24) {
-        hour -= 24;
-      }
-    }
-    return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addMinutes} хвилин, стане ${hour}:${minutes}:${times.seconds}`
+
+  hour = Math.floor(sum / 60);
+  minutes = Math.floor(sum - hour * 60);
+  hour = calcHour24(hour);
+
+  return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addMinutes} хвилин, стане ${hour}:${minutes}:${times.seconds}`
 }
 
-function calcTimeHour (addHour) {
-  let sum = times.hour + addHour;
-    for (let i = sum; i >= 24; i -= sum) {
-      if (sum >= 24) {
-        sum -= 24;
-      }
-    }
-    return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addHour} годин, стане ${sum}:${times.minutes}:${times.seconds}`
+function calcTimeHour(addHour) {
+  let hour = times.hour + addHour;
+
+  hour = calcHour24(hour);
+
+  return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addHour} годин, стане ${hour}:${times.minutes}:${times.seconds}`
 }
 
-console.log(calcTimeSeconds(18000));
-console.log(calcTimeMinutes(300));
+console.log(calcTimeSeconds(20000));
+console.log(calcTimeMinutes(600));
 console.log(calcTimeHour(5));
