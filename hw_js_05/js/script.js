@@ -69,7 +69,7 @@ function calcTimeFuel(distance) {
 
 console.log(calcTimeFuel(1273));
 
-// Норма 1
+// Норма
 let data = new Date();
 
 let times = {
@@ -79,12 +79,12 @@ let times = {
 }
 
 function calcHour24(TimeHour) {
-  for (let i = TimeHour; i >= 24; i -= TimeHour) {
+  for (let i = TimeHour; i >= 24; i -= 24) {
     if (TimeHour >= 24) {
       TimeHour -= 24;
     }
-    return TimeHour;
   }
+  return TimeHour;
 }
 
 function calcTimeSeconds(addSeconds) {
@@ -92,7 +92,7 @@ function calcTimeSeconds(addSeconds) {
     minutes = times.minutes * 60,
     seconds = times.seconds;
 
-  sum = hour + minutes + times.seconds + addSeconds;
+  let sum = hour + minutes + seconds + addSeconds;
   hour = Math.floor(sum / 3600);
   minutes = Math.floor((sum - hour * 3600) / 60);
   seconds = Math.floor(sum - hour * 3600 - minutes * 60);
@@ -123,4 +123,30 @@ function calcTimeHour(addHour) {
 
 console.log(calcTimeSeconds(20000));
 console.log(calcTimeMinutes(600));
-console.log(calcTimeHour(5));
+console.log(calcTimeHour(45));
+
+
+//Максимум
+let sumFraction = {
+  sum: function(a, b) {
+    return `${a} + ${b} = ${(a + b).toFixed(2)}`;
+  },
+  diff: function(a, b) {
+    return `${a} - ${b} = ${(a - b).toFixed(2)}`;
+  },
+  product: function (a, b) {
+    return `${a} * ${b} = ${(a * b).toFixed(2)}`;
+  },
+  quotient: function (a, b) {
+    return `${a} / ${b} = ${(a / b).toFixed(2)}`;
+  },
+  fraction_reduction: function (a) {
+    return `${a} = ${Math.round(a)}`;
+  }
+}
+
+console.log(sumFraction.sum(0.1, 0.2));
+console.log(sumFraction.diff(0.47, 0.33));
+console.log(sumFraction.product(3.56, 12.71));
+console.log(sumFraction.quotient(1.82, 3.77));
+console.log(sumFraction.fraction_reduction(5.71));
