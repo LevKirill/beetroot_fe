@@ -68,3 +68,56 @@ function calcTimeFuel (distance) {
 }
 
 console.log(calcTimeFuel(1273));
+
+// Норма 1
+let data = new Date();
+
+let times = {
+  hour: data.getHours(),
+  minutes: data.getMinutes(),
+  seconds: data.getSeconds()
+}
+
+function calcTimeSeconds (addSeconds) {
+  let hour = times.hour * 3600,
+    minutes = times.minutes * 60,
+    seconds = times.seconds;
+    sum = hour + minutes + times.seconds + addSeconds;
+    hour = Math.floor(sum / 3600);
+    minutes = Math.floor((sum - hour * 3600) / 60);
+    seconds = Math.floor(sum - hour * 3600 - minutes * 60);
+    for (let i = hour; i >= 24; i -= hour) {
+      if (hour >= 24) {
+        hour -= 24;
+      }
+    }
+    return `Було - ${times.hour}:${times.minutes}:${times.seconds}. Якщо додати ${addSeconds} секунд, стане ${hour}:${minutes}:${seconds}`
+}
+
+function calcTimeMinutes (addMinutes) {
+  let hour = times.hour * 60,
+    minutes,
+    sum = hour + times.minutes + addMinutes;
+    hour = Math.floor(sum / 60);
+    minutes = Math.floor(sum - hour * 60);
+    for (let i = hour; i >= 24; i -= hour) {
+      if (hour >= 24) {
+        hour -= 24;
+      }
+    }
+    return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addMinutes} хвилин, стане ${hour}:${minutes}:${times.seconds}`
+}
+
+function calcTimeHour (addHour) {
+  let sum = times.hour + addHour;
+    for (let i = sum; i >= 24; i -= sum) {
+      if (sum >= 24) {
+        sum -= 24;
+      }
+    }
+    return `Було - ${times.hour}:${times.minutes}:${times.seconds} Якщо додати ${addHour} годин, стане ${sum}:${times.minutes}:${times.seconds}`
+}
+
+console.log(calcTimeSeconds(18000));
+console.log(calcTimeMinutes(300));
+console.log(calcTimeHour(5));
