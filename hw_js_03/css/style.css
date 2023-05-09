@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+table {
+  margin-top: 20px;
+}
+table, table th, table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table p {
+  padding: 6px 10px;
+  margin: 0;
+}
+table p:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+table p:nth-child(2n-1) {
+  background-color: #e5e3e3;
+}
+
+.none {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
