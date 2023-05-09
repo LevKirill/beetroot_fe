@@ -1,0 +1,8 @@
+@import 'mixins';
+
+@include font("iconsfont", "iconsfont", "400", "normal");
+@include font("Montserrat", "montserrat-regular", "400", "normal");
+@include font("Montserrat", "montserrat-bold", "700", "normal");
+@include font("Open Sans", "opensans-regular", "400", "normal");
+@include font("Open Sans", "opensans-italic", "400", "italic");
+@include font("Source Sans Pro", "sourcesanspro-regular", "400", "normal");

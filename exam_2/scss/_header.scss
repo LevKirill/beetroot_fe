@@ -1,0 +1,61 @@
+@import 'vars';
+
+.header {
+  position: fixed;
+  background: transparent;
+  width: 100%;
+  left: 0;
+  top: 3.3125em;
+  z-index: 10;
+  transition: all 0.2s ease-in;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 15.0625em 1fr 10em;
+    column-gap: 1em;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 32.1875em;
+      width: 100%;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.875em;
+        &:before {
+          content: '';
+          display: block;
+          width: 0.875em;
+          height: 0.875em;
+          border-radius: 50%;
+          border: 1px solid $colorWhite;
+          background: transparent;
+        }
+        &.active:before {
+          background-color: $colorWhite;
+        }
+        a {
+          font-size: 0.875em;
+          font-weight: 400;
+          line-height: 1.28;
+          color: $colorWhite;
+          text-decoration: none;
+          text-transform: uppercase;
+          outline: none;
+        }
+      }
+    }
+  }
+  &__sticky {
+    background: linear-gradient(251.06deg, $colorViolet -2.19%, $colorBlue 103.21%);
+    top: 0;
+    padding: 0.5em 0;
+    box-shadow: 0 -2px 16px linear-gradient(-251.06deg, $colorViolet -2.19%, $colorBlue 103.21%);
+  }
+}

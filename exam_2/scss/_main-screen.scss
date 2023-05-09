@@ -1,0 +1,81 @@
+@import 'vars';
+
+.main_screen {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  &__slider {
+    width: 100%;
+    height: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25em;
+      text-align: center;
+      text-transform: uppercase;
+      height: 100%;
+      color: $colorWhite;
+    }
+    &--title {
+      font-size: 5em;
+      font-weight: 700;
+      line-height: 1.225;
+      letter-spacing: 0.1em;
+    }
+    &--desc {
+      font-size: 1.125em;
+      font-weight: 400;
+      line-height: 1.22;
+      letter-spacing: 0.3em;
+    }
+    .swiper-pagination {
+      right: 3.25em;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5em;
+      .swiper-pagination-bullet {
+        margin: 0;
+        width: 0.625em;
+        height: 0.625em;
+        border: 1px solid $colorWhite;
+        opacity: 1;
+        background: transparent;
+        transition: $transition;
+        &-active {
+          background: $colorWhite;
+        }
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    bottom: 3.125em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 1px solid rgba($color: $colorWhite, $alpha: 0.7);
+    z-index: 2;
+    color: $colorWhite;
+    text-decoration: none;
+    &:before {
+      font-size: 0.625em;
+    }
+  }
+}

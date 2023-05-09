@@ -1,0 +1,61 @@
+@import 'vars';
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $colorDarkBlue;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+  display: block;
+  width: 15.0625em;
+  height: 3.375em;
+  background: url("#{$linkImg}/logo.png") no-repeat;
+  background-size: cover;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25em;
+    align-self: center;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50%;
+      border: 1px solid rgba($color: $colorWhite, $alpha: 0.4);
+      text-decoration: none;
+      color: $colorWhite;
+      &:before {
+        font-size: 1.125em;
+      }
+      &.iconfont-instagram:before {
+        position: relative;
+        right: -1px;
+      }
+    }
+  }
+}
