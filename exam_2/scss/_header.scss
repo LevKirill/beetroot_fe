@@ -25,21 +25,6 @@
       max-width: 32.1875em;
       width: 100%;
       li {
-        display: flex;
-        align-items: center;
-        gap: 0.875em;
-        &:before {
-          content: '';
-          display: block;
-          width: 0.875em;
-          height: 0.875em;
-          border-radius: 50%;
-          border: 1px solid $colorWhite;
-          background: transparent;
-        }
-        &.active:before {
-          background-color: $colorWhite;
-        }
         a {
           font-size: 0.875em;
           font-weight: 400;
@@ -47,14 +32,30 @@
           color: $colorWhite;
           text-decoration: none;
           text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: 0.875em;
+          &:before {
+            content: '';
+            display: block;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            border: 1px solid $colorWhite;
+            background: transparent;
+            transition: $transition;
+          }
+          &.active:before {
+            background-color: $colorWhite;
+          }
         }
       }
     }
   }
   &__sticky {
-    background: linear-gradient(251.06deg, $colorViolet -2.19%, $colorBlue 103.21%);
+    background: $headerGradient;
     top: 0;
     padding: 0.5em 0;
-    box-shadow: 0 -2px 16px linear-gradient(-251.06deg, $colorViolet -2.19%, $colorBlue 103.21%);
+    box-shadow: 0 -2px 16px $headerGradient;
   }
 }

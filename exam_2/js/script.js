@@ -2,7 +2,7 @@
 let date = new Date(),
   dateYear = date.getFullYear(),
   copyright = document.querySelector('.copyright'),
-  contacts = document.getElementById('contacts'),
+  contacts = document.querySelector('#contacts .contacts'),
   footer = document.querySelector('.footer'),
   bottom = contacts.offsetHeight / 3;
 
@@ -14,7 +14,6 @@ footer.style.padding = `${Math.round(bottom + 54)}px 0`;
 const swiper = new Swiper(".main_screen__slider", {
   direction: "vertical",
   spaceBetween: 30,
-  centeredSlides: true,
   effect: "cube",
   grabCursor: true,
   loop: true,
@@ -87,8 +86,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+//Header sticky
 let element = document.querySelector('.header');
-
 window.addEventListener('scroll', function () {
   if (window.scrollY > 53) {
     element.classList.add("header__sticky");
@@ -111,3 +110,13 @@ window.addEventListener('scroll', function () {
     });
   }
 })();
+
+//Scrollspy
+window.onload = function () {
+  scrollSpy('#navMain', {
+    sectionSelector: 'section',
+    targetSelector: 'a',
+    activeClass: 'active',
+    offset: 120
+  });
+}

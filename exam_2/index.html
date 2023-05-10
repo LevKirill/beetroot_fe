@@ -10,10 +10,10 @@
 	<body>
 		<header class="header">
 			<div class="wrapper header__wrapper">
-				<a href="#about-us" class="logo"></a>
+				<a href="#aboutUs" class="logo"></a>
 				<nav class="header__menu">
-					<ul>
-						<li class="active"><a href="#about-us">About us</a></li>
+					<ul id="navMain">
+						<li><a href="#aboutUs" class="active">About us</a></li>
 						<li><a href="#projects">Projects</a></li>
 						<li><a href="#news">News</a></li>
 						<li><a href="#contacts">Contact</a></li>
@@ -29,7 +29,7 @@
 			</div>
 		</header>
 		<main class="main">
-			<section id="about-us" class="main_screen">
+			<section id="aboutUs" class="main_screen">
 				<div class="swiper main_screen__slider">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
@@ -88,8 +88,34 @@
 				<a href="#projects" class="main_screen__arrow iconfont-arrow-up"></a>
 			</section>
 			<section id="projects" class="projects">
-				<div class="wrapper">
+				<div class="wrapper projects__wrapper">
 					<h2 class="title">What we do</h2>
+					<div class="projects__items projects__items--left">
+						<picture class="projects__img projects__img--left">
+							<source srcset="./img/about-work/img-about-work-trade-center.webp" type="image/webp">
+							<img src="./img/about-work/img-about-work-trade-center.jpg" alt="Trade Center">
+						</picture>
+						<div class="projects__container projects__container--left">
+							<h2 class="projects__title">One World</h2>
+							<h3 class="projects__subtitle">Trade Center</h3>
+							<p class="projects__desc">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
+							<button class="projects__more">More Details</button>
+							<a href="https://goo.gl/maps/5Sce2AwG4ybWdczw6" class="projects__address iconfont-marker" target="_blank">New York City, United States - 1776 feet</a>
+						</div>
+					</div>
+					<div class="projects__items projects__items--right">
+						<picture class="projects__img projects__img--right">
+							<source srcset="./img/about-work/img-about-work-commerce-centre.webp" type="image/webp">
+							<img src="./img/about-work/img-about-work-commerce-centre.jpg" alt="Commerce Centre">
+						</picture>
+						<div class="projects__container projects__container--right">
+							<h2 class="projects__title">International</h2>
+							<h3 class="projects__subtitle">Commerce Centre</h3>
+							<p class="projects__desc">Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
+							<button class="projects__more">More Details</button>
+							<a href="https://goo.gl/maps/SJCbFFEtC7Ag9nDi8" class="projects__address iconfont-marker" target="_blank">Hong Kong - 1588 feet</a>
+						</div>
+					</div>
 				</div>
 			</section>
 			<section id="news" class="news">
@@ -263,9 +289,9 @@
 					<button class="gallery__see_more">See more</button>
 				</div>
 			</section>
-			<article class="contacts_map">
+			<section id="contacts" class="contacts_map">
 				<section class="map"></section>
-				<section id="contacts" class="contacts">
+				<section class="contacts">
 					<div class="wrapper">
 						<h2 class="title">Get in touch</h2>
 						<ul class="contacts__list">
@@ -283,11 +309,11 @@
 						</form>
 					</div>
 				</section>
-			</article>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="wrapper footer__wrapper">
-				<a href="#about-us" class="logo"></a>
+				<a href="#aboutUs" class="logo"></a>
 				<nav class="social footer__social">
 					<ul>
 						<li><a href="https://www.facebook.com/" class="iconfont-facebook"></a></li>
@@ -300,7 +326,7 @@
 		</footer>
 		<script src="./js/swiper-bundle.min.js"></script>
 		<script src="./js/simplebox_util.js"></script>
+		<script src="./js/scrollspy.min.js"></script>
 		<script src="./js/script.js"></script>
-		<script src=""></script>
 	</body>
 </html>

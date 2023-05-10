@@ -1,6 +1,6 @@
 @import 'vars';
 
-@mixin font($font_name, $file_name, $weight, $style: normal) {
+@mixin font ($font_name, $file_name, $weight, $style: normal) {
   @font-face {
     font-family: $font_name;
     font-display: swap;
@@ -14,7 +14,6 @@
     font-style: #{$style};
   }
 }
-
 @mixin bullet ($direction: row) {
   display: flex;
   flex-direction: $direction;
@@ -31,4 +30,21 @@
       background: $colorWhite;
     }
   }
+}
+@mixin btnMore ($margin: 0 auto) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $margin;
+  border: 1px solid $colorDarkBlue;
+  width: 13.57em;
+  height: 3.57em;
+  background-color: transparent;
+  font-family: $fontMontserrat;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorBlack;
 }
