@@ -1,3 +1,5 @@
+@import 'vars';
+
 @mixin font($font_name, $file_name, $weight, $style: normal) {
   @font-face {
     font-family: $font_name;
@@ -10,5 +12,23 @@
          url('../fonts/#{$file_name}.woff2') format('woff2');
     font-weight: #{$weight};
     font-style: #{$style};
+  }
+}
+
+@mixin bullet ($direction) {
+  display: flex;
+  flex-direction: $direction;
+  gap: 2.5em;
+  .swiper-pagination-bullet {
+    margin: 0;
+    width: 0.625em;
+    height: 0.625em;
+    border: 1px solid $colorWhite;
+    opacity: 1;
+    background: transparent;
+    transition: $transition;
+    &-active {
+      background: $colorWhite;
+    }
   }
 }

@@ -1,0 +1,26 @@
+@import 'vars';
+
+.footer {
+  min-height: 32.3125em;
+  background: url("#{$linkImg}/background/back-footer.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 12.6875em;
+  &__wrapper {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 15.0625em 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 2.5625em 1em;
+  }
+  &__social {
+    justify-self: flex-end;
+  }
+  .copyright {
+    font-family: $fontMontserrat;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.21;
+    color: $colorWhite;
+    grid-column: 1/3;
+  }
+}

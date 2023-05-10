@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'mixins';
 
 .main_screen {
   position: relative;
@@ -42,21 +43,7 @@
     }
     .swiper-pagination {
       right: 3.25em;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5em;
-      .swiper-pagination-bullet {
-        margin: 0;
-        width: 0.625em;
-        height: 0.625em;
-        border: 1px solid $colorWhite;
-        opacity: 1;
-        background: transparent;
-        transition: $transition;
-        &-active {
-          background: $colorWhite;
-        }
-      }
+      @include bullet(column);
     }
   }
   &__arrow {

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $fontOpenSans;
   font-size: 16px;
   font-weight: 400;
   color: $colorDarkBlue;
@@ -19,7 +19,31 @@ body {
 }
 
 h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $fontMontserrat;
+}
+
+h2.title {
+  font-size: 2.75em;
+  font-weight: 700;
+  line-height: 1.23;
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorDarkBlue;
+  &:before {
+    content: '';
+    display: block;
+    font-size: 0.45em; //20px
+    width: 5em;
+    height: 1px;
+    margin: 0 auto 1.5em;
+    background: $colorDarkBlue;
+  }
+  &__white {
+    color: $colorWhite;
+    &:before {
+      background-color: $colorWhite;
+    }
+  }
 }
 
 .logo {
