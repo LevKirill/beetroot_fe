@@ -1,10 +1,8 @@
 @import 'vars';
 
 .footer {
-  min-height: 32.3125em;
   background: url("#{$linkImg}/background/back-footer.jpg") no-repeat;
   background-size: cover;
-  padding-top: 12.6875em;
   &__wrapper {
     max-width: 800px;
     display: grid;

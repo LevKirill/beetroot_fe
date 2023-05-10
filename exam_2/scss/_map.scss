@@ -1,0 +1,9 @@
+@import 'vars';
+
+.map {
+  position: relative;
+  height: 43.75em;
+  background: url("#{$linkImg}/background/back-map.jpg") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
