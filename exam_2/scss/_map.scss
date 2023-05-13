@@ -1,9 +1,5 @@
 @import 'vars';
 
-.map {
-  position: relative;
+.google_map {
   height: 43.75em;
-  background: url("#{$linkImg}/background/back-map.jpg") no-repeat;
-  background-size: cover;
-  z-index: -1;
 }
