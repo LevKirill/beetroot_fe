@@ -1,0 +1,59 @@
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hw_1 .content,
+.hw_1 .edit {
+  min-height: 150px;
+  height: auto;
+  width: 400px;
+  font-size: 14px;
+  display: block;
+}
+.hw_1 .content {
+  padding: 5px;
+  border: 1px solid black;
+}
+.hw_1 .edit {
+  padding: 3px;
+  border-width: 3px;
+}
+
+.hw_2 table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+.hw_2 table tr th {
+  padding: 5px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.hw_2 table tr th:hover {
+  color: blue;
+}
+.hw_2 table tr th:not(:last-child) {
+  border-right: 1px solid black;
+}
+.hw_2 table tr td:not(:first-child) {
+  border-left: 1px solid black;
+}
+.hw_2 table tr td:not(:last-child) {
+  border-right: 1px solid black;
+}
+.hw_2 table tr:nth-child(2n) {
+  background-color: #e8e8ec;
+}
+
+.hw_3 .resize {
+  width: 200px;
+  height: 100px;
+  border-radius: 0 0 50px 50px;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
