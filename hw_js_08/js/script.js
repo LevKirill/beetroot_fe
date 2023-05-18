@@ -35,23 +35,32 @@ function editEnd() {
 }
 
 // HW_2
-let btn = document.querySelectorAll('.hw_2 th'),
-  td1 = document.querySelectorAll('.hw_2 td:nth-child(1)'),
-  td2 = document.querySelectorAll('.hw_2 td:nth-child(2)'),
-  td3 = document.querySelectorAll('.hw_2 td:nth-child(3)');
+let btn = document.querySelectorAll('.sort th'),
+  td = [],
+  tdText = [],
+  tdColumn = [];
+  index = 1;
 
-btn[0].addEventListener('click', function () { sort(td1); });
-btn[1].addEventListener('click', function () { sort(td2); });
-btn[2].addEventListener('click', function () { sort(td3); });
+for (let i = 0; i < btn.length; i++) {
+  td[i] = document.querySelectorAll(`.sort td:nth-child(${index})`);
+  for (let j = 0; j < td[i].length; j++) {
+    tdText[j] = td[i][j].innerText;
+    tdColumn[i] = tdText.slice();
+  }
+  btn[i].addEventListener('click', function () { sort(tdColumn[i], td[i]); });
+  index++;
+}
 
 // Function HW_2
-function sort (tdAccepted) {
+function sort (tdAccepted, td) {
   let tdArray = [];
   for (let i = 0; i < tdAccepted.length; i++) {
-    tdArray[i] = tdAccepted[i].innerText;
+    for (let j = 0; j < tdAccepted[i].length; j++) {
+      tdArray[i] = tdAccepted[i];
+    }
   }
   tdArray.sort(function(a, b){return a-b});
   for (let i = 0; i < tdArray.length; i++) {
-    tdAccepted[i].textContent = tdArray[i];
+    td[i].innerText = tdArray[i];
   }
 }
