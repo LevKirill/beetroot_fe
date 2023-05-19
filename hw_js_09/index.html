@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OnWave</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="wrapper">
+    <a href="#home" class="logo"><svg class="icon"><use xlink:href="./img/sprite.svg#logo"></use></svg></a>
+    <nav class="menu header__menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#catalog">Catalog</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
+    <ul class="items">
+      <li><button class="search"><svg class="icon"><use xlink:href="./img/sprite.svg#search"></use></svg></button></li>
+      <li><button class="search"><svg class="icon"><use xlink:href="./img/sprite.svg#profile"></use></svg></button></li>
+    </ul>
+  </div>
+</header>
+<main>
+  <section id="home" class="main_screen">
+    <div class="swiper main_screen__swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <picture>
+            <source srcset="./img/slider/back/slide-back-1.webp" type="image/webp">
+            <img src="./img/slider/back/slide-back-1.jpg" alt="Slide 1">
+          </picture>
+          <div class="wrapper main_screen__wrapper">
+            <div class="content">
+              <h2 class="title title__white">discover new options</h2>
+              <button class="btn btn__white">View more</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <source srcset="./img/slider/back/slide-back-2.webp" type="image/webp">
+            <img src="./img/slider/back/slide-back-2.jpg" alt="Slide 2">
+          </picture>
+          <div class="wrapper main_screen__wrapper">
+            <div class="content">
+              <h2 class="title title__white">expand your horizons</h2>
+              <button class="btn btn__white">View more</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <source srcset="./img/slider/back/slide-back-3.webp" type="image/webp">
+            <img src="./img/slider/back/slide-back-3.jpg" alt="Slide 3">
+          </picture>
+          <div class="wrapper main_screen__wrapper">
+            <div class="content">
+              <h2 class="title title__white">Find your own style</h2>
+              <button class="btn btn__white">View more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <section id="catalog" class="news">
+    <div class="wrapper">
+
+    </div>
+  </section>
+</main>
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>

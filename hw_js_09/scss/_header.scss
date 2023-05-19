@@ -1,0 +1,47 @@
+@import 'vars';
+
+.header {
+  background-color: $colorBrownLight;
+  position: sticky;
+  top: 0;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 11.375em 1fr 6.375em;
+    align-items: center;
+  }
+  .logo {
+    text-decoration: none;
+    outline: none;
+    svg {
+      width: 11.375em;
+      height: 2.125em;
+    }
+  }
+  .menu {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        height: 4em;
+      }
+    }
+  }
+  .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875em;
+    button {
+      display: block;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      line-height: 0;
+      svg {
+        width: 2.25em;
+        height: 2.25em;
+      }
+    }
+  }
+}
