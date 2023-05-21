@@ -66,3 +66,31 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .main_screen__slider--title {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main_screen__slider .swiper-pagination {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main_screen__slider--title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .header .logo {
+    width: 12.0625em;
+    height: 2.6875em;
+  }
+  .main_screen__slider .wrapper {
+    font-size: 0.9em;
+  }
+}

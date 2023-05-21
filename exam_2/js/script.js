@@ -7,8 +7,8 @@ let date = new Date(),
   bottom = contacts.offsetHeight / 3;
 
 copyright.textContent = `Copyrights © ${dateYear} Montichello`;
-contacts.style.bottom = `-${Math.round(bottom)}px`;
-footer.style.padding = `${Math.round(bottom + 54)}px 0`;
+
+window.initMap = initMap;
 
 //Slider in section.main_screen
 const swiper = new Swiper(".main_screen__slider", {
@@ -35,31 +35,29 @@ const swiper = new Swiper(".main_screen__slider", {
 
 //Slider in section.news
 const swiperNews = new Swiper(".news__slider", {
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   loop: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".news__pagination",
     clickable: true,
   },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  // breakpoints: {
-  //   640: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 20,
-  //   },
-  //   768: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 40,
-  //   },
-  //   1024: {
-  //     slidesPerView: 5,
-  //     spaceBetween: 50,
-  //   },
-  // },
+  breakpoints: {
+    570: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 20,
+    },
+    980: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 30,
+    },
+  },
 });
 
 // Плавна прокрутка до якоря
@@ -86,6 +84,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+//Scrollspy
+window.onload = function () {
+  scrollSpy('#navMain', {
+    sectionSelector: 'section',
+    targetSelector: 'a',
+    activeClass: 'active',
+    offset: 120
+  });
+}
+
 //Header sticky
 let element = document.querySelector('.header');
 window.addEventListener('scroll', function () {
@@ -98,7 +106,7 @@ window.addEventListener('scroll', function () {
 
 //Gallery
 (function () {
-  var boxes = [], els, i, l;
+  let boxes = [], els, i, l;
   if (document.querySelectorAll) {
     els = document.querySelectorAll('a[rel=simplebox]');
     Box.getStyles('simplebox_css', './css/style.css');
@@ -111,28 +119,17 @@ window.addEventListener('scroll', function () {
   }
 })();
 
-//Scrollspy
-window.onload = function () {
-  scrollSpy('#navMain', {
-    sectionSelector: 'section',
-    targetSelector: 'a',
-    activeClass: 'active',
-    offset: 120
-  });
-}
-
 // Google Map
 let map;
-
 function initMap() {
   map = new google.maps.Map(document.getElementById("googleMap"), {
     center: { lat: 40.6686, lng: -73.8999 },
-    zoom: 13.5,
+    zoom: 17,
     mapId: '2f084b4895741534',
   });
 
   const marker = new google.maps.Marker({
-    position: { lat: 40.6781, lng: -73.8981 },
+    position: { lat: 40.6686, lng: -73.8999 },
     map: map,
     title: "Monticello",
     icon: {
@@ -142,4 +139,59 @@ function initMap() {
   });
 }
 
-window.initMap = initMap;
+//Validation Form
+$(document).ready(function() {
+  $("#myForm").validate({
+    rules: {
+      name : {
+        required: true,
+        minlength: 3
+      },
+      email: {
+        required: true,
+        email: true
+      },
+    }
+  });
+});
+
+let hamburger = $('.hamburger'),
+  headerMenu = $('.header__menu');
+
+$(document).ready(function() {
+  // Optimalisation: Store the references outside the event handler:
+  let $window = $(window),
+    windowsize;
+    indentContAndFooter($(window).width());
+  function checkWidth() {
+    windowsize = $window.width();
+    indentContAndFooter(windowsize);
+  }
+
+  $(window).resize(checkWidth);
+});
+
+hamburger.on('click', function () {
+  let linkOnClick = $('.header__menu a[href^="#"]');
+
+  clickHamburger();
+
+  linkOnClick.on('click', function () {
+    clickHamburger();
+  });
+});
+
+function indentContAndFooter (width) {
+  if (width > 800) {
+    contacts.style.bottom = `-${Math.round(bottom)}px`;
+    footer.style.padding = `${Math.round(bottom + 54)}px 0`;
+  } else {
+    contacts.style.bottom = `0`;
+    footer.style.padding = `1.875em 0`;
+  }
+}
+
+function clickHamburger () {
+  headerMenu.toggleClass('header__menu--active');
+  hamburger.toggleClass('hamburger__pressed');
+}

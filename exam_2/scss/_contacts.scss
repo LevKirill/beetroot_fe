@@ -52,20 +52,38 @@
     display: flex;
     flex-direction: column;
     gap: 1.9375em;
-    .input {
-      font-family: $fontMontserrat;
-      font-weight: 400;
-      font-size: 1.125em;
-      line-height: 1.5;
-      color: $colorBlack;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid $colorDarkBlue;
-      background-color: transparent;
-      padding: 0 0 0.78em;
-      outline: none;
-      &::placeholder {
-        color: $colorPlaceholder;
+    .item_input {
+      position: relative;
+      .input {
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 1.125em;
+        line-height: 1.5;
+        color: $colorBlack;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $colorDarkBlue;
+        background-color: transparent;
+        padding: 0 0 0.78em;
+        outline: none;
+        transition: 0.2s ease-in;
+        &::placeholder {
+          color: $colorPlaceholder;
+        }
+        &.error {
+          border-color: #f15151;
+          &::placeholder {
+            color: rgba(241, 81, 81, 0.7);
+          }
+        }
+        & + .error {
+          position: absolute;
+          font-size: 14px;
+          color: #f15151;
+          width: 100%;
+          bottom: -18px;
+          left: 0;
+        }
       }
     }
     .submit {
@@ -80,6 +98,41 @@
       width: 7.78em;
       height: 2.78em;
       background-color: transparent;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contacts {
+    position: relative;
+    padding: 0;
+    .wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+      gap: 2.625em 1.5em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contacts {
+    .wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: 'contactsTitle'
+                           'contactsList'
+                           'contactsForm';
+    }
+    &__list {
+      align-items: center;
+    }
+    &__form {
+      justify-self: center;
+      max-width: 300px;
+      width: 100%;
+      .submit {
+        align-self: center;
+      }
     }
   }
 }

@@ -12,10 +12,18 @@
     .news__slider {
       padding: 5.625em 0 3.125em;
       width: 100%;
+      overflow: hidden;
+      .swiper-slide {
+        height: auto;
+      }
       .news__slide {
         background-color: $colorWhite;
+        height: 100%;
         &--container {
           padding: 0 1.25em 1.875em;
+          display: flex;
+          flex-direction: column;
+          height: calc(100% - 15em);
         }
         &--img {
           width: 100%;
@@ -49,6 +57,7 @@
                                 'authorImg authorDate';
           font-family: $fontMontserrat;
           font-weight: 400;
+          margin-top: auto;
           picture {
             grid-area: authorImg;
             width: 3.75em;
@@ -117,5 +126,69 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .news .slider_container .swiper-button {
+    &-prev {
+      left: -3em;
+    }
+    &-next {
+      right: -3em;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .news .slider_container {
+    display: flex;
+    flex-direction: column-reverse;
+    .news__slider {
+      padding-top: 1.2em;
+    }
+    .block_pagination {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      padding-top: 1.875em;
+      .swiper-button {
+        position: relative;
+        margin: 0;
+        &-prev {
+          left: auto;
+        }
+        &-next {
+          right: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .news {
+    min-height: auto;
+    .slider_container {
+      .news__slider {
+        .news__slide--title {
+          font-size: 1.1em;
+        }
+        .news__slide--desc {
+          font-size: 0.9em;
+        }
+      }
+      .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .news__wrapper {
+    padding-top: 4em;
   }
 }

@@ -3,25 +3,21 @@
 *, ::before, ::after {
   box-sizing: border-box;
 }
-
 body {
   font-family: $fontOpenSans;
   font-size: 16px;
   font-weight: 400;
   color: $colorDarkBlue;
 }
-
 .wrapper {
   max-width: 1200px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
-
 h2, h3 {
   font-family: $fontMontserrat;
 }
-
 h2.title {
   font-size: 2.75em;
   font-weight: 700;
@@ -29,6 +25,9 @@ h2.title {
   text-align: center;
   text-transform: uppercase;
   color: $colorDarkBlue;
+  @media screen and (max-width: 479px) {
+    font-size: 2em;
+  }
   &:before {
     content: '';
     display: block;
@@ -45,7 +44,6 @@ h2.title {
     }
   }
 }
-
 .logo {
   display: block;
   width: 15.0625em;
@@ -53,7 +51,6 @@ h2.title {
   background: url("#{$linkImg}/logo.png") no-repeat;
   background-size: cover;
 }
-
 .social {
   display: flex;
   align-items: center;
