@@ -139,6 +139,8 @@ function initMap() {
   });
 }
 
+$(document).ready(window.initMap = initMap);
+
 //Validation Form
 $(document).ready(function() {
   $("#myForm").validate({
