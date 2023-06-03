@@ -15,8 +15,8 @@ $fontSourceSansPro: 'Source Sans Pro', sans-serif;
 $width: 30px; //Ширина Гамбургера
 $height: 22px; //Высота Гамбургера
 $spanHeight: 2px; //Высота одной полоски
-$topTwo: calc($height / 2 - $spanHeight + 1px); //Отступ второй полоски сверху
-$topThree: calc($height - $spanHeight); //Отступ третьей полоски сверху
+$topTwo: $height / 2 - $spanHeight + 1px; //Отступ второй полоски сверху
+$topThree: $height - $spanHeight; //Отступ третьей полоски сверху
 $hamburgerColor: $colorWhite; //Цвет полосок
 
 //Other

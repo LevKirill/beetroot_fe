@@ -1,14 +1,14 @@
 //Text copyright in footer
-let date = new Date(),
-  dateYear = date.getFullYear(),
-  copyright = document.querySelector('.copyright'),
-  contacts = document.querySelector('#contacts .contacts'),
-  footer = document.querySelector('.footer'),
-  bottom = contacts.offsetHeight / 3;
+let date = new Date();
+// let dateYear = date.getFullYear();
+let copyright = document.querySelector('.copyright span');
 
-copyright.textContent = `Copyrights © ${dateYear} Montichello`;
+copyright.textContent = date.getFullYear();
 
-window.initMap = initMap;
+
+let contacts = document.querySelector('#contacts .contacts');
+let footer = document.querySelector('.footer');
+let bottom = contacts.offsetHeight / 3;
 
 //Slider in section.main_screen
 const swiper = new Swiper(".main_screen__slider", {

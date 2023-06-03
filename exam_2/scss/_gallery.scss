@@ -81,3 +81,32 @@
     @include btnMore();
   }
 }
+
+@media screen and (max-width: 980px) {
+  .gallery {
+    &__wrapper {
+      padding: 7em 15px;
+    }
+    &__container {
+      max-width: 580px;
+      margin-right: auto;
+      margin-left: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2fr 1fr 1fr;
+      grid-template-areas:  'gallery1 gallery1'
+                          'gallery2 gallery3'
+                          'gallery4 gallery5';
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    &__wrapper {
+      padding: 4em 15px;
+    }
+    &__container {
+      padding-top: 3.5em;
+    }
+  }
+}
