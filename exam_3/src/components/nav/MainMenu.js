@@ -1,9 +1,10 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 function mainMenu (props) {
   const listItems = props.links.map((item, index) =>
     <li key={item.link.toString()}>
-      <a href={ item.path }>{ item.link }</a>
+      <NavLink to={ item.path }>{ item.link }</NavLink>
     </li>
   );
 

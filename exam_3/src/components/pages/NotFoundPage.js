@@ -1,4 +1,11 @@
-function notFoundPage () {
+import {useEffect} from "react";
+
+function NotFoundPage () {
+  useEffect(() => {
+    document.title = 'Not Found Page';
+  }, []);
+
+
   return (
     <div>
       <h1>404</h1>
@@ -7,4 +14,4 @@ function notFoundPage () {
   );
 }
 
-export default notFoundPage;
+export default NotFoundPage;
