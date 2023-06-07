@@ -1,4 +1,5 @@
 import {useEffect} from "react";
+import MoviesList from "../layout/MoviesList";
 
 function Movies () {
   useEffect(() => {
@@ -7,7 +8,7 @@ function Movies () {
 
 
   return (
-    <div>Movies Page</div>
+    <MoviesList />
   );
 }
 
