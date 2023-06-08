@@ -31,8 +31,14 @@ function MoviesList () {
   if (error) {
     return ( <div className="error"><h2>{ error }</h2></div> );
   } else if (movies) {
+    const items = movies.map((movie, index) =>
+      <div key={index} className="movie">
+        <img src={imageBaseURL + movie.poster_path}/>
+        <h2>{movie.title}</h2>
+      </div>
+    );
     return (
-      <div>Yes!</div>
+      <div className="movie">{ items }</div>
     );
   }
 }
