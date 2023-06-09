@@ -1,0 +1,31 @@
+//Colors
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorLinkHover: #ff55a5;
+
+//Color Background
+$backgroundHeader: #2b2b31;
+
+//Mixins
+@mixin font ($font_name, $file_name, $weight, $style: normal) {
+  @font-face {
+    font-family: $font_name;
+    src: url(../fonts/#{$file_name}.ttf) format('truetype'),
+    url(../fonts/#{$file_name}.woff2) format('woff2');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin image ($max_width) {
+  max-width: $max_width;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@mixin fonts ($font_size: 1em, $font_weight: 400, $line_height: 1.15) {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  line-height: $line_height;
+}

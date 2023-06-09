@@ -33,8 +33,10 @@ function MoviesList () {
   } else if (movies) {
     const items = movies.map((movie, index) =>
       <div key={index} className="movie">
-        <img src={imageBaseURL + movie.poster_path}/>
-        <h2>{movie.title}</h2>
+        <Link to={"/movie/" + movie.id}>
+          <img src={imageBaseURL + movie.poster_path}/>
+          <h2>{movie.title}</h2>
+        </Link>
       </div>
     );
     return (

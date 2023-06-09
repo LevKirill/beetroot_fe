@@ -9,7 +9,7 @@ function mainMenu (props) {
   );
 
   return (
-    <nav>
+    <nav className="menu">
       <ul>{ listItems }</ul>
     </nav>
   );

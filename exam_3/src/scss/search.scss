@@ -1,0 +1,18 @@
+@import "vars";
+
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.75em;
+  background-color: $backgroundHeader;
+  box-shadow: 0 5px 25px 0 rgba($color: $colorBlack, $alpha: .3);
+  border-top: 1px solid rgba($color: $colorWhite, $alpha: .05);
+  z-index: 99;
+  transition: 0.2s ease-in;
+}
+
+header.active + .search {
+  top: 3.75em;
+}
