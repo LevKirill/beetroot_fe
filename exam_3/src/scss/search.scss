@@ -7,10 +7,51 @@
   right: 0;
   height: 3.75em;
   background-color: $backgroundHeader;
-  box-shadow: 0 5px 25px 0 rgba($color: $colorBlack, $alpha: .3);
+  box-shadow: 0 0.3125em 1.5625em 0 rgba($color: $colorBlack, $alpha: .3);
   border-top: 1px solid rgba($color: $colorWhite, $alpha: .05);
   z-index: 99;
   transition: 0.2s ease-in;
+  .wrapper {
+    height: 100%;
+  }
+  .search_form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  input {
+    &[name="search"] {
+      width: 100%;
+      height: 100%;
+      background-color: $backgroundSearch;
+      border: none;
+      outline: none;
+      padding: 0 8.125em 0 1.25em;
+    }
+    &[type="submit"] {
+      position: absolute;
+      right: 1.67em;
+      height: 3.33em;
+      width: 7.5em;
+      top: 0.83em;
+      border: none;
+      border-radius: 0.33em;
+      background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+      box-shadow: 0 0 1.67em 0 rgba(255,88,96,0.5);
+      opacity: .85;
+      font-size: 0.75em;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: 0.2s ease-in;
+      &:hover {
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 header.active + .search {

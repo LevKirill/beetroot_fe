@@ -1,43 +1,13 @@
 @font-face {
   font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-light.ttf) format("truetype"), url(../fonts/ubuntu-light.woff2) format("woff2");
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-lightitalic.ttf) format("truetype"), url(../fonts/ubuntu-lightitalic.woff2) format("woff2");
-  font-weight: 300;
-  font-style: italic; }
-@font-face {
-  font-family: "Ubuntu";
   src: url(../fonts/ubuntu-regular.ttf) format("truetype"), url(../fonts/ubuntu-regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-italic.ttf) format("truetype"), url(../fonts/ubuntu-italic.woff2) format("woff2");
-  font-weight: 400;
-  font-style: italic; }
-@font-face {
-  font-family: "Ubuntu";
   src: url(../fonts/ubuntu-medium.ttf) format("truetype"), url(../fonts/ubuntu-medium.woff2) format("woff2");
   font-weight: 500;
   font-style: normal; }
-@font-face {
-  font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-mediumitalic.ttf) format("truetype"), url(../fonts/ubuntu-mediumitalic.woff2) format("woff2");
-  font-weight: 500;
-  font-style: italic; }
-@font-face {
-  font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-bold.ttf) format("truetype"), url(../fonts/ubuntu-bold.woff2) format("woff2");
-  font-weight: 700;
-  font-style: normal; }
-@font-face {
-  font-family: "Ubuntu";
-  src: url(../fonts/ubuntu-bolditalic.ttf) format("truetype"), url(../fonts/ubuntu-bolditalic.woff2) format("woff2");
-  font-weight: 700;
-  font-style: italic; }
 @font-face {
   font-family: "icofonts";
   src: url(../fonts/icofonts.ttf) format("truetype"), url(../fonts/icofonts.woff2) format("woff2");
@@ -69,5 +39,14 @@ body {
   width: 100%;
   padding: 0 15px;
   margin: 0 auto; }
+  @media screen and (max-width: 1200px) {
+    .wrapper {
+      max-width: 960px; } }
+  @media screen and (max-width: 992px) {
+    .wrapper {
+      max-width: 720px; } }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      max-width: 540px; } }
 
 /*# sourceMappingURL=style.css.map */
