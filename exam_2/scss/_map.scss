@@ -1,0 +1,11 @@
+@import 'vars';
+
+.google_map {
+  height: 43.75em;
+  @media screen and (max-width: 1024px){
+    height: 38em;
+  }
+  @media screen and (max-width: 800px) {
+    height: 22em;
+  }
+}
