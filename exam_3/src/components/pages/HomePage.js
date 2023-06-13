@@ -1,13 +1,15 @@
 import {useEffect} from "react";
-
+import SliderMovie from "../layout/SliderMovie";
 function Home () {
   useEffect(() => {
     document.title = 'Home Page';
   }, []);
 
   return (
-    <div>Home Page</div>
-  );
+    <section className="main_screen">
+      <SliderMovie />
+    </section>
+);
 }
 
 export default Home;

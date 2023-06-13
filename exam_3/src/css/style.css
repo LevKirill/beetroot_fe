@@ -1,5 +1,10 @@
 @font-face {
   font-family: "Ubuntu";
+  src: url(../fonts/ubuntu-light.ttf) format("truetype"), url(../fonts/ubuntu-light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "Ubuntu";
   src: url(../fonts/ubuntu-regular.ttf) format("truetype"), url(../fonts/ubuntu-regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal; }
@@ -27,6 +32,12 @@
 .icon_search:before {
   content: "\e900"; }
 
+.icon_arrow:before {
+  content: "\e901"; }
+
+.icon_star:before {
+  content: "\e902"; }
+
 *, :before, :after {
   box-sizing: border-box; }
 
@@ -48,5 +59,8 @@ body {
   @media screen and (max-width: 768px) {
     .wrapper {
       max-width: 540px; } }
+
+main {
+  padding-top: 60px; }
 
 /*# sourceMappingURL=style.css.map */

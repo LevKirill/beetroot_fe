@@ -1,0 +1,87 @@
+.main_screen {
+  position: relative;
+  padding: 4.375em 0;
+  background-color: #2b2b31;
+  color: #fff; }
+  .main_screen a {
+    color: inherit;
+    text-decoration: none; }
+  .main_screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0; }
+  .main_screen h1 {
+    position: relative;
+    font-size: 2.25em;
+    font-weight: 300;
+    margin-bottom: 1em;
+    padding-right: 3.33em;
+    text-transform: uppercase;
+    line-height: 1.5; }
+    .main_screen h1 b {
+      font-weight: 500; }
+    .main_screen h1 .swiper_nav_btns {
+      font-size: 0.45em;
+      display: flex;
+      align-items: center;
+      gap: 0.625em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+      .main_screen h1 .swiper_nav_btns .icon_arrow {
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5em;
+        height: 2.5em;
+        transition: 0.2s ease-in; }
+        .main_screen h1 .swiper_nav_btns .icon_arrow:before {
+          font-size: 1.5em;
+          transition: 0.2s ease-in; }
+        .main_screen h1 .swiper_nav_btns .icon_arrow__next {
+          transform: scaleX(-1); }
+        .main_screen h1 .swiper_nav_btns .icon_arrow:hover {
+          border-color: rgba(255, 255, 255, 0.2); }
+          .main_screen h1 .swiper_nav_btns .icon_arrow:hover:before {
+            color: #fff; }
+  .main_screen .swiper_movies {
+    display: flex;
+    flex-direction: column-reverse; }
+    .main_screen .swiper_movies__poster {
+      width: 100%;
+      height: 23.1875em; }
+    .main_screen .swiper_movies h2 {
+      color: inherit;
+      font-size: 1.25em;
+      font-weight: 400;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      margin-top: 0.5em; }
+    .main_screen .swiper_movies .icon_star {
+      font-size: 1em;
+      font-weight: 500;
+      margin-top: 0.3125em;
+      display: flex;
+      align-items: center;
+      gap: 0.25em; }
+      .main_screen .swiper_movies .icon_star:before {
+        color: #ff55a5; }
+
+/*# sourceMappingURL=main-screen.css.map */

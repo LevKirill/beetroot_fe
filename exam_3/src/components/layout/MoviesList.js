@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
+const imageOriginalURL = 'https://image.tmdb.org/t/p/original';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 
 function MoviesList () {
@@ -40,7 +41,7 @@ function MoviesList () {
       </div>
     );
     return (
-      <div className="movie">{ items }</div>
+      <div className="movies">{ items }</div>
     );
   }
 }

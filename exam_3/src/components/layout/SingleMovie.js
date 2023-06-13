@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 
 function SingleMovie () {
