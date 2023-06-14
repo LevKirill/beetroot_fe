@@ -19,8 +19,21 @@ const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 function SliderMovie () {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
+  const [genreIDs, setGenreIDs] = useState([]);
 
   async function fetchData() {
+    axios.get(genreURL, {
+      params: {
+        api_key: apiKey,
+      }
+    })
+      .then(response => {
+        setGenreIDs(response.data.genres);
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+
     axios.get(baseURL, {
       params: {
         api_key: apiKey,
@@ -41,16 +54,32 @@ function SliderMovie () {
   if (error) {
     return ( <div className="error"><h2>{ error }</h2></div> );
   } else if (movies) {
-    const sliderItems = movies.map((movie, index) =>
-      <SwiperSlide key={index} className="slide_movie"  >
-        <Link to={"/movie/" + movie.id}>
-          <img src={imageBaseURL + movie.poster_path}  className="swiper_movies__poster"/>
-          <h2>{movie.title}</h2>
-          <p className="icon_star">{movie.vote_average}</p>
-          <p className="genre_list">{movie.genre_ids}</p>
-        </Link>
-      </SwiperSlide>
-    );
+    const sliderItems = movies.map((movie, index) => {
+      let genre = [];
+      let genre_ids = movie.genre_ids;
+      for (let i = 0; i < genre_ids.length; i++) {
+        let id = genre_ids[i];
+        for (let j = 0; j < genreIDs.length; j++) {
+          let api_id = genreIDs[j].id;
+          if (id === api_id) {
+            genre.push(genreIDs[j].name);
+          }
+        }
+      }
+
+      if (index < 12) {
+        return (
+          <SwiperSlide key={index} className="slide_movie">
+            <Link to={"/movie/" + movie.id}>
+              <img src={imageBaseURL + movie.poster_path} className="swiper_movies__poster"/>
+              <h2>{movie.title}</h2>
+              <p className="genre_list">{genre.join(', ')}</p>
+              <p className="icon_star">{movie.vote_average}</p>
+            </Link>
+          </SwiperSlide>
+        )
+      }
+    });
     return (
       <div className="wrapper">
         <Swiper

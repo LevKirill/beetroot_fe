@@ -73,14 +73,26 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       word-wrap: break-word;
-      margin-top: 0.5em; }
+      margin-top: 0.5em;
+      line-height: 1.5; }
+    .main_screen .swiper_movies .genre_list {
+      font-size: 0.875em;
+      margin-top: 0.36em;
+      line-height: 1.5;
+      position: relative;
+      background-image: -webkit-linear-gradient(0deg, #ff55a5 0%, #ff5860 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #ff5860;
+      opacity: 0.8; }
     .main_screen .swiper_movies .icon_star {
       font-size: 1em;
       font-weight: 500;
       margin-top: 0.3125em;
       display: flex;
       align-items: center;
-      gap: 0.25em; }
+      gap: 0.25em;
+      line-height: 1.5; }
       .main_screen .swiper_movies .icon_star:before {
         color: #ff55a5; }
 
