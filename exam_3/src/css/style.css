@@ -2,24 +2,28 @@
   font-family: "Ubuntu";
   src: url(../fonts/ubuntu-light.ttf) format("truetype"), url(../fonts/ubuntu-light.woff2) format("woff2");
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+}
 @font-face {
   font-family: "Ubuntu";
   src: url(../fonts/ubuntu-regular.ttf) format("truetype"), url(../fonts/ubuntu-regular.woff2) format("woff2");
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+}
 @font-face {
   font-family: "Ubuntu";
   src: url(../fonts/ubuntu-medium.ttf) format("truetype"), url(../fonts/ubuntu-medium.woff2) format("woff2");
   font-weight: 500;
-  font-style: normal; }
+  font-style: normal;
+}
 @font-face {
   font-family: "icofonts";
   src: url(../fonts/icofonts.ttf) format("truetype"), url(../fonts/icofonts.woff2) format("woff2");
   font-weight: normal;
-  font-style: normal; }
-[class^="icon_"]:before, [class*=" icon_"]:before {
-  font-family: 'icofonts' !important;
+  font-style: normal;
+}
+[class^=icon_]:before, [class*=" icon_"]:before {
+  font-family: "icofonts" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -27,40 +31,69 @@
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .icon_search:before {
-  content: "\e900"; }
+  content: "\e900";
+}
 
 .icon_arrow:before {
-  content: "\e901"; }
+  content: "\e901";
+}
 
 .icon_star:before {
-  content: "\e902"; }
+  content: "\e902";
+}
+
+.icon_play:before {
+  content: "\e903";
+}
 
 *, :before, :after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 16px; }
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  background-color: #2b2b31;
+  color: #fff;
+}
 
 .wrapper {
   max-width: 1140px;
   width: 100%;
   padding: 0 15px;
-  margin: 0 auto; }
-  @media screen and (max-width: 1200px) {
-    .wrapper {
-      max-width: 960px; } }
-  @media screen and (max-width: 992px) {
-    .wrapper {
-      max-width: 720px; } }
-  @media screen and (max-width: 768px) {
-    .wrapper {
-      max-width: 540px; } }
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .wrapper {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 540px;
+  }
+}
 
 main {
-  padding-top: 60px; }
+  padding-top: 60px;
+}
+
+a {
+  transition: 0.2s ease-in;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: #ff55a5;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,8 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
+  background-color: $backgroundHeader;
+  color: $colorWhite;
 }
 
 .wrapper {
@@ -29,4 +31,17 @@ body {
 
 main {
   padding-top: 60px;
+}
+
+article {
+
+}
+
+a {
+  transition: 0.2s ease-in;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: $colorLinkHover;
+  }
 }

@@ -16,6 +16,7 @@ function SingleMovie () {
     axios.get(baseURL + id, {
       params: {
         api_key: apiKey,
+        language: 'uk',
       }
     })
     .then(response => {

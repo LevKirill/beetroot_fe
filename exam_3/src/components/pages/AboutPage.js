@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-
+import MoviesList from "../layout/MoviesList";
 function About () {
   useEffect(() => {
     document.title = 'About Page';
@@ -7,7 +7,7 @@ function About () {
 
 
   return (
-    <div>About Page</div>
+    <div>Сторінка про нас</div>
   );
 }
 

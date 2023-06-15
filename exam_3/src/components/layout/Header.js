@@ -8,19 +8,19 @@ import Logo from '../../img/logo.svg';
 
 const links = [
   {
-    link: 'Home',
+    link: 'Головна',
     path: '/',
   },
   {
-    link: 'Movies',
+    link: 'Фільми',
     path: '/movies',
   },
   {
-    link: 'About',
+    link: 'Про нас',
     path: '/about',
   },
   {
-    link: 'Contacts',
+    link: 'Контакти',
     path: '/contacts',
   },
 ]

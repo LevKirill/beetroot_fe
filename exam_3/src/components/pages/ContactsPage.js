@@ -7,7 +7,7 @@ function Contacts () {
 
 
   return (
-    <div>Contacts Page</div>
+    <div>Сторінка контактів</div>
   );
 }
 
