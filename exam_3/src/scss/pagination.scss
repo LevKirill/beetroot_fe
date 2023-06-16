@@ -1,0 +1,42 @@
+@import "vars";
+
+.container_pagination {
+  text-align: center;
+  nav {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0;
+    background-color: #2b2b31;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    border-radius: 4px;
+    height: 50px;
+    color: rgba($color: $colorWhite, $alpha: 0.5);
+    ul, li {
+      height: 100%;
+    }
+    button, .MuiPaginationItem-ellipsis {
+      transition: 0.2s ease-in;
+      font-size: 1em;
+      height: 3.125em;
+      width: 3.125em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: inherit;
+      text-align: center;
+      border-radius: 4px;
+      &:not(.MuiPaginationItem-ellipsis):hover {
+        color: $colorWhite;
+      }
+      &.Mui-selected {
+        color: #fff;
+        cursor: default;
+        font-weight: 500;
+        background-image: linear-gradient(90deg, $colorLinkHover 0%, $colorPink 100%);
+        box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
+      }
+    }
+  }
+}

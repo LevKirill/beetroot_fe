@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 import '../../css/movies.css';
+import '../../css/pagination.css';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
@@ -13,11 +16,14 @@ function MoviesList () {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [genreIDs, setGenreIDs] = useState([]);
+  const [page, setPage] = useState(1);
+  const [total_page, setTotalPage] = useState(1);
 
-  async function fetchData() {
+  async function fetchData(currentPage) {
     axios.get(genreURL, {
       params: {
         api_key: apiKey,
+        page: currentPage,
         language: 'uk',
       }
     })
@@ -31,11 +37,17 @@ function MoviesList () {
     axios.get(baseURL, {
       params: {
         api_key: apiKey,
+        page: currentPage,
         language: 'uk',
       }
     })
     .then(response => {
       setMovies(response.data.results);
+      if (response.data.total_pages > 500) {
+        setTotalPage(500);
+      } else {
+        setTotalPage(response.data.total_pages);
+      }
     })
       .catch(error => {
         setError(error.message);
@@ -43,8 +55,13 @@ function MoviesList () {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchData(page)
   }, []);
+
+  const handleChange = (event, value) => {
+    setPage(value);
+    fetchData(value);
+  }
 
   if (error) {
     return ( <div className="error"><h2>{ error }</h2></div> );
@@ -79,7 +96,12 @@ function MoviesList () {
       );
     });
     return (
-      <div className="movies">{ items }</div>
+      <section className="movies_catalog">
+        <div className="movies">{ items }</div>
+        <Stack spacing={2} className="container_pagination">
+          <Pagination count={total_page} page={page} onChange={handleChange} defaultPage={6} siblingCount={1} boundaryCount={1} />
+        </Stack>
+      </section>
     );
   }
 }
