@@ -46,11 +46,9 @@
       margin-bottom: 20px;
     }
     a {
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
-      height: 50px;
-      width: 150px;
       border-radius: 4px;
       background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
       box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
@@ -62,6 +60,7 @@
       font-weight: 500;
       letter-spacing: 0.6px;
       margin-top: 20px;
+      padding: 1.286em;
       transition: 0.2s ease-in;
       &:hover {
         opacity: 1;

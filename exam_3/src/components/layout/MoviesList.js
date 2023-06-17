@@ -8,7 +8,7 @@ import '../../css/movies.css';
 import '../../css/pagination.css';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
+const imageBaseURL = 'https://image.tmdb.org/t/p/w200';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list';
 

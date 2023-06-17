@@ -6,7 +6,7 @@ const baseURL = 'https://api.themoviedb.org/3/movie/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 
-function SingleMovie () {
+function SingleMovie() {
   const params = useParams();
   const id = params.id;
   const [movie, setMovie] = useState(null);
@@ -19,12 +19,12 @@ function SingleMovie () {
         language: 'uk',
       }
     })
-    .then(response => {
-      setMovie(response.data);
-    })
-    .catch(error => {
-      setError(error.message);
-    })
+      .then(response => {
+        setMovie(response.data);
+      })
+      .catch(error => {
+        setError(error.message);
+      })
   }
 
   useEffect(() => {
@@ -32,15 +32,16 @@ function SingleMovie () {
   }, []);
 
   if (error) {
-    return ( <div className="error"><h2>{ error }</h2></div> );
+    return (<div className="error"><h2>{error}</h2></div>);
   } else if (movie) {
-      return (
-        <div className="movie">
-          <img src={imageBaseURL + ((movie.belongs_to_collection) ? movie.belongs_to_collection.poster_path : movie.poster_path)}/>
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-        </div>
-      );
+    return (
+      <div className="movie">
+        <img
+          src={imageBaseURL + ((movie.belongs_to_collection) ? movie.belongs_to_collection.poster_path : movie.poster_path)}/>
+        <h2>{movie.title}</h2>
+        <p>{movie.overview}</p>
+      </div>
+    );
   }
 }
 

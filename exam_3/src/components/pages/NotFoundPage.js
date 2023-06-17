@@ -12,8 +12,8 @@ function NotFoundPage () {
     <section className="not_found">
       <div className="not_found__content">
         <h1>404</h1>
-        <p>The page you are looking for not available!</p>
-        <Link to="/">Go back</Link>
+        <p>Сторінка, яку ви шукаєте, недоступна!</p>
+        <Link to="/">Повернутися на головну</Link>
       </div>
     </section>
   );
