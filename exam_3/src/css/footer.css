@@ -1,62 +1,89 @@
-.footer .wrapper {
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4.375em;
+  padding: 4.375em 0 1.875em;
+}
+.footer__nav .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
   grid-template-areas: "our_up resources legal contacts" "our_up resources legal social";
   gap: 0.9375em;
 }
-.footer nav:not(.footer__social) {
+.footer__nav nav:not(.footer__nav--social) {
   display: flex;
   flex-direction: column;
   gap: 0.9375em;
 }
-.footer nav:not(.footer__social) ul {
+.footer__nav nav:not(.footer__nav--social) ul {
   display: flex;
   flex-direction: column;
   gap: 0.9375em;
 }
-.footer nav:not(.footer__social) ul a {
+.footer__nav nav:not(.footer__nav--social) ul a {
   color: rgba(255, 255, 255, 0.6);
 }
-.footer nav:not(.footer__social) ul a:hover {
+.footer__nav nav:not(.footer__nav--social) ul a:hover {
   color: #ff55a5;
 }
-.footer h6 {
+.footer__nav h6 {
   font-size: 1em;
   font-weight: 500;
 }
-.footer__our_up {
+.footer__nav--our_up {
   grid-area: our_up;
 }
-.footer__resources {
+.footer__nav--resources {
   grid-area: resources;
 }
-.footer__legal {
+.footer__nav--legal {
   grid-area: legal;
 }
-.footer__contacts {
+.footer__nav--contacts {
   grid-area: contacts;
 }
-.footer__social {
+.footer__nav--social {
   grid-area: social;
 }
-.footer__social ul {
+.footer__nav--social ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1.25em;
 }
-.footer__social ul a:before {
+.footer__nav--social ul a:before {
   font-size: 1.375em;
 }
-.footer__social ul a.icon_facebook:before {
+.footer__nav--social ul a.icon_facebook:before {
   color: #3b5999;
 }
-.footer__social ul a.icon_instagram:before {
+.footer__nav--social ul a.icon_instagram:before {
   color: #ff55a5;
 }
-.footer__social ul a.icon_twitter:before {
+.footer__nav--social ul a.icon_twitter:before {
   color: #1da1f2;
+}
+.footer__bottom {
+  padding-top: 1.875em;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer__bottom .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__bottom--copyright {
+  font-size: 0.875em;
+}
+.footer__bottom--info ul {
+  display: flex;
+  gap: 1.875em;
+}
+.footer__bottom--info ul a {
+  font-size: 0.875em;
 }
 
 /*# sourceMappingURL=footer.css.map */

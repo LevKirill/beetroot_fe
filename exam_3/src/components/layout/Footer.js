@@ -7,7 +7,7 @@ import '../../css/footer.css';
 function footer () {
 
   const downOurUp = {
-    class: 'footer__our_up',
+    class: 'footer__nav--our_up',
     sprite: Sprite,
     title: 'Завантажте наш додаток',
     links: [
@@ -26,7 +26,7 @@ function footer () {
     ]
   }
   const resources = {
-    class: 'footer__resources',
+    class: 'footer__nav--resources',
     title: 'Ресурси',
     links: [
       {
@@ -44,7 +44,7 @@ function footer () {
     ]
   }
   const legal = {
-    class: 'footer__legal',
+    class: 'footer__nav--legal',
     title: 'Юридичний',
     links: [
       {
@@ -62,7 +62,7 @@ function footer () {
     ]
   }
   const contacts = {
-    class: 'footer__contacts',
+    class: 'footer__nav--contacts',
     title: 'Контакти',
     links: [
       {
@@ -76,7 +76,7 @@ function footer () {
     ]
   }
   const social = {
-    class: 'footer__social',
+    class: 'footer__nav--social',
     title: '',
     links: [
       {
@@ -93,17 +93,39 @@ function footer () {
       },
     ]
   }
-
+  const Year = new Date().getFullYear();
+  const info = {
+    class: 'footer__bottom--info',
+    title: '',
+    links: [
+      {
+        link: 'Умови використання',
+        path: '#',
+      },
+      {
+        link: 'Політика конфіденційності',
+        path: '#',
+      },
+    ]
+  }
 
   return (
     <footer className={'footer'}>
-      <div className="wrapper">
-        <NavClassImgSprite class={downOurUp.class} title={downOurUp.title} sprite={downOurUp.sprite} links={downOurUp.links} />
-        <NavClassImgSprite class={resources.class} title={resources.title} links={resources.links} />
-        <NavClassImgSprite class={legal.class} title={legal.title} links={legal.links} />
-        <NavClassImgSprite class={contacts.class} title={contacts.title} links={contacts.links} />
-        <NavClassImgSprite class={social.class} title={social.title} links={social.links} />
-      </div>
+      <section className="footer__nav">
+        <div className="wrapper">
+          <NavClassImgSprite class={downOurUp.class} title={downOurUp.title} sprite={downOurUp.sprite} links={downOurUp.links} />
+          <NavClassImgSprite class={resources.class} title={resources.title} links={resources.links} />
+          <NavClassImgSprite class={legal.class} title={legal.title} links={legal.links} />
+          <NavClassImgSprite class={contacts.class} title={contacts.title} links={contacts.links} />
+          <NavClassImgSprite class={social.class} title={social.title} links={social.links} />
+        </div>
+      </section>
+      <section className="footer__bottom">
+        <div className="wrapper">
+          <p className="footer__bottom--copyright">© FlixGo, 2018—{Year}.</p>
+          <NavClassImgSprite class={info.class} title={info.title} links={info.links} />
+        </div>
+      </section>
     </footer>
   );
 }

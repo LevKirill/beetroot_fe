@@ -1,65 +1,94 @@
 @import "vars";
 
 .footer {
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    grid-template-areas: 'our_up resources legal contacts'
+  display: flex;
+  flex-direction: column;
+  gap: 4.375em;
+  padding: 4.375em 0 1.875em;
+  &__nav {
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: 'our_up resources legal contacts'
                          'our_up resources legal social';
-    gap: 0.9375em;
-  }
-  nav:not(.footer__social) {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9375em;
-    ul {
+      gap: 0.9375em;
+    }
+    nav:not(.footer__nav--social) {
       display: flex;
       flex-direction: column;
       gap: 0.9375em;
-      a {
-        color: rgba($color: $colorWhite, $alpha: 0.6);
-        &:hover {
-          color: $colorLinkHover;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9375em;
+        a {
+          color: rgba($color: $colorWhite, $alpha: 0.6);
+          &:hover {
+            color: $colorLinkHover;
+          }
+        }
+      }
+    }
+    h6 {
+      font-size: 1em;
+      font-weight: 500;
+    }
+    &--our_up {
+      grid-area: our_up;
+    }
+    &--resources {
+      grid-area: resources;
+    }
+    &--legal {
+      grid-area: legal;
+    }
+    &--contacts {
+      grid-area: contacts;
+    }
+    &--social {
+      grid-area: social;
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.25em;
+        a {
+          &:before {
+            font-size: 1.375em;
+          }
+          &.icon_facebook:before {
+            color: #3b5999;
+          }
+          &.icon_instagram:before {
+            color: #ff55a5;
+          }
+          &.icon_twitter:before {
+            color: #1da1f2;
+          }
         }
       }
     }
   }
-  h6 {
-    font-size: 1em;
-    font-weight: 500;
-  }
-  &__our_up {
-    grid-area: our_up;
-  }
-  &__resources {
-    grid-area: resources;
-  }
-  &__legal {
-    grid-area: legal;
-  }
-  &__contacts {
-    grid-area: contacts;
-  }
-  &__social {
-    grid-area: social;
-    ul {
+  &__bottom {
+    padding-top: 1.875em;
+    border-top: 1px solid rgba($color: $colorWhite, $alpha: 0.06);
+    .wrapper {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.25em;
-      a {
-        &:before {
-          font-size: 1.375em;
-        }
-        &.icon_facebook:before {
-          color: #3b5999;
-        }
-        &.icon_instagram:before {
-          color: #ff55a5;
-        }
-        &.icon_twitter:before {
-          color: #1da1f2;
+      gap: 1em;
+      color: rgba($color: $colorWhite, $alpha: 0.6);
+    }
+    &--copyright {
+      font-size: 0.875em;
+    }
+    &--info {
+      ul {
+        display: flex;
+        gap: 1.875em;
+        a {
+          font-size: 0.875em;
         }
       }
     }
