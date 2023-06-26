@@ -1,0 +1,62 @@
+.footer .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "our_up resources legal contacts" "our_up resources legal social";
+  gap: 0.9375em;
+}
+.footer nav:not(.footer__social) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375em;
+}
+.footer nav:not(.footer__social) ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375em;
+}
+.footer nav:not(.footer__social) ul a {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer nav:not(.footer__social) ul a:hover {
+  color: #ff55a5;
+}
+.footer h6 {
+  font-size: 1em;
+  font-weight: 500;
+}
+.footer__our_up {
+  grid-area: our_up;
+}
+.footer__resources {
+  grid-area: resources;
+}
+.footer__legal {
+  grid-area: legal;
+}
+.footer__contacts {
+  grid-area: contacts;
+}
+.footer__social {
+  grid-area: social;
+}
+.footer__social ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.25em;
+}
+.footer__social ul a:before {
+  font-size: 1.375em;
+}
+.footer__social ul a.icon_facebook:before {
+  color: #3b5999;
+}
+.footer__social ul a.icon_instagram:before {
+  color: #ff55a5;
+}
+.footer__social ul a.icon_twitter:before {
+  color: #1da1f2;
+}
+
+/*# sourceMappingURL=footer.css.map */

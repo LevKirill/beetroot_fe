@@ -6,6 +6,8 @@ function mainMenu (props) {
   let navTitle;
   if (props.title) {
     navTitle = <h6>{props.title}</h6>
+  } else {
+    navTitle = '';
   }
 
   const listItems = props.links.map((item, index) => {
@@ -26,7 +28,7 @@ function mainMenu (props) {
     }
     return (
       <li key={index}>
-        <Link to={item.path ? item.path : '#'}>
+        <Link to={item.path ? item.path : '#'} className={item.class}>
           {svg}
           {img}
           {linkName}
@@ -37,7 +39,7 @@ function mainMenu (props) {
 
   return (
     <nav className={props.class ? props.class : ''}>
-      {navTitle}
+      {(navTitle)}
       <ul>{ listItems }</ul>
     </nav>
   );
@@ -49,6 +51,7 @@ mainMenu.defaultProps = {
   title: 'Download Our App',
   links: [
     {
+      class: 'classLink',
       link: 'Link',
       path: '/',
       svg: 'google-play',
@@ -56,6 +59,7 @@ mainMenu.defaultProps = {
       height: 47,
     },
     {
+      class: 'classLink',
       link: 'Link',
       path: '/',
       svg: 'app-store',

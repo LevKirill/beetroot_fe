@@ -1,0 +1,67 @@
+@import "vars";
+
+.footer {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: 'our_up resources legal contacts'
+                         'our_up resources legal social';
+    gap: 0.9375em;
+  }
+  nav:not(.footer__social) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375em;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375em;
+      a {
+        color: rgba($color: $colorWhite, $alpha: 0.6);
+        &:hover {
+          color: $colorLinkHover;
+        }
+      }
+    }
+  }
+  h6 {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  &__our_up {
+    grid-area: our_up;
+  }
+  &__resources {
+    grid-area: resources;
+  }
+  &__legal {
+    grid-area: legal;
+  }
+  &__contacts {
+    grid-area: contacts;
+  }
+  &__social {
+    grid-area: social;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.25em;
+      a {
+        &:before {
+          font-size: 1.375em;
+        }
+        &.icon_facebook:before {
+          color: #3b5999;
+        }
+        &.icon_instagram:before {
+          color: #ff55a5;
+        }
+        &.icon_twitter:before {
+          color: #1da1f2;
+        }
+      }
+    }
+  }
+}
