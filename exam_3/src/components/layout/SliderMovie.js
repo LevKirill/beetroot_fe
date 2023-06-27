@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
-import MoviesList from "./MoviesList";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFlip, Autoplay, A11y, Navigation, Pagination} from 'swiper';
+import { FreeMode, Navigation, Thumbs} from 'swiper';
 import SwiperNavButtons from "./SwiperNavButton";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import "swiper/css/effect-flip";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 import '../../css/main-screen.css';
 
@@ -22,6 +22,7 @@ function SliderMovie () {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [genreIDs, setGenreIDs] = useState([]);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   async function fetchData() {
     axios.get(genreURL, {
@@ -43,9 +44,9 @@ function SliderMovie () {
         language: 'uk',
       }
     })
-    .then(response => {
-      setMovies(response.data.results);
-    })
+      .then(response => {
+        setMovies(response.data.results);
+      })
       .catch(error => {
         setError(error.message);
       })
@@ -87,7 +88,7 @@ function SliderMovie () {
 
 
     const sliderBack = movies.map((movie, index) => {
-      if (index < 9) {
+      if (index < 12) {
         if (movie.backdrop_path) {
           return (
             <SwiperSlide key={index} className="slide_back">
@@ -100,27 +101,24 @@ function SliderMovie () {
     return (
       <div className="container">
         <Swiper
-          className="swiper_movies_back"
-          centeredSlides={true}
-          effect={"flip"}
+          onSwiper={setThumbsSwiper}
           loop={true}
-          allowTouchMove={false}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, EffectFlip]}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="swiper_movies_back"
         >
           {sliderBack}
         </Swiper>
 
         <div className="wrapper">
           <Swiper
-            modules={[Navigation, Pagination, A11y]}
-            className="swiper_movies"
+            loop={true}
             spaceBetween={40}
             slidesPerView={4}
-            loop={true}
+            thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="swiper_movies"
           >
             <h1><b>Новинки</b> цього сезону<SwiperNavButtons /></h1>
             {sliderItems}
