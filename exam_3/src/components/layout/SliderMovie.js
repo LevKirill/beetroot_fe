@@ -3,12 +3,13 @@ import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs} from 'swiper';
+import { FreeMode, Navigation, Thumbs, EffectFlip} from 'swiper';
 import SwiperNavButtons from "./SwiperNavButton";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import "swiper/css/effect-flip";
 
 import '../../css/main-screen.css';
 
@@ -102,10 +103,12 @@ function SliderMovie () {
       <div className="container">
         <Swiper
           onSwiper={setThumbsSwiper}
+          effect={"flip"}
           loop={true}
+          allowTouchMove={false}
           freeMode={true}
           watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
+          modules={[FreeMode, Navigation, Thumbs, EffectFlip]}
           className="swiper_movies_back"
         >
           {sliderBack}
