@@ -61,7 +61,7 @@
   padding-top: 1.875em;
 }
 .catalog_movies .movies .movie {
-  max-width: 12.375em;
+  max-width: 14.75em;
 }
 .catalog_movies .movies .movie > a {
   display: block;
@@ -70,7 +70,7 @@
 }
 .catalog_movies .movies .poster_img {
   position: relative;
-  height: 18.5625em;
+  height: 22.1875em;
 }
 .catalog_movies .movies .poster_img:before {
   content: "";
@@ -119,7 +119,7 @@
 }
 .catalog_movies .movies h2 {
   color: inherit;
-  font-size: 0.875em;
+  font-size: 1em;
   font-weight: 400;
   width: 100%;
   overflow: hidden;
@@ -131,7 +131,7 @@
 }
 .catalog_movies .movies .genre_list {
   font-size: 0.875em;
-  margin-top: 0.36em;
+  margin-top: 0.18em;
   line-height: 1.5;
   position: relative;
   background-image: -webkit-linear-gradient(0deg, #ff55a5 0%, #ff5860 100%);
@@ -147,7 +147,7 @@
 .catalog_movies .movies .icon_star {
   font-size: 1em;
   font-weight: 500;
-  margin-top: 0.3125em;
+  margin-top: 0.1563em;
   display: flex;
   align-items: center;
   gap: 0.25em;

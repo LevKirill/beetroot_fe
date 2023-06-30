@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
+import NoImagePoster from '../../img/no-image-poster.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs, EffectFlip} from 'swiper';
@@ -77,7 +78,8 @@ function SliderMovie () {
         return (
           <SwiperSlide key={index} className="slide_movie">
             <Link to={"/movie/" + movie.id}>
-              <img src={imageBaseURL + movie.poster_path} className="swiper_movies__poster"/>
+              <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}
+                   className="swiper_movies__poster"/>
               <h2>{movie.title}</h2>
               <p className="genre_list">{genre.join(', ')}</p>
               <p className="icon_star">{movie.vote_average}</p>

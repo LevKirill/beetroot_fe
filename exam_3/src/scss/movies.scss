@@ -54,7 +54,7 @@
     gap: 2.1em 1.875em;
     padding-top: 1.875em;
     .movie {
-      max-width: 12.375em;
+      max-width: 14.75em;
       & > a {
         display: block;
         color: inherit;
@@ -63,7 +63,7 @@
     }
     .poster_img {
       position: relative;
-      height: 18.5625em;
+      height: 22.1875em;
       &:before {
         content: '';
         position: absolute;
@@ -114,20 +114,19 @@
     }
     h2 {
       color: inherit;
-      font-size: 0.875em;
+      font-size: 1em;
       font-weight: 400;
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       word-wrap: break-word;
-
       margin-top: 0.5em;
       line-height: 1.5;
     }
     .genre_list {
       font-size: 0.875em;
-      margin-top: 0.36em;
+      margin-top: 0.18em;
       line-height: 1.5;
       position: relative;
       background-image: -webkit-linear-gradient(0deg, $colorLinkHover 0%, $colorPink 100%);
@@ -143,7 +142,7 @@
     .icon_star {
       font-size: 1em;
       font-weight: 500;
-      margin-top: 0.3125em;
+      margin-top: 0.1563em;
       display: flex;
       align-items: center;
       gap: 0.25em;

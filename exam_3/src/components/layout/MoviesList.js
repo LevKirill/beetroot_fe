@@ -3,12 +3,13 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import NoImagePoster from '../../img/no-image-poster.png';
 
 import '../../css/movies.css';
 import '../../css/pagination.css';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w200';
+const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list';
 
@@ -83,7 +84,7 @@ function MoviesList () {
         <div key={index} className="movie">
           <Link to={"/movie/" + movie.id}>
             <div className="poster_img">
-              <img src={imageBaseURL + movie.poster_path}/>
+              <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
               <span className="icon_play"></span>
             </div>
             <div className="content">

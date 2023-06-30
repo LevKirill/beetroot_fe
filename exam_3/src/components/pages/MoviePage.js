@@ -8,11 +8,7 @@ function Movies () {
 
 
   return (
-    <section className="single_movie">
-      <div className="wrapper">
-        <SingleMovie />
-      </div>
-    </section>
+    <SingleMovie />
   );
 }
 
