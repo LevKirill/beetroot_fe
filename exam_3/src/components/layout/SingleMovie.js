@@ -1,9 +1,8 @@
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NoImagePoster from '../../img/no-image-poster.png';
-import '../../css/single-movie.css';
-import '../../css/similar-movies.css';
+import '../../scss/single-movie.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
@@ -17,7 +16,6 @@ function SingleMovie() {
   const [movie, setMovie] = useState(null);
   const [video, setVideo] = useState([]);
   const [videoEN, setVideoEN] = useState([]);
-  const [similar, setSimilars] = useState([]);
   const [genreIDs, setGenreIDs] = useState([]);
   const [error, setError] = useState(null);
 
@@ -72,19 +70,6 @@ function SingleMovie() {
       .catch(error => {
         setError(error.message);
       })
-
-    axios.get(baseURL + id + '/similar', {
-      params: {
-        api_key: apiKey,
-        language: 'uk',
-      }
-    })
-      .then(response => {
-        setSimilars(response.data.results);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
   }
 
   useEffect(() => {
@@ -104,15 +89,15 @@ function SingleMovie() {
     let releaseArr = release.split('-');
     releaseArr.reverse();
 
-    let videoIframe = <div className="movie__video"></div>;
+    let videoIframe = <div className="movie__video  movie__video--not"></div>;
     if (video.length !== 0) {
-      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + video[0].key} title={movie.title}
+      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + video[0].key} title={movie.title ? movie.title : ''}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
       className={'movie__video'}></iframe>;
     } else if (videoEN.length !== 0) {
-      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + videoEN[0].key} title={movie.title}
+      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + videoEN[0].key} title={movie.title ? movie.title : ''}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -146,40 +131,7 @@ function SingleMovie() {
       />
     }
 
-    const items = similar.map((movie, index) => {
-      let genre = [];
-      let genre_ids = movie.genre_ids;
-      for (let i = 0; i < genre_ids.length; i++) {
-        let id = genre_ids[i];
-        for (let j = 0; j < genreIDs.length; j++) {
-          let api_id = genreIDs[j].id;
-          if (id === api_id) {
-            genre.push(genreIDs[j].name);
-          }
-        }
-      }
-
-      if (index < 10) {
-        return (
-          <div key={index} className="similar__movies--movie">
-            <Link to={"/movie/" + movie.id}>
-              <div className="poster_img">
-                <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
-                <span className="icon_play"></span>
-              </div>
-              <div className="content">
-                <h3>{movie.title}</h3>
-                <p className="genre_list">{genre.join(', ')}</p>
-                <p className="icon_star">{movie.vote_average}</p>
-              </div>
-            </Link>
-          </div>
-        );
-      }
-    });
-
     return (
-      <section className="single_movie">
         <div className="movie">
         {backIM}
         <div className="wrapper">
@@ -205,13 +157,6 @@ function SingleMovie() {
           {videoIframe}
         </div>
       </div>
-        <div className="similar">
-          <div className="wrapper">
-            <h2>Вам також може сподобатися</h2>
-            <div className="similar__movies">{ items }</div>
-          </div>
-        </div>
-      </section>
     );
   }
 }

@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import MoviesList from "../layout/MoviesList";
 function About () {
   useEffect(() => {
     document.title = 'About Page';

@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import SingleMovie from '../layout/SingleMovie';
+import SimilarMovie from "../layout/SimilarMovie";
 
 function Movies () {
   useEffect(() => {
@@ -8,7 +9,10 @@ function Movies () {
 
 
   return (
-    <SingleMovie />
+    <section className="single_movie">
+      <SingleMovie />
+      <SimilarMovie />
+    </section>
   );
 }
 

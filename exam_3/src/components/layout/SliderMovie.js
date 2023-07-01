@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/effect-flip";
 
-import '../../css/main-screen.css';
+import '../../scss/main-screen.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/upcoming';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';

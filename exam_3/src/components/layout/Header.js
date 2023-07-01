@@ -1,4 +1,4 @@
-import '../../css/header.css';
+import '../../scss/header.scss';
 
 import MainMenu from '../nav/MainMenu';
 import {Link} from "react-router-dom";

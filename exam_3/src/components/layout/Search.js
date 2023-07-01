@@ -1,4 +1,4 @@
-import '../../css/search.css';
+import '../../scss/search.scss';
 
 function Search () {
 

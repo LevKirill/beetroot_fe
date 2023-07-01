@@ -2,7 +2,7 @@ import React from "react";
 import NavClassImgSprite from "../nav/NavClassImgSprite";
 import Sprite from '../../img/sprite.svg';
 
-import '../../css/footer.css';
+import '../../scss/footer.scss';
 
 function footer () {
 

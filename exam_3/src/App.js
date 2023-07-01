@@ -1,5 +1,5 @@
 import 'reset-css';
-import './css/style.css';
+import './scss/style.scss';
 import HomePage from './components/pages/HomePage';
 import MoviesPage from './components/pages/MoviesPage';
 import MoviePage from "./components/pages/MoviePage";
@@ -9,7 +9,6 @@ import ContactsPage from './components/pages/ContactsPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import {Routes, Route} from "react-router-dom";
 import Layout from "./components/layout/Layout";
-// import SingleMovie from "./components/layout/SingleMovie";
 
 function App() {
   return (
