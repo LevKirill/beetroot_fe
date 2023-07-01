@@ -89,7 +89,7 @@ function SingleMovie() {
 
   useEffect(() => {
     fetchData()
-  }, []);
+  }, [movie]);
 
   if (error) {
     return (<div className="error"><h2>{error}</h2></div>);
@@ -162,7 +162,7 @@ function SingleMovie() {
       if (index < 10) {
         return (
           <div key={index} className="similar__movies--movie">
-            <Link to={"/movie/" + movie.id} target={'_blank'}>
+            <Link to={"/movie/" + movie.id}>
               <div className="poster_img">
                 <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
                 <span className="icon_play"></span>
