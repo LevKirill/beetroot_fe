@@ -3,10 +3,10 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import NoImagePoster from '../../img/no-image-poster.png';
+import NoImagePoster from '../../../img/no-image-poster.png';
 
-import '../../scss/movies.scss';
-import '../../scss/pagination.scss';
+import '../../../scss/movies.scss';
+import '../../../scss/pagination.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';

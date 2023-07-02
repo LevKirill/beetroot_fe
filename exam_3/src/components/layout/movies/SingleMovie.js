@@ -1,8 +1,8 @@
 import {useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import NoImagePoster from '../../img/no-image-poster.png';
-import '../../scss/single-movie.scss';
+import NoImagePoster from '../../../img/no-image-poster.png';
+import '../../../scss/single-movie.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
@@ -119,12 +119,7 @@ function SingleMovie() {
 
     let posterClassName = 'movie__content--poster';
     let posterIMG = <img src={NoImagePoster} className={posterClassName} />;
-    if (movie.belongs_to_collection) {
-      posterIMG = <img
-        src={imageBaseURL + movie.belongs_to_collection.poster_path}
-        className={posterClassName}
-      />
-    } else if (movie.poster_path) {
+    if (movie.poster_path) {
       posterIMG = <img
         src={imageBaseURL + movie.poster_path}
         className={posterClassName}

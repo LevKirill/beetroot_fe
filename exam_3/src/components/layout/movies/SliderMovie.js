@@ -1,18 +1,18 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
-import NoImagePoster from '../../img/no-image-poster.png';
+import NoImagePoster from '../../../img/no-image-poster.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs, EffectFlip} from 'swiper';
-import SwiperNavButtons from "./SwiperNavButton";
+import SwiperNavButtons from "../SwiperNavButton";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/effect-flip";
 
-import '../../scss/main-screen.scss';
+import '../../../scss/main-screen.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/upcoming';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';

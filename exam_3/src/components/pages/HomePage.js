@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import SliderMovie from "../layout/SliderMovie";
+import SliderMovie from "../layout/movies/SliderMovie";
 function Home () {
   useEffect(() => {
     document.title = 'Home Page';

@@ -1,9 +1,9 @@
 @import "vars";
 
-.single_movie {
+.single_movie, .single_tv {
   position: relative;
   min-height: 640px;
-  .movie {
+  .movie, .tv {
     padding: 4.375em 0;
     &__back {
       position: absolute;
@@ -132,5 +132,11 @@
     &__video {
       grid-area: video;
     }
+  }
+}
+.single_tv {
+  .tv_seasons {
+    position: relative;
+    z-index: 3;
   }
 }

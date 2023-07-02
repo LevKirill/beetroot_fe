@@ -16,6 +16,10 @@ const links = [
     path: '/movies',
   },
   {
+    link: 'TV',
+    path: '/tv',
+  },
+  {
     link: 'Про нас',
     path: '/about',
   },

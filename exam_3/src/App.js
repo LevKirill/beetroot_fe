@@ -5,6 +5,8 @@ import MoviesPage from './components/pages/MoviesPage';
 import MoviePage from "./components/pages/MoviePage";
 import AboutPage from './components/pages/AboutPage';
 import ContactsPage from './components/pages/ContactsPage';
+import TVPage from "./components/pages/TVPage";
+import TVSinglePage from "./components/pages/TVSinglePage";
 
 import NotFoundPage from './components/pages/NotFoundPage';
 import {Routes, Route} from "react-router-dom";
@@ -19,6 +21,8 @@ function App() {
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path='/about' element={<AboutPage />}/>
         <Route path='/contacts' element={<ContactsPage />}/>
+        <Route path='/tv' element={<TVPage />}/>
+        <Route path='/tv/:id' element={<TVSinglePage />}/>
         <Route path='*' element={<NotFoundPage />}/>
       </Route>
     </Routes>

@@ -1,8 +1,8 @@
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import NoImagePoster from '../../img/no-image-poster.png';
-import '../../scss/similar-movies.scss';
+import NoImagePoster from '../../../img/no-image-poster.png';
+import '../../../scss/similar-movies.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
