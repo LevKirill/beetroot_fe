@@ -1,9 +1,10 @@
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NoImagePoster from '../../../img/no-image-poster.png';
 import GetNoun from "../GetNoun";
 import '../../../scss/single-movie.scss';
+import '../../../scss/tv-seasons.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/tv/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w200/';
@@ -121,10 +122,25 @@ function SingleTV() {
 
         seasonLast = <div className={"tv_season tv_season_" + TV.seasons[i].season_number}>
           <h2>Останній сезон</h2>
-          {TV.seasons[i].poster_path ? (<img src={imageBaseURL + TV.seasons[i].poster_path} alt={TV.seasons[i].name}/>) : <img src={NoImagePoster} className={posterClassName} />}
-          <h3 className="tv_season__title">{TV.seasons[i].name} <span className="icon_star">{TV.seasons[i].vote_average}</span></h3>
-          <div className="tv_season__series">{releaseSeasonArr[2]} | {TV.seasons[i].episode_count} {GetNoun(TV.seasons[i].episode_count, 'серія', 'серії', 'серій')}</div>
-          <div className="tv_season__desc">Сезон {TV.seasons[i].season_number} серіалу &quot;{TV.name}&quot;, прем’єра якого відбулася {releaseSeasonArr.join('.')}</div>
+          <div className="tv_season__block">
+            {TV.seasons[i].poster_path ?
+              (<img src={imageBaseURL + TV.seasons[i].poster_path} alt={TV.seasons[i].name}/>) :
+              <img src={NoImagePoster} className={posterClassName} />}
+            <div className="tv_season__info">
+              <h3>
+                {TV.seasons[i].name} <span className="icon_star">{TV.seasons[i].vote_average}</span>
+              </h3>
+              <h4>
+                {releaseSeasonArr[2]} | {TV.seasons[i].episode_count}&nbsp;
+                {GetNoun(TV.seasons[i].episode_count, 'серія', 'серії', 'серій')}
+              </h4>
+              <div className="tv_season__info--desc">
+                Сезон&nbsp;
+                {TV.seasons[i].season_number} серіалу &quot;{TV.name}&quot;, прем’єра якого відбулася {releaseSeasonArr.join('.')}
+              </div>
+            </div>
+          </div>
+          {(TV.seasons.length === 0 || TV.seasons.length === 1) ? '' : <Link to={'#'}>Переглянути всі сезони</Link>}
         </div>
     }
 
