@@ -7,6 +7,7 @@ import NoImagePoster from '../../../img/no-image-poster.png';
 
 import '../../../scss/movies.scss';
 import '../../../scss/pagination.scss';
+import ScrollToTop from "../ScrollTop";
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
@@ -80,9 +81,11 @@ function MoviesList () {
         }
       }
 
+      document.title = `Список фільмів | Сторінка ${page}`;
+
       return (
         <div key={index} className="movie">
-          <Link to={"/movie/" + movie.id}>
+          <Link to={"/movie/" + movie.id} onClick={ScrollToTop}>
             <div className="poster_img">
               <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
               <span className="icon_play"></span>

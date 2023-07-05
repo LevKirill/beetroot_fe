@@ -20,7 +20,9 @@ function Movies () {
       </article>
       <article className="catalog_movies">
         <div className="block_filter">
-          <div className="wrapper">Фільтри</div>
+          <div className="wrapper">
+
+          </div>
         </div>
         <div className="wrapper">
           <MoviesList />

@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 function mainMenu (props) {
   const listItems = props.links.map((item, index) =>
     <li key={item.link.toString()}>
-      <NavLink to={ item.path }>{ item.link }</NavLink>
+      <NavLink to={ item.path } onClick={item.onClick}>{ item.link }</NavLink>
     </li>
   );
 
@@ -20,10 +20,12 @@ mainMenu.defaultProps = {
     {
       link: 'Link',
       path: '/',
+      onClick: 'toggleBurger',
     },
     {
       link: 'Link',
       path: '/',
+      onClick: 'toggleBurger',
     },
   ]
 }

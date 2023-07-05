@@ -6,29 +6,6 @@ import {useState} from "react";
 
 import Logo from '../../img/logo.svg';
 
-const links = [
-  {
-    link: 'Головна',
-    path: '/',
-  },
-  {
-    link: 'Фільми',
-    path: '/movies',
-  },
-  {
-    link: 'Серіали',
-    path: '/tv',
-  },
-  {
-    link: 'Про нас',
-    path: '/about',
-  },
-  {
-    link: 'Контакти',
-    path: '/contacts',
-  },
-]
-
 function Header () {
   const [isActiveSearch, setActiveSearch] = useState (false);
   const [isActiveBurger, setActiveBurger] = useState (false);
@@ -45,6 +22,34 @@ function Header () {
       setActiveSearch(!isActiveSearch);
     }
   }
+
+  const links = [
+    {
+      link: 'Головна',
+      path: '/',
+      onClick: toggleBurger,
+    },
+    {
+      link: 'Фільми',
+      path: '/movies',
+      onClick: toggleBurger,
+    },
+    {
+      link: 'Серіали',
+      path: '/tv',
+      onClick: toggleBurger,
+    },
+    {
+      link: 'Про нас',
+      path: '/about',
+      onClick: toggleBurger,
+    },
+    {
+      link: 'Контакти',
+      path: '/contacts',
+      onClick: toggleBurger,
+    },
+  ]
 
   return (
     <header className={isActiveSearch ? "active" : ""}>

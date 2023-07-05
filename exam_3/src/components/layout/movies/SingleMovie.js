@@ -73,7 +73,7 @@ function SingleMovie() {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, [movie]);
 
   if (error) {
@@ -91,17 +91,15 @@ function SingleMovie() {
 
     let videoIframe = <div className="movie__video  movie__video--not"></div>;
     if (video.length !== 0) {
-      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + video[0].key} title={movie.title ? movie.title : ''}
+      videoIframe = <iframe src={'https://www.youtube.com/embed/' + video[0].key} title={movie.title ? movie.title : ''}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-      className={'movie__video'}></iframe>;
+                            allowFullScreen></iframe>;
     } else if (videoEN.length !== 0) {
-      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + videoEN[0].key} title={movie.title ? movie.title : ''}
+      videoIframe = <iframe src={'https://www.youtube.com/embed/' + videoEN[0].key} title={movie.title ? movie.title : ''}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className={'movie__video'}></iframe>;
+                allowFullScreen></iframe>;
     }
 
     let backIM;
@@ -126,12 +124,15 @@ function SingleMovie() {
       />
     }
 
+    movie && movie.title ?
+        document.title = movie.title + (releaseArr[2] ? (' (' + releaseArr[2] + ')') : '') : document.title = 'Сторінка фільму';
+
     return (
-        <div className="movie">
+      <div className="movie">
         {backIM}
         <div className="wrapper">
-          <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}
-            {movie.title !== movie.original_title ? (' ' + movie.original_title) : ''}
+          <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;
+            <span>{movie.title !== movie.original_title ? movie.original_title : ''}</span>
           </h1>
           <div className="movie__content">
             {posterIMG}
@@ -149,7 +150,7 @@ function SingleMovie() {
               <p className={'movie__desc--overview'}>{movie.overview ? movie.overview : 'Нажаль, огляд поки що відсутній...'}</p>
             </div>
           </div>
-          {videoIframe}
+          <div className="movie__video">{videoIframe}</div>
         </div>
       </div>
     );

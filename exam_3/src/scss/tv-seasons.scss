@@ -58,8 +58,26 @@
         font-weight: 400;
       }
       &--desc {
-        margin-top: 28px;
+        margin-top: 1.75em;
         line-height: 1.4;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .tv_seasons {
+    .tv_season {
+      &__block {
+        padding: 15px;
+        img {
+          display: none;
+        }
+      }
+      &__info {
+        &--desc {
+          margin-top: 1em;
+        }
       }
     }
   }

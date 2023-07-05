@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NoImagePoster from '../../../img/no-image-poster.png';
 import GetNoun from "../GetNoun";
-import '../../../scss/single-movie.scss';
 import '../../../scss/tv-seasons.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/tv/';
@@ -77,21 +76,19 @@ function SingleTV() {
     let releaseArr = release.split('-');
     releaseArr.reverse();
 
-    let releaseLast = TV.last_air_date;
-    let releaseLastArr = releaseLast.split('-');
-    releaseLastArr.reverse();
-
     let videoIframe = <div className="movie__video  movie__video--not"></div>;
     if (video.length !== 0) {
-      videoIframe = <iframe src={'https://www.youtube.com/embed/' + video[0].key} title={TV.title ? TV.title : ''}
+      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + video[0].key} title={TV.title ? TV.title : ''}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen></iframe>;
+                            allowFullScreen
+      className={'movie__video'}></iframe>;
     } else if (videoEN.length !== 0) {
-      videoIframe = <iframe src={'https://www.youtube.com/embed/' + videoEN[0].key} title={TV.title ? TV.title : ''}
+      videoIframe = <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + videoEN[0].key} title={TV.title ? TV.title : ''}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>;
+                allowFullScreen
+                className={'movie__video'}></iframe>;
     }
 
     let backIM;
@@ -146,17 +143,13 @@ function SingleTV() {
         </div>
     }
 
-    let releaseAll = releaseArr[2] === releaseLastArr[2] ? releaseArr[2] : releaseArr[2] + '-' + releaseLastArr[2];
-    TV && TV.name ? document.title = TV.name + (releaseArr[2] ? (' (TV веріал ' + releaseAll + ')') : '') +
-        (TV.name !== TV.original_name ? (' ' + TV.original_name) : '') : document.title = 'Сторінка серіалу';
-
     return (
       <>
         <div className="tv">
           {backIM}
           <div className="wrapper">
-            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;
-              <span>{TV.name !== TV.original_name ? TV.original_name : ''}</span>
+            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}
+              {TV.name !== TV.original_name ? (' ' + TV.original_name) : ''}
             </h1>
             <div className="tv__content">
               {posterIMG}
@@ -176,7 +169,7 @@ function SingleTV() {
                 <p className={'tv__desc--overview'}>{TV.overview ? TV.overview : 'Нажаль, огляд поки що відсутній...'}</p>
               </div>
             </div>
-            <div className="tv__video">{videoIframe}</div>
+            {videoIframe}
           </div>
         </div>
         <div className="tv_seasons">

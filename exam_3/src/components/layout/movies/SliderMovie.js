@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import NoImagePoster from '../../../img/no-image-poster.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -78,8 +78,9 @@ function SliderMovie () {
         return (
           <SwiperSlide key={index} className="slide_movie">
             <Link to={"/movie/" + movie.id}>
-              <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}
-                   className="swiper_movies__poster"/>
+              <div className="swiper_movies__poster">
+                <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
+              </div>
               <h2>{movie.title}</h2>
               <p className="genre_list">{genre.join(', ')}</p>
               <p className="icon_star">{movie.vote_average}</p>
@@ -95,7 +96,7 @@ function SliderMovie () {
         if (movie.backdrop_path) {
           return (
             <SwiperSlide key={index} className="slide_back">
-              <img src={imageOriginalURL + movie.backdrop_path} className="swiper_movies__back"/>
+              <img src={imageOriginalURL + movie.backdrop_path} className="swiper_movies__back" />
             </SwiperSlide>
           )
         }
@@ -119,13 +120,27 @@ function SliderMovie () {
         <div className="wrapper">
           <Swiper
             loop={true}
-            spaceBetween={40}
-            slidesPerView={4}
+            spaceBetween={0}
+            slidesPerView={1}
             thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
             modules={[FreeMode, Navigation, Thumbs]}
             className="swiper_movies"
+            breakpoints={{
+              360: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+              },
+              680: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+              },
+              980: {
+                spaceBetween: 40,
+                slidesPerView: 4,
+              },
+            }}
           >
-            <h1><b>Новинки</b> цього сезону<SwiperNavButtons /></h1>
+            <h1><span><b>Новинки</b> цього сезону</span><SwiperNavButtons /></h1>
             {sliderItems}
           </Swiper>
         </div>

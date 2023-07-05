@@ -4,7 +4,7 @@ import TVList from "../layout/tv/TVList";
 
 function Movies () {
   useEffect(() => {
-    document.title = 'Movies Page';
+    document.title = 'TV Serials Page';
   }, []);
 
 

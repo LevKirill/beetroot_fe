@@ -7,6 +7,7 @@ import AboutPage from './components/pages/AboutPage';
 import ContactsPage from './components/pages/ContactsPage';
 import TVPage from "./components/pages/TVPage";
 import TVSinglePage from "./components/pages/TVSinglePage";
+import SeasonsList from "./components/layout/tv/SeasonsList";
 
 import NotFoundPage from './components/pages/NotFoundPage';
 import {Routes, Route} from "react-router-dom";
@@ -23,6 +24,7 @@ function App() {
         <Route path='/contacts' element={<ContactsPage />}/>
         <Route path='/tv' element={<TVPage />}/>
         <Route path='/tv/:id' element={<TVSinglePage />}/>
+        <Route path='/tv/:id/seasons' element={<SeasonsList />}/>
         <Route path='*' element={<NotFoundPage />}/>
       </Route>
     </Routes>

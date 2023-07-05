@@ -18,8 +18,7 @@
       opacity: 0.1;
       pointer-events: none;
     }
-    &:before,
-    &:after {
+    &:before, &:after {
       content: '';
       top: 0;
       left: 0;
@@ -48,6 +47,8 @@
     }
     h1 {
       grid-area: title;
+      display: flex;
+      flex-wrap: wrap;
       font-size: 2.625em;
       font-weight: 300;
       line-height: 1.25;
@@ -131,6 +132,19 @@
     }
     &__video {
       grid-area: video;
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
     }
   }
 }
@@ -138,5 +152,50 @@
   .tv_seasons {
     position: relative;
     z-index: 3;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .single_movie, .single_tv {
+    .movie, .tv {
+      .wrapper {
+        max-width: 930px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "title"
+        "content"
+        "video";
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .single_movie, .single_tv {
+    .movie, .tv {
+      padding: 3em 0;
+      h1 {
+        font-size: 2em;
+      }
+      &__content {
+        grid-template-columns: 9.375em 1fr;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .single_movie, .single_tv {
+    .movie, .tv {
+      &__content {
+        grid-template-columns: 1fr;
+        grid-template-areas:  "poster"
+                              "info"
+                              "overview";
+        img {
+          max-width: 200px;
+        }
+      }
+    }
   }
 }

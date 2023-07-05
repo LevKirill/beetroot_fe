@@ -2,7 +2,7 @@ import {useEffect} from "react";
 
 function Contacts () {
   useEffect(() => {
-    document.title = 'Contacts Page';
+    document.title = 'Контакти';
   }, []);
 
 

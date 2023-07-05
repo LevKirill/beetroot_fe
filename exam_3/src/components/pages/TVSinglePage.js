@@ -2,9 +2,9 @@ import {useEffect} from "react";
 import SingleTV from "../layout/tv/SingleTV";
 
 function Movies () {
-  useEffect(() => {
-    document.title = 'Movies Page';
-  }, []);
+  // useEffect(() => {
+  //   document.title = 'TV Serial Page';
+  // }, []);
 
 
   return (

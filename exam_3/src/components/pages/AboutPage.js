@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 function About () {
   useEffect(() => {
-    document.title = 'About Page';
+    document.title = 'Про нас';
   }, []);
 
 

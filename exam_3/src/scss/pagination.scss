@@ -11,7 +11,7 @@
     background-color: #2b2b31;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
     border-radius: 4px;
-    height: 50px;
+    height: 3.125em;
     color: rgba($color: $colorWhite, $alpha: 0.5);
     ul, li {
       height: 100%;
@@ -38,5 +38,31 @@
         box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
       }
     }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container_pagination nav {
+    li {
+      &:first-child, &:last-child {
+        display: none;
+      }
+    }
+    button, .MuiPaginationItem-ellipsis {
+      width: 2.9em;
+      height: 2.9em;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container_pagination {
+    font-size: 0.88em;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .container_pagination {
+    font-size: 0.76em;
   }
 }

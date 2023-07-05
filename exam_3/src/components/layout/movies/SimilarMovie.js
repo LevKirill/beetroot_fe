@@ -1,6 +1,7 @@
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import ScrollToTop from "../ScrollTop";
 import NoImagePoster from '../../../img/no-image-poster.png';
 import '../../../scss/similar-movies.scss';
 
@@ -111,10 +112,6 @@ function SimularMovie() {
         );
       }
     });
-
-    function ScrollToTop () {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
 
     return (
       <div className="similar">
