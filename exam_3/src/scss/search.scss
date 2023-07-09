@@ -1,5 +1,9 @@
 @import "vars";
 
+.search_form {
+  padding-top: 100px;
+}
+
 .search {
   position: fixed;
   top: 0;
@@ -18,15 +22,27 @@
     position: relative;
     width: 100%;
     height: 100%;
+    font-size: 1em;
   }
   input {
     &[name="search"] {
       width: 100%;
       height: 100%;
       background-color: $backgroundSearch;
-      border: none;
+      border: 1px solid transparent;
       outline: none;
-      padding: 0 8.125em 0 1.25em;
+      padding: 0 130px 0 20px;
+      color: rgba($color: $colorWhite, $alpha: 1);
+      font-size: 1.125em;
+      letter-spacing: 1px;
+      transition: 0.2s ease-in;
+      outline: none;
+      &::placeholder {
+        color: rgba($color: $colorWhite, $alpha: 0.7);
+      }
+      &:focus {
+        border-color: rgba($color: $colorWhite, $alpha: 0.15);
+      }
     }
     &[type="submit"] {
       position: absolute;

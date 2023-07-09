@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import NoImagePoster from '../../../img/no-image-poster.png';
+import ScrollTop from "../ScrollTop";
 
 import '../../../scss/movies.scss';
 import '../../../scss/pagination.scss';
-import ScrollToTop from "../ScrollTop";
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
@@ -45,10 +45,11 @@ function MoviesList () {
     })
     .then(response => {
       setMovies(response.data.results);
-      if (response.data.total_pages > 500) {
-        setTotalPage(500);
+      let totalPages = response.data.total_pages;
+      if (totalPages && totalPages <= 500) {
+        setTotalPage(totalPages);
       } else {
-        setTotalPage(response.data.total_pages);
+        setTotalPage(500);
       }
     })
       .catch(error => {
@@ -85,7 +86,7 @@ function MoviesList () {
 
       return (
         <div key={index} className="movie">
-          <Link to={"/movie/" + movie.id} onClick={ScrollToTop}>
+          <Link to={"/movie/" + movie.id} onClick={ScrollTop}>
             <div className="poster_img">
               <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
               <span className="icon_play"></span>
@@ -103,7 +104,15 @@ function MoviesList () {
       <section className="movies_catalog">
         <div className="movies">{ items }</div>
         <Stack spacing={2} className="container_pagination">
-          <Pagination count={total_page} page={page} onChange={handleChange} defaultPage={6} siblingCount={1} boundaryCount={1} />
+          <Pagination
+              count={total_page}
+              page={page}
+              onChange={handleChange}
+              defaultPage={6}
+              siblingCount={1}
+              boundaryCount={1}
+              onClick={ScrollTop}
+          />
         </Stack>
       </section>
     );
