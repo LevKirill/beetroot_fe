@@ -1,0 +1,32 @@
+[class^="icon_"]:before, [class*=" icon_"]:before {
+  font-family: 'icofonts' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon_search:before {
+  content: "\e900";
+}
+.icon_arrow:before {
+  content: "\e901";
+}
+.icon_star:before {
+  content: "\e902";
+}
+.icon_play:before {
+  content: "\e903";
+}
+.icon_facebook:before {
+  content: "\e904";
+}
+.icon_instagram:before {
+  content: "\e905";
+}
+.icon_twitter:before {
+  content: "\e906";
+}
