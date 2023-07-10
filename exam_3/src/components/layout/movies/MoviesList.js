@@ -8,8 +8,10 @@ import ScrollTop from "../ScrollTop";
 
 import '../../../scss/movies.scss';
 import '../../../scss/pagination.scss';
+import '../../../scss/search.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
+const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list';
@@ -20,8 +22,9 @@ function MoviesList () {
   const [genreIDs, setGenreIDs] = useState([]);
   const [page, setPage] = useState(1);
   const [total_page, setTotalPage] = useState(1);
+  const [search, setSearch] = useState('');
 
-  async function fetchData(currentPage) {
+  async function fetchData(currentPage, search = null) {
     axios.get(genreURL, {
       params: {
         api_key: apiKey,
@@ -36,25 +39,48 @@ function MoviesList () {
         setError(error.message);
       })
 
-    axios.get(baseURL, {
-      params: {
-        api_key: apiKey,
-        page: currentPage,
-        language: 'uk',
-      }
-    })
-    .then(response => {
-      setMovies(response.data.results);
-      let totalPages = response.data.total_pages;
-      if (totalPages && totalPages <= 500) {
-        setTotalPage(totalPages);
-      } else {
-        setTotalPage(500);
-      }
-    })
-      .catch(error => {
-        setError(error.message);
+    if (!search) {
+      axios.get(baseURL, {
+        params: {
+          api_key: apiKey,
+          page: currentPage,
+          language: 'uk',
+        }
       })
+          .then(response => {
+            setMovies(response.data.results);
+            let totalPages = response.data.total_pages;
+            if (totalPages && totalPages <= 500) {
+              setTotalPage(totalPages);
+            } else {
+              setTotalPage(500);
+            }
+          })
+          .catch(error => {
+            setError(error.message);
+          })
+    } else if (search) {
+      axios.get(baseSearchURL, {
+        params: {
+          api_key: apiKey,
+          page: currentPage,
+          language: 'uk',
+          query: search,
+        }
+      })
+          .then(response => {
+            setMovies(response.data.results);
+            let totalPages = response.data.total_pages;
+            if (totalPages && totalPages <= 500) {
+              setTotalPage(totalPages);
+            } else {
+              setTotalPage(500);
+            }
+          })
+          .catch(error => {
+            setError(error.message);
+          })
+    }
   }
 
   useEffect(() => {
@@ -63,7 +89,12 @@ function MoviesList () {
 
   const handleChange = (event, value) => {
     setPage(value);
-    fetchData(value);
+    fetchData(value, search);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetchData(page, search);
   }
 
   if (error) {
@@ -102,6 +133,27 @@ function MoviesList () {
     });
     return (
       <section className="movies_catalog">
+        <search className="search">
+          <div className="wrapper">
+            <form
+                className="search_form"
+                onSubmit={handleSubmit}
+            >
+              <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  value={search}
+                  placeholder="Пошук..."
+                  onChange={(e) => setSearch(e.target.value)}
+              />
+              <input
+                  type="submit"
+                  value="Шукати"
+              />
+            </form>
+          </div>
+        </search>
         <div className="movies">{ items }</div>
         <Stack spacing={2} className="container_pagination">
           <Pagination

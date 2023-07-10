@@ -51,6 +51,12 @@ function Header () {
     },
   ]
 
+  const currentUrl = window.location.pathname;
+  let iconSearch = '';
+  if (currentUrl === '/movies' || currentUrl === '/tv') {
+    iconSearch = <div id="searchBtn" className="icon_search" onClick={toggleSearch}></div>;
+  }
+
   return (
     <header className={isActiveSearch ? "active" : ""}>
       <div className="wrapper">
@@ -60,7 +66,7 @@ function Header () {
           onClick={toggleBurger}
         ><span></span><span></span><span></span></div>
         <MainMenu links={links} />
-        <div id="searchBtn" className="icon_search" onClick={toggleSearch}></div>
+        {iconSearch}
       </div>
     </header>
   );

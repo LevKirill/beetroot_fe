@@ -1,9 +1,5 @@
 @import "vars";
 
-.search_form {
-  padding-top: 100px;
-}
-
 .search {
   position: fixed;
   top: 0;
@@ -70,6 +66,10 @@
   }
 }
 
-header.active + .search {
-  top: 3.75em;
+header.active {
+  & + main {
+    .search {
+      top: 3.75em;
+    }
+  }
 }
