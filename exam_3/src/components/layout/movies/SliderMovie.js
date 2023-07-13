@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import NoImagePoster from '../../../img/no-image-poster.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs, EffectFlip} from 'swiper';
+import { FreeMode, Navigation, Thumbs, EffectFlip, Controller} from 'swiper';
 import SwiperNavButtons from "../SwiperNavButton";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -25,6 +25,8 @@ function SliderMovie () {
   const [error, setError] = useState(null);
   const [genreIDs, setGenreIDs] = useState([]);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
 
   async function fetchData() {
     axios.get(genreURL, {
@@ -107,24 +109,24 @@ function SliderMovie () {
         <Swiper
           onSwiper={setThumbsSwiper}
           effect={"flip"}
-          loop={true}
           allowTouchMove={false}
           freeMode={true}
           watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs, EffectFlip]}
+          modules={[FreeMode, Navigation, Thumbs, EffectFlip, Controller]}
           className="swiper_movies_back"
+          onSwiper={setFirstSwiper}
         >
           {sliderBack}
         </Swiper>
 
         <div className="wrapper">
           <Swiper
-            loop={true}
             spaceBetween={0}
             slidesPerView={1}
             thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[FreeMode, Navigation, Thumbs, Controller]}
             className="swiper_movies"
+            controller={{ control: firstSwiper }}
             breakpoints={{
               360: {
                 spaceBetween: 20,

@@ -113,14 +113,16 @@ function SimularMovie() {
       }
     });
 
-    return (
-      <div className="similar">
-          <div className="wrapper">
-            <h2>Вам також може сподобатися</h2>
-            <div className="similar__movies">{ items }</div>
+    if (similar.length !== 0) {
+      return (
+          <div className="similar">
+            <div className="wrapper">
+              <h2>Вам також може сподобатися</h2>
+              <div className="similar__movies">{ items }</div>
+            </div>
           </div>
-        </div>
-    );
+      );
+    }
   }
 }
 

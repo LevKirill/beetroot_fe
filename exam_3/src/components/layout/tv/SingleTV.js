@@ -18,6 +18,7 @@ function SingleTV() {
   const [TV, setTV] = useState(null);
   const [video, setVideo] = useState([]);
   const [videoEN, setVideoEN] = useState([]);
+  const [actors, setActors] = useState([]);
   const [error, setError] = useState(null);
 
   async function fetchData() {
@@ -58,6 +59,18 @@ function SingleTV() {
       .catch(error => {
         setError(error.message);
       })
+
+    axios.get(baseURL + id + '/credits', {
+      params: {
+        api_key: apiKey,
+      }
+    })
+      .then(response => {
+        setActors(response.data.cast);
+      })
+      .catch(error => {
+        setError(error.message);
+      })
   }
 
   useEffect(() => {
@@ -71,6 +84,13 @@ function SingleTV() {
     let genres = TV.genres;
     for (let i = 0; i < genres.length; i++) {
       genre.push(genres[i].name);
+    }
+
+    let actor = [];
+    for (let i = 0; i < actors.length; i++) {
+      if (i < 5) {
+        actor.push(actors[i].name);
+      }
     }
 
     let release = TV.first_air_date;
@@ -118,9 +138,12 @@ function SingleTV() {
     let seasonLast;
     let lastSeason = TV.seasons;
     for (let i = lastSeason.length - 1; i >= lastSeason.length - 1; i--) {
-        let releaseSeason = TV.seasons[i].air_date;
-        let releaseSeasonArr = releaseSeason.split('-');
-        releaseSeasonArr.reverse();
+      let releaseSeason = TV.seasons[i].air_date;
+      let releaseSeasonArr = '';
+        if (releaseSeason !== null) {
+          releaseSeasonArr = releaseSeason.split('-');
+          releaseSeasonArr.reverse();
+        }
 
         seasonLast = <div className={"tv_season tv_season_" + TV.seasons[i].season_number}>
           <h2>Останній сезон</h2>
@@ -133,12 +156,12 @@ function SingleTV() {
                 {TV.seasons[i].name} <span className="icon_star">{TV.seasons[i].vote_average}</span>
               </h3>
               <h4>
-                {releaseSeasonArr[2]} | {TV.seasons[i].episode_count}&nbsp;
+                {releaseSeasonArr !== '' ? releaseSeasonArr[2] : ''} | {TV.seasons[i].episode_count}&nbsp;
                 {GetNoun(TV.seasons[i].episode_count, 'серія', 'серії', 'серій')}
               </h4>
               <div className="tv_season__info--desc">
                 Сезон&nbsp;
-                {TV.seasons[i].season_number} серіалу &quot;{TV.name}&quot;, прем’єра якого відбулася {releaseSeasonArr.join('.')}
+                {TV.seasons[i].season_number} серіалу &quot;{TV.name}&quot;{releaseSeasonArr !== '' ? `, прем’єра якого відбулася ${releaseSeasonArr.join('.')}` : ''}
               </div>
             </div>
           </div>
@@ -155,14 +178,14 @@ function SingleTV() {
         <div className="tv">
           {backIM}
           <div className="wrapper">
-            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;
-              <span>{TV.name !== TV.original_name ? TV.original_name : ''}</span>
+            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}{TV.name !== TV.original_name ? `&nbsp;${TV.original_name}` : ''}
             </h1>
             <div className="tv__content">
               {posterIMG}
               <ul className="tv__info">
                 <li className="tv__info--vote_average icon_star">{TV.vote_average.toFixed(1)}</li>
-                <li className="tv__info--genre">Жанри: <span>{genre.join(', ')}</span></li>
+                <li className="tv__info--genre">Жанри: <span>{genre.map((genre) => <span>{genre}</span>)}</span></li>
+                <li className="tv__info--actor">Актери: <span>{actor.map((actor) => <span>{actor}</span>)}</span></li>
                 <li className="tv__info--runtime">Тривалість епізоду:
                   <span>{TV.episode_run_time.length === 0 ? 'невідома' : (TV.episode_run_time + ' хв')}</span>
                 </li>

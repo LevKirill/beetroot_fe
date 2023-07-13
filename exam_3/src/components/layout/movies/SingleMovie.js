@@ -2,7 +2,9 @@ import {useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NoImagePoster from '../../../img/no-image-poster.png';
+import Gravatar from '../../../img/gravatar.jpg';
 import '../../../scss/single-movie.scss';
+import '../../../scss/rewiews.scss';
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w300/';
@@ -17,6 +19,8 @@ function SingleMovie() {
   const [video, setVideo] = useState([]);
   const [videoEN, setVideoEN] = useState([]);
   const [genreIDs, setGenreIDs] = useState([]);
+  const [actors, setActors] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
 
   async function fetchData() {
@@ -70,6 +74,30 @@ function SingleMovie() {
       .catch(error => {
         setError(error.message);
       })
+
+    axios.get(baseURL + id + '/credits', {
+      params: {
+        api_key: apiKey,
+      }
+    })
+        .then(response => {
+          setActors(response.data.cast);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
+
+    axios.get(baseURL + id + '/reviews', {
+      params: {
+        api_key: apiKey,
+      }
+    })
+        .then(response => {
+          setReviews(response.data.results);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
   }
 
   useEffect(() => {
@@ -83,6 +111,13 @@ function SingleMovie() {
     let genres = movie.genres;
     for (let i = 0; i < genres.length; i++) {
       genre.push(genres[i].name);
+    }
+
+    let actor = [];
+    for (let i = 0; i < actors.length; i++) {
+      if (i < 5) {
+        actor.push(actors[i].name);
+      }
     }
 
     let release = movie.release_date;
@@ -124,35 +159,63 @@ function SingleMovie() {
       />
     }
 
+    const reviewsList = reviews.map((review, index) => {
+      let reviewDate = review.updated_at.substr(0,review.updated_at.indexOf("T"));
+      reviewDate = reviewDate.split('-');
+      reviewDate.reverse();
+
+      let reviewTime = review.updated_at.substr(11,5);
+
+      return (
+          <div key={review.id} className={'review'}>
+            <div className="review__author">
+              <img src={review.author_details.avatar_path !== null ? 'https://secure.gravatar.com/avatar' +
+                  review.author_details.avatar_path.replace('/https://secure.gravatar.com/avatar','') :
+                  Gravatar} alt={review.author_details.name !== '' ? `Avatar ${review.author_details.name}` : 'Avatar'}
+              />
+              <div className="author__desc">
+                <h3>{review.author_details.name ? review.author_details.name : review.author_details.username}</h3>
+                <data>{reviewDate.join('.') + ' ' + reviewTime}</data>
+              </div>
+            </div>
+            <p className="review__content" dangerouslySetInnerHTML={{__html: review.content}} />
+          </div>
+      );
+    });
+
     movie && movie.title ?
         document.title = movie.title + (releaseArr[2] ? (' (' + releaseArr[2] + ')') : '') : document.title = 'Сторінка фільму';
 
     return (
-      <div className="movie">
-        {backIM}
-        <div className="wrapper">
-          <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;
-            <span>{movie.title !== movie.original_title ? movie.original_title : ''}</span>
-          </h1>
-          <div className="movie__content">
-            {posterIMG}
-            <ul className="movie__info">
-              <li className="movie__info--vote_average icon_star">{movie.vote_average.toFixed(1)}</li>
-              <li className="movie__info--genre">Жанри: <span>{genre.join(', ')}</span></li>
-              <li className="movie__info--runtime">Тривалість:
-                <span>{movie.runtime === 0 ? 'невідома' : (movie.runtime + ' хв')}</span>
-              </li>
-              <li className="movie__info--premiere">Прем'єра:
-                <span>{releaseArr.length !== 1 &&  releaseArr[0] !== '' ? releaseArr.join('.') : 'невідома'}</span>
-              </li>
-            </ul>
-            <div className="movie__desc">
-              <p className={'movie__desc--overview'}>{movie.overview ? movie.overview : 'Нажаль, огляд поки що відсутній...'}</p>
+      <>
+        <div className="movie">
+          {backIM}
+          <div className="wrapper">
+            <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;|| {movie.title !== movie.original_title ? movie.original_title : ''}
+            </h1>
+            <div className="movie__content">
+              {posterIMG}
+              <ul className="movie__info">
+                <li className="movie__info--vote_average icon_star">{movie.vote_average.toFixed(1)}</li>
+                <li className="tv__info--genre">Жанри: <span>{genre.map((genre) => <span>{genre}</span>)}</span></li>
+                <li className="tv__info--actor">Актери: <span>{actor.map((actor) => <span>{actor}</span>)}</span></li>
+                <li className="movie__info--runtime">Тривалість:
+                  <span>{movie.runtime === 0 ? 'невідома' : (movie.runtime + ' хв')}</span>
+                </li>
+                <li className="movie__info--premiere">Прем'єра:
+                  <span>{releaseArr.length !== 1 &&  releaseArr[0] !== '' ? releaseArr.join('.') : 'невідома'}</span>
+                </li>
+              </ul>
+              <div className="movie__desc">
+                <p className={'movie__desc--overview'}>{movie.overview ? movie.overview : 'Нажаль, огляд поки що відсутній...'}</p>
+              </div>
             </div>
+            <div className="movie__video">{videoIframe}</div>
           </div>
-          <div className="movie__video">{videoIframe}</div>
         </div>
-      </div>
+        {reviewsList.length !== 0 ?
+            <div className="reviews"><div className="wrapper"><h2>Відгуки</h2>{reviewsList}</div></div> : ''}
+      </>
     );
   }
 }

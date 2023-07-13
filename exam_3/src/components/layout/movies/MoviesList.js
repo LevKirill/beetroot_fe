@@ -94,6 +94,7 @@ function MoviesList () {
 
   function handleSubmit(event) {
     event.preventDefault();
+    document.querySelector('#search').value = '';
     fetchData(page, search);
   }
 
@@ -111,6 +112,9 @@ function MoviesList () {
             genre.push(genreIDs[j].name);
           }
         }
+      }
+
+      if (genre_ids.length && genreIDs.length) {
       }
 
       document.title = `Список фільмів | Сторінка ${page}`;
@@ -143,7 +147,6 @@ function MoviesList () {
                   type="search"
                   name="search"
                   id="search"
-                  value={search}
                   placeholder="Пошук..."
                   onChange={(e) => setSearch(e.target.value)}
               />

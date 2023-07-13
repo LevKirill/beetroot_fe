@@ -4,6 +4,7 @@
   position: relative;
   min-height: 640px;
   .movie, .tv {
+    position: relative;
     padding: 4.375em 0;
     &__back {
       position: absolute;
@@ -82,8 +83,18 @@
         display: flex;
         align-items: flex-start;
         gap: 0.5em;
-        span {
+        & > span {
           line-height: 1.15;
+          color: $colorLinkHover;
+          display: flex;
+          flex-wrap: wrap;
+          span {
+            &:not(:last-child) {
+              &:after {
+                content: ',\00a0';
+              }
+            }
+          }
         }
       }
       &--vote_average {
@@ -116,19 +127,7 @@
       line-height: 1.3;
       color: $colorText;
       overflow-y: auto;
-      &::-webkit-scrollbar {
-        width: 0.25em;
-        border-radius: 0.25em;
-        cursor: pointer;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: $colorLinkHover;
-      }
-      &::-webkit-scrollbar-track {
-        background: #4B4A4A;
-      }
-      &__overview {
-      }
+      @include scrollbar();
     }
     &__video {
       grid-area: video;
