@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import SliderMovie from "../layout/movies/SliderMovie";
 function Home () {
   useEffect(() => {
-    document.title = 'Home Page';
+    document.title = 'Головна сторінка | FlixGo';
   }, []);
 
   return (

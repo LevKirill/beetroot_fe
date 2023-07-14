@@ -21,6 +21,13 @@ $backgroundSearch: #28282d;
   }
 }
 
+@mixin wrapper ($padding: 0 15px) {
+  max-width: 1330px;
+  width: 100%;
+  padding: $padding;
+  margin: 0 auto;
+}
+
 @mixin image ($max_width) {
   max-width: $max_width;
   width: 100%;

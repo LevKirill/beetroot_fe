@@ -161,6 +161,7 @@ function TVList () {
               siblingCount={1}
               boundaryCount={1}
               siblingCount={1}
+              onClick={ScrollTop}
           />
         </Stack>
       </section>

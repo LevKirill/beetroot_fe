@@ -10,7 +10,6 @@ const baseURL = 'https://api.themoviedb.org/3/tv/';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w200/';
 const imageBackURL = 'https://image.tmdb.org/t/p/w1280/';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
-const genreURL = 'https://api.themoviedb.org/3/genre/tv/list';
 
 function SingleTV() {
   const params = useParams();
@@ -116,24 +115,15 @@ function SingleTV() {
 
     let backIM;
     if (TV.backdrop_path) {
-      backIM = <img
-        src={imageBackURL + TV.backdrop_path}
-        className={'movie__back'}
-      />
+      backIM = <img src={imageBackURL + TV.backdrop_path} className={'movie__back'} />
     } else {
-      backIM = <img
-        src={imageBackURL + TV.poster_path}
-        className={'movie__back'}
-      />
+      backIM = <img src={imageBackURL + TV.poster_path} className={'movie__back'} />
     }
 
     let posterClassName = 'movie__content--poster';
     let posterIMG = <img src={NoImagePoster} className={posterClassName} />;
     if (TV.poster_path) {
-      posterIMG = <img
-        src={imageBaseURL + TV.poster_path}
-        className={posterClassName}
-      />
+      posterIMG = <img src={imageBaseURL + TV.poster_path} className={posterClassName} />
     }
     let seasonLast;
     let lastSeason = TV.seasons;
@@ -153,7 +143,7 @@ function SingleTV() {
               <img src={NoImagePoster} className={posterClassName} />}
             <div className="tv_season__info">
               <h3>
-                {TV.seasons[i].name} <span className="icon_star">{TV.seasons[i].vote_average}</span>
+                <Link to={`/tv/${id}/season/${TV.seasons[i].season_number}`}>{TV.seasons[i].name}</Link> <span className="icon_star">{TV.seasons[i].vote_average}</span>
               </h3>
               <h4>
                 {releaseSeasonArr !== '' ? releaseSeasonArr[2] : ''} | {TV.seasons[i].episode_count}&nbsp;
@@ -165,12 +155,12 @@ function SingleTV() {
               </div>
             </div>
           </div>
-          {(TV.seasons.length === 0 || TV.seasons.length === 1) ? '' : <Link to={'#'}>Переглянути всі сезони</Link>}
+          {(TV.seasons.length === 0 || TV.seasons.length === 1) ? '' : <Link to={`/tv/${id}/seasons`}>Переглянути всі сезони</Link>}
         </div>
     }
 
     let releaseAll = releaseArr[2] === releaseLastArr[2] ? releaseArr[2] : releaseArr[2] + '-' + releaseLastArr[2];
-    TV && TV.name ? document.title = TV.name + (releaseArr[2] ? (' (TV веріал ' + releaseAll + ')') : '') +
+    TV && TV.name ? document.title = TV.name + (releaseArr[2] ? (' (TV серіал ' + releaseAll + ')') : '') +
         (TV.name !== TV.original_name ? (' ' + TV.original_name) : '') : document.title = 'Сторінка серіалу';
 
     return (
@@ -178,7 +168,7 @@ function SingleTV() {
         <div className="tv">
           {backIM}
           <div className="wrapper">
-            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}{TV.name !== TV.original_name ? `&nbsp;${TV.original_name}` : ''}
+            <h1>{TV.name} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}{TV.name !== TV.original_name ? ' ' + TV.original_name : ''}
             </h1>
             <div className="tv__content">
               {posterIMG}
