@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Sprite from '../../img/sprite.svg';
 
-function mainMenu (props) {
+function mainMenu(props) {
   let navTitle;
   if (props.title) {
     navTitle = <h6>{props.title}</h6>
@@ -18,7 +18,9 @@ function mainMenu (props) {
 
     let svg;
     if (item.svg) {
-      svg = <svg width={item.width} height={item.height}><use xlinkHref={`${props.sprite}#${item.svg}`}></use></svg>;
+      svg = <svg width={item.width} height={item.height}>
+        <use xlinkHref={`${props.sprite}#${item.svg}`}></use>
+      </svg>;
       img = '';
     }
 
@@ -27,21 +29,21 @@ function mainMenu (props) {
       linkName = <span>{item.link}</span>;
     }
     return (
-      <li key={index}>
-        <Link to={item.path ? item.path : '#'} className={item.class}>
-          {svg}
-          {img}
-          {linkName}
-        </Link>
-      </li>
+        <li key={index}>
+          <Link to={item.path ? item.path : '#'} className={item.class}>
+            {svg}
+            {img}
+            {linkName}
+          </Link>
+        </li>
     )
   });
 
   return (
-    <nav className={props.class ? props.class : ''}>
-      {(navTitle)}
-      <ul>{ listItems }</ul>
-    </nav>
+      <nav className={props.class ? props.class : ''}>
+        {(navTitle)}
+        <ul>{listItems}</ul>
+      </nav>
   );
 }
 

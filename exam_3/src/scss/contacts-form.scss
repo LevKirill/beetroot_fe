@@ -1,0 +1,99 @@
+@import "vars";
+
+.contacts__form {
+  position: relative;
+  background-color: $backReview;
+  border-radius: 0.5em 0.5em;
+  overflow: hidden;
+  padding: 1.875em 2.625em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:  'name email'
+                        'subject subject'
+                        'message message'
+                        'submit submit';
+  gap: 1.5em;
+  &:before {
+    @include border (0, auto);
+  }
+  .form_item {
+    position: relative;
+    font-size: 1em;
+    input, textarea {
+      position: relative;
+      font-size: 1em;
+      background-color: $backgroundHeader;
+      border: 1px solid transparent;
+      height: 3.125em;
+      color: $colorWhite;
+      width: 100%;
+      border-radius: 0.5em;
+      padding: 0 1.25em;
+      transition: 0.2s ease-in;
+      outline: none;
+      font-family: 'Ubuntu', sans-serif;
+      &::placeholder {
+        color: #bdc7be;
+      }
+      &:focus {
+        border-color: $colorLinkHover;
+      }
+      &.error {
+        border-color: $colorPink;
+        color: $colorPink;
+        &::placeholder {
+          color: $colorPink;
+        }
+      }
+    }
+    textarea {
+      padding: 0.9375em 1.25em;
+      height: 7.5em;
+      resize: none;
+    }
+    &__name {
+      grid-area: name;
+    }
+    &__email {
+      grid-area: email;
+    }
+    &__subject {
+      grid-area: subject;
+    }
+    &__message {
+      grid-area: message;
+    }
+    .error_message {
+      position: absolute;
+      font-size: 0.75em;
+      color: $colorPink;
+      bottom: -1.333em;
+      left: 1.67em;
+    }
+  }
+  .form_submit {
+    grid-area: submit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff5860 0%, #ff55a5 100%);
+    box-shadow: 0 0 16px 0 rgba(255,88,96,0.3);
+    position: relative;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: $colorWhite;
+    text-transform: uppercase;
+    max-width: 11.43em;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    &:hover {
+      box-shadow: 0 0 16px 0 rgba(255,88,96,0.6);
+    }
+  }
+}

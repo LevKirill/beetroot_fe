@@ -43,3 +43,26 @@
     }
   }
 }
+
+@media screen and (max-width: 780px) {
+  .tv_all_seasons .tv_title__details h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tv_all_seasons .tv_title__details h1 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .tv_all_seasons {
+    .tv_title .container img {
+      display: none;
+    }
+    .tv_season {
+      font-size: 0.9em;
+    }
+  }
+}

@@ -73,3 +73,16 @@ header.active {
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .search {
+    font-size: 0.8em;
+    .wrapper {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  header.active + main .search {
+    top: calc(3.75em * 1.2);
+  }
+}

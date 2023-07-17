@@ -16,7 +16,7 @@ const imageBaseURL = 'https://image.tmdb.org/t/p/w300';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list';
 
-function MoviesList () {
+function MoviesList() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [genreIDs, setGenreIDs] = useState([]);
@@ -32,12 +32,12 @@ function MoviesList () {
         language: 'uk',
       }
     })
-      .then(response => {
-        setGenreIDs(response.data.genres);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setGenreIDs(response.data.genres);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
 
     if (!search) {
       axios.get(baseURL, {
@@ -99,7 +99,7 @@ function MoviesList () {
   }
 
   if (error) {
-    return ( <div className="error"><h2>{ error }</h2></div> );
+    return (<div className="error"><h2>{error}</h2></div>);
   } else if (movies) {
     const items = movies.map((movie, index) => {
       let genre = [];
@@ -117,59 +117,60 @@ function MoviesList () {
       if (genre_ids.length && genreIDs.length) {
       }
 
+      // Head Title
       document.title = `Список фільмів | Сторінка ${page}`;
 
       return (
-        <div key={index} className="movie">
-          <Link to={"/movie/" + movie.id} onClick={ScrollTop}>
-            <div className="poster_img">
-              <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
-              <span className="icon_play"></span>
-            </div>
-            <div className="content">
-              <h2>{movie.title}</h2>
-              <p className="genre_list">{genre.join(', ')}</p>
-              <p className="icon_star">{movie.vote_average}</p>
-            </div>
-          </Link>
-        </div>
+          <div key={index} className="movie">
+            <Link to={"/movie/" + movie.id} onClick={ScrollTop}>
+              <div className="poster_img">
+                <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster} alt="poster" />
+                <span className="icon_play"></span>
+              </div>
+              <div className="content">
+                <h2>{movie.title}</h2>
+                <p className="genre_list">{genre.join(', ')}</p>
+                <p className="icon_star">{movie.vote_average}</p>
+              </div>
+            </Link>
+          </div>
       );
     });
     return (
-      <section className="movies_catalog">
-        <search className="search">
-          <div className="wrapper">
-            <form
-                className="search_form"
-                onSubmit={handleSubmit}
-            >
-              <input
-                  type="search"
-                  name="search"
-                  id="search"
-                  placeholder="Пошук..."
-                  onChange={(e) => setSearch(e.target.value)}
-              />
-              <input
-                  type="submit"
-                  value="Шукати"
-              />
-            </form>
-          </div>
-        </search>
-        <div className="movies">{ items }</div>
-        <Stack spacing={2} className="container_pagination">
-          <Pagination
-              count={total_page}
-              page={page}
-              onChange={handleChange}
-              defaultPage={6}
-              siblingCount={1}
-              boundaryCount={1}
-              onClick={ScrollTop}
-          />
-        </Stack>
-      </section>
+        <section className="movies_catalog">
+          <search className="search">
+            <div className="wrapper">
+              <form
+                  className="search_form"
+                  onSubmit={handleSubmit}
+              >
+                <input
+                    type="search"
+                    name="search"
+                    id="search"
+                    placeholder="Пошук..."
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+                <input
+                    type="submit"
+                    value="Шукати"
+                />
+              </form>
+            </div>
+          </search>
+          <div className="movies">{items}</div>
+          <Stack spacing={2} className="container_pagination">
+            <Pagination
+                count={total_page}
+                page={page}
+                onChange={handleChange}
+                defaultPage={6}
+                siblingCount={1}
+                boundaryCount={1}
+                onClick={ScrollTop}
+            />
+          </Stack>
+        </section>
     );
   }
 }

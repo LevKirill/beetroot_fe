@@ -1,17 +1,17 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-function mainMenu (props) {
+function mainMenu(props) {
   const listItems = props.links.map((item, index) =>
-    <li key={item.link.toString()}>
-      <NavLink to={ item.path } onClick={item.onClick}>{ item.link }</NavLink>
-    </li>
+      <li key={index}>
+        <NavLink to={item.path} onClick={item.onClick}>{item.link}</NavLink>
+      </li>
   );
 
   return (
-    <nav className="menu">
-      <ul>{ listItems }</ul>
-    </nav>
+      <nav className="menu">
+        <ul>{listItems}</ul>
+      </nav>
   );
 }
 

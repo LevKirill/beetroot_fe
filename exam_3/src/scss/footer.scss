@@ -1,17 +1,21 @@
 @import "vars";
 
 .footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 4.375em;
   padding: 4.375em 0 1.875em;
+  &:before {
+    @include border(0, auto);
+  }
   &__nav {
     .wrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: auto auto;
-      grid-template-areas: 'our_up resources legal contacts'
-                         'our_up resources legal social';
+      grid-template-areas:  'our_up resources legal contacts'
+                            'our_up resources legal social';
       gap: 0.9375em;
     }
     nav:not(.footer__nav--social) {

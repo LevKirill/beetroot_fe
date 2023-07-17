@@ -26,7 +26,7 @@
       bottom: 0;
       right: 0;
       position: absolute;
-      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
       -webkit-backface-visibility: hidden;
     }
     &:before {
@@ -160,10 +160,9 @@
       .wrapper {
         max-width: 930px;
         grid-template-columns: 1fr;
-        grid-template-areas:
-        "title"
-        "content"
-        "video";
+        grid-template-areas:  "title"
+                              "content"
+                              "video";
       }
     }
   }

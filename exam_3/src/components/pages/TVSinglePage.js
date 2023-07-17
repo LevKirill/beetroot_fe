@@ -1,16 +1,10 @@
-import {useEffect} from "react";
 import SingleTV from "../layout/tv/SingleTV";
 
-function Movies () {
-  // useEffect(() => {
-  //   document.title = 'TV Serial Page';
-  // }, []);
-
-
+function Movies() {
   return (
-    <section className="single_tv">
-      <SingleTV />
-    </section>
+      <section className="single_tv">
+        <SingleTV/>
+      </section>
   );
 }
 

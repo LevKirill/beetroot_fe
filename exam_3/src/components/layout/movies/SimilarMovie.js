@@ -25,12 +25,12 @@ function SimularMovie() {
         language: 'uk',
       }
     })
-      .then(response => {
-        setMovie(response.data);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setMovie(response.data);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
 
     axios.get(genreURL, {
       params: {
@@ -38,12 +38,12 @@ function SimularMovie() {
         language: 'uk',
       }
     })
-      .then(response => {
-        setGenreIDs(response.data.genres);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setGenreIDs(response.data.genres);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
 
     axios.get(baseURL + id + '/similar', {
       params: {
@@ -51,12 +51,12 @@ function SimularMovie() {
         language: 'uk',
       }
     })
-      .then(response => {
-        setSimilars(response.data.results);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setSimilars(response.data.results);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
   }
 
   useEffect(() => {
@@ -66,20 +66,6 @@ function SimularMovie() {
   if (error) {
     return (<div className="error"><h2>{error}</h2></div>);
   } else if (movie) {
-
-    let posterClassName = 'movie__content--poster';
-    let posterIMG = <img src={NoImagePoster} className={posterClassName} />;
-    if (movie.belongs_to_collection) {
-      posterIMG = <img
-        src={imageBaseURL + movie.belongs_to_collection.poster_path}
-        className={posterClassName}
-      />
-    } else if (movie.poster_path) {
-      posterIMG = <img
-        src={imageBaseURL + movie.poster_path}
-        className={posterClassName}
-      />
-    }
 
     const items = similar.map((movie, index) => {
       let genre = [];
@@ -96,19 +82,19 @@ function SimularMovie() {
 
       if (index < 10) {
         return (
-          <div key={index} className="similar__movies--movie">
-            <Link to={"/movie/" + movie.id} onClick={ScrollToTop}>
-              <div className="poster_img">
-                <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
-                <span className="icon_play"></span>
-              </div>
-              <div className="content">
-                <h3>{movie.title}</h3>
-                <p className="genre_list">{genre.join(', ')}</p>
-                <p className="icon_star">{movie.vote_average}</p>
-              </div>
-            </Link>
-          </div>
+            <div key={index} className="similar__movies--movie">
+              <Link to={"/movie/" + movie.id} onClick={ScrollToTop}>
+                <div className="poster_img">
+                  <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster} alt="poster" />
+                  <span className="icon_play"></span>
+                </div>
+                <div className="content">
+                  <h3>{movie.title}</h3>
+                  <p className="genre_list">{genre.join(', ')}</p>
+                  <p className="icon_star">{movie.vote_average}</p>
+                </div>
+              </Link>
+            </div>
         );
       }
     });
@@ -118,7 +104,7 @@ function SimularMovie() {
           <div className="similar">
             <div className="wrapper">
               <h2>Вам також може сподобатися</h2>
-              <div className="similar__movies">{ items }</div>
+              <div className="similar__movies">{items}</div>
             </div>
           </div>
       );

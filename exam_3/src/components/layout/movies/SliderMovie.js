@@ -3,8 +3,8 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import NoImagePoster from '../../../img/no-image-poster.png';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs, EffectFlip, Controller} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {FreeMode, Navigation, Thumbs, EffectFlip, Controller} from 'swiper';
 import SwiperNavButtons from "../SwiperNavButton";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -20,40 +20,36 @@ const imageOriginalURL = 'https://image.tmdb.org/t/p/w1280';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list';
 const apiKey = 'ddfb10c51e93bea162e98742b4f4c826';
 
-function SliderMovie () {
+function SliderMovie() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [genreIDs, setGenreIDs] = useState([]);
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [firstSwiper, setFirstSwiper] = useState(null);
-  const [secondSwiper, setSecondSwiper] = useState(null);
 
   async function fetchData() {
     axios.get(genreURL, {
       params: {
-        api_key: apiKey,
-        language: 'uk',
+        api_key: apiKey, language: 'uk',
       }
     })
-      .then(response => {
-        setGenreIDs(response.data.genres);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setGenreIDs(response.data.genres);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
 
     axios.get(baseURL, {
       params: {
-        api_key: apiKey,
-        language: 'uk',
+        api_key: apiKey, language: 'uk',
       }
     })
-      .then(response => {
-        setMovies(response.data.results);
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+        .then(response => {
+          setMovies(response.data.results);
+        })
+        .catch(error => {
+          setError(error.message);
+        })
   }
 
   useEffect(() => {
@@ -61,7 +57,7 @@ function SliderMovie () {
   }, []);
 
   if (error) {
-    return ( <div className="error"><h2>{ error }</h2></div> );
+    return (<div className="error"><h2>{error}</h2></div>);
   } else if (movies) {
     const sliderItems = movies.map((movie, index) => {
       let genre = [];
@@ -77,77 +73,64 @@ function SliderMovie () {
       }
 
       if (index < 12) {
-        return (
-          <SwiperSlide key={index} className="slide_movie">
-            <Link to={"/movie/" + movie.id}>
-              <div className="swiper_movies__poster">
-                <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster}/>
-              </div>
-              <h2>{movie.title}</h2>
-              <p className="genre_list">{genre.join(', ')}</p>
-              <p className="icon_star">{movie.vote_average}</p>
-            </Link>
-          </SwiperSlide>
-        )
+        return (<SwiperSlide key={index} className="slide_movie">
+              <Link to={"/movie/" + movie.id}>
+                <div className="swiper_movies__poster">
+                  <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster} alt="poster"/>
+                </div>
+                <h2>{movie.title}</h2>
+                <p className="genre_list">{genre.join(', ')}</p>
+                <p className="icon_star">{movie.vote_average}</p>
+              </Link>
+            </SwiperSlide>)
       }
     });
-
 
     const sliderBack = movies.map((movie, index) => {
       if (index < 12) {
         if (movie.backdrop_path) {
-          return (
-            <SwiperSlide key={index} className="slide_back">
-              <img src={imageOriginalURL + movie.backdrop_path} className="swiper_movies__back" />
-            </SwiperSlide>
-          )
+          return (<SwiperSlide key={index} className="slide_back">
+                <img src={imageOriginalURL + movie.backdrop_path} className="swiper_movies__back" alt="Slide Back"/>
+              </SwiperSlide>)
         }
       }
     });
-    return (
-      <div className="container">
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          effect={"flip"}
-          allowTouchMove={false}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs, EffectFlip, Controller]}
-          className="swiper_movies_back"
-          onSwiper={setFirstSwiper}
-        >
-          {sliderBack}
-        </Swiper>
 
-        <div className="wrapper">
+    return (<div className="container">
           <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
-            modules={[FreeMode, Navigation, Thumbs, Controller]}
-            className="swiper_movies"
-            controller={{ control: firstSwiper }}
-            breakpoints={{
-              360: {
-                spaceBetween: 20,
-                slidesPerView: 2,
-              },
-              680: {
-                spaceBetween: 30,
-                slidesPerView: 3,
-              },
-              980: {
-                spaceBetween: 40,
-                slidesPerView: 4,
-              },
-            }}
+              onSwiper={setFirstSwiper}
+              effect={"flip"}
+              allowTouchMove={false}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs, EffectFlip, Controller]}
+              className="swiper_movies_back"
           >
-            <h1><span><b>Новинки</b> цього сезону</span><SwiperNavButtons /></h1>
-            {sliderItems}
+            {sliderBack}
           </Swiper>
-        </div>
-      </div>
-    );
+
+          <div className="wrapper">
+            <Swiper
+                spaceBetween={0}
+                slidesPerView={1}
+                modules={[FreeMode, Navigation, Thumbs, Controller]}
+                className="swiper_movies"
+                controller={{control: firstSwiper}}
+                breakpoints={{
+                  360: {
+                    spaceBetween: 20, slidesPerView: 2,
+                  }, 680: {
+                    spaceBetween: 30, slidesPerView: 3,
+                  }, 980: {
+                    spaceBetween: 40, slidesPerView: 4,
+                  },
+                }}
+            >
+              <h1><span><b>Новинки</b> цього сезону</span><SwiperNavButtons/></h1>
+              {sliderItems}
+            </Swiper>
+          </div>
+        </div>);
   }
 }
 

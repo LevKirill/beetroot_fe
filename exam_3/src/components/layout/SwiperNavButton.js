@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSwiper } from 'swiper/react';
+import {useSwiper} from 'swiper/react';
 
-function SwiperNavButtons () {
+function SwiperNavButtons() {
   const swiper = useSwiper();
 
   return (
