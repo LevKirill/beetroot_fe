@@ -114,9 +114,6 @@ function MoviesList() {
         }
       }
 
-      if (genre_ids.length && genreIDs.length) {
-      }
-
       // Head Title
       document.title = `Список фільмів | Сторінка ${page}`;
 

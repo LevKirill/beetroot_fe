@@ -4,6 +4,15 @@ import "../../scss/privacy-policy.scss";
 function PrivacyPolicy() {
   return (
       <div className="privacy_policy">
+        <article className="page_title">
+          <div className="wrapper">
+            <h1>Політика конфеденційності</h1>
+            <div className="breadcrumbs">
+              <Link to="/">Головна</Link> <span className="icon_arrow"></span> <span
+                className="breadcrumbs__title">Політика конфеденційності</span>
+            </div>
+          </div>
+        </article>
         <div className="wrapper">
           <strong>A. Вступ</strong>
           <ol>

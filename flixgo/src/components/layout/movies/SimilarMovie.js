@@ -1,7 +1,7 @@
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import ScrollToTop from "../ScrollTop";
+import ScrollTop from "../ScrollTop";
 import NoImagePoster from '../../../img/no-image-poster.png';
 import '../../../scss/similar-movies.scss';
 
@@ -83,7 +83,7 @@ function SimularMovie() {
       if (index < 10) {
         return (
             <div key={index} className="similar__movies--movie">
-              <Link to={"/movie/" + movie.id} onClick={ScrollToTop}>
+              <Link to={"/movie/" + movie.id} onClick={ScrollTop}>
                 <div className="poster_img">
                   <img src={movie.poster_path ? (imageBaseURL + movie.poster_path) : NoImagePoster} alt="poster" />
                   <span className="icon_play"></span>

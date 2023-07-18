@@ -54,7 +54,7 @@ function Header() {
 
   const currentUrl = window.location.pathname;
   let iconSearch = <div/>;
-  if (currentUrl === '/movies' || currentUrl === '/tv') {
+  if (currentUrl === '/movies' || currentUrl === '/tv') { 
     iconSearch = <div id="searchBtn" className="icon_search" onClick={toggleSearch}></div>;
   }
 

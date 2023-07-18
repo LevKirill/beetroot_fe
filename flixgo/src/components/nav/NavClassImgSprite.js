@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Sprite from '../../img/sprite.svg';
+import ScrollTop from "../layout/ScrollTop";
 
 function mainMenu(props) {
   let navTitle;
@@ -30,7 +31,7 @@ function mainMenu(props) {
     }
     return (
         <li key={index}>
-          <Link to={item.path ? item.path : '#'} className={item.class}>
+          <Link to={item.path ? item.path : '#'} className={item.class} onClick={ScrollTop}>
             {svg}
             {img}
             {linkName}

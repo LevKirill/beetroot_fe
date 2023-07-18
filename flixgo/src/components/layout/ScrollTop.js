@@ -1,5 +1,5 @@
-function ScrollToTop() {
+function ScrollTop() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-export default ScrollToTop;
+export default ScrollTop;

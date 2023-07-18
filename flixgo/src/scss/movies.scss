@@ -6,9 +6,10 @@
   background-size: cover;
   .wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 11.875em;
+    min-height: 11.875em;
     transition: height 0.2s ease-in;
   }
   h1 {
@@ -156,10 +157,22 @@
 
 @media screen and (max-width: 980px) {
   .page_title .wrapper {
-    height: 6em;
+    min-height: 6em;
+    padding: 1em 15px;
   }
   .catalog_movies .movies {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page_title span {
+    &.icon_arrow:nth-of-type(2) {
+      display: none;
+    }
+    &.breadcrumbs__title {
+      display: none;
+    }
   }
 }
 

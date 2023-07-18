@@ -27,7 +27,7 @@ function footer() {
   }
   const resources = {
     class: 'footer__nav--resources',
-    title: 'Ресурси',
+    title: 'Користувачам',
     links: [
       {
         link: 'Про нас',
@@ -41,7 +41,7 @@ function footer() {
   }
   const legal = {
     class: 'footer__nav--legal',
-    title: 'Юридичний',
+    title: 'Основні положення',
     links: [
       {
         link: 'Умови використання',

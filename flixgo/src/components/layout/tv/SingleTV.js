@@ -167,6 +167,16 @@ function SingleTV() {
 
     return (
         <>
+          <article className="page_title">
+            <div className="wrapper">
+              <h1>{TV.name}</h1>
+              <div className="breadcrumbs">
+                <Link to="/">Головна</Link> <span className="icon_arrow"></span>
+                <Link to="/tv">Серіали</Link> <span className="icon_arrow"></span>
+                <span className="breadcrumbs__title">{TV.name}</span>
+              </div>
+            </div>
+          </article>
           <div className="tv">
             {backIM}
             <div className="wrapper">

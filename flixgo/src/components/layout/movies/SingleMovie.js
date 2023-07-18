@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NoImagePoster from '../../../img/no-image-poster.png';
@@ -166,10 +166,21 @@ function SingleMovie() {
 
     return (
         <>
+          <article className="page_title">
+            <div className="wrapper">
+              <h1>{movie.title}</h1>
+              <div className="breadcrumbs">
+                <Link to="/">Головна</Link> <span className="icon_arrow"></span>
+                <Link to="/movies">Фільми</Link> <span className="icon_arrow"></span>
+                <span className="breadcrumbs__title">{movie.title}</span>
+              </div>
+            </div>
+          </article>
           <div className="movie">
             <img src={backIM} className={'movie__back'} alt="background"/>
             <div className="wrapper">
-              <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;|| {movie.title !== movie.original_title ? movie.original_title : ''}
+              <h1>{movie.title} {releaseArr[2] ? ('(' + releaseArr[2] + ')') : ''}&nbsp;
+                {movie.title !== movie.original_title ? movie.original_title : ''}
               </h1>
               <div className="movie__content">
                 <img src={posterIMG} className={posterClassName} alt="poster"/>
