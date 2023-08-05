@@ -1,0 +1,194 @@
+@import 'vars';
+@import 'mixins';
+
+.news {
+  position: relative;
+  min-height: 61.125em;
+  &__wrapper {
+    padding-top: 7.5em;
+  }
+  .slider_container {
+    position: relative;
+    .news__slider {
+      padding: 5.625em 0 3.125em;
+      width: 100%;
+      overflow: hidden;
+      .swiper-slide {
+        height: auto;
+      }
+      .news__slide {
+        background-color: $colorWhite;
+        height: 100%;
+        &--container {
+          padding: 0 1.25em 1.875em;
+          display: flex;
+          flex-direction: column;
+          height: calc(100% - 15em);
+        }
+        &--img {
+          width: 100%;
+          height: 15em;
+          object-fit: cover;
+          padding-bottom: 1.875em;
+        }
+        &--title {
+          font-family: $fontMontserrat;
+          font-weight: 700;
+          font-size: 1.375em;
+          line-height: 1.23;
+          color: $colorDarkBlue;
+          text-transform: uppercase;
+          padding-bottom: 0.68em;
+        }
+        &--desc {
+          font-size: 1.125em;
+          font-weight: 400;
+          line-height: 1.39;
+          color: $colorDarkBlue;
+        }
+        .author {
+          padding-top: 2.4375em;
+          display: grid;
+          grid-template-columns: 3.75em 1fr;
+          grid-template-rows: repeat(2, auto);
+          align-items: center;
+          gap: 0.375em 1.25em;
+          grid-template-areas:  'authorImg authorName'
+                                'authorImg authorDate';
+          font-family: $fontMontserrat;
+          font-weight: 400;
+          margin-top: auto;
+          picture {
+            grid-area: authorImg;
+            width: 3.75em;
+            height: 3.75em;
+            .author__img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+          &__name {
+            grid-area: authorName;
+            align-self: flex-end;
+            font-size: 1.125em;
+            line-height: 1.22;
+            color: $colorDarkBlue;
+          }
+          &__date {
+            grid-area: authorDate;
+            align-self: flex-start;
+            font-size: 0.875em;
+            line-height: 1.21;
+            color: $colorBlue;
+          }
+        }
+      }
+    }
+    .swiper-pagination {
+      justify-content: center;
+      bottom: 0;
+      @include bullet ();
+    }
+    .swiper-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50%;
+      border: 1px solid rgba($color: $colorWhite, $alpha: 0.5);
+      &:before {
+        color: $colorWhite;
+        font-size: 0.5625em;
+      }
+      &-next {
+        right: -6.25em;
+        &:before {
+          position: relative;
+          right: -1px;
+        }
+      }
+      &-prev {
+        left: -6.25em;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .news .slider_container .swiper-button {
+    &-prev {
+      left: -3em;
+    }
+    &-next {
+      right: -3em;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .news .slider_container {
+    display: flex;
+    flex-direction: column-reverse;
+    .news__slider {
+      padding-top: 1.2em;
+    }
+    .block_pagination {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      padding-top: 1.875em;
+      .swiper-button {
+        position: relative;
+        margin: 0;
+        &-prev {
+          left: auto;
+        }
+        &-next {
+          right: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .news {
+    min-height: auto;
+    .slider_container {
+      .news__slider {
+        .news__slide--title {
+          font-size: 1.1em;
+        }
+        .news__slide--desc {
+          font-size: 0.9em;
+        }
+      }
+      .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .news__wrapper {
+    padding-top: 4em;
+  }
+}

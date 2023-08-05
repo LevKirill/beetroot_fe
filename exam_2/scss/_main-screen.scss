@@ -1,0 +1,96 @@
+@import 'vars';
+@import 'mixins';
+
+.main_screen {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  &__slider {
+    width: 100%;
+    height: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25em;
+      text-align: center;
+      text-transform: uppercase;
+      height: 100%;
+      color: $colorWhite;
+    }
+    &--title {
+      font-size: 5em;
+      font-weight: 700;
+      line-height: 1.225;
+      letter-spacing: 0.1em;
+    }
+    &--desc {
+      font-size: 1.125em;
+      font-weight: 400;
+      line-height: 1.22;
+      letter-spacing: 0.3em;
+    }
+    .swiper-pagination {
+      right: 3.25em;
+      @include bullet(column);
+    }
+  }
+  &__arrow {
+    position: absolute;
+    bottom: 3.125em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 1px solid rgba($color: $colorWhite, $alpha: 0.7);
+    z-index: 2;
+    color: $colorWhite;
+    text-decoration: none;
+    &:before {
+      font-size: 0.625em;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main_screen__slider--title {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main_screen__slider .swiper-pagination {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main_screen__slider--title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .header .logo {
+    width: 12.0625em;
+    height: 2.6875em;
+  }
+  .main_screen__slider .wrapper {
+    font-size: 0.9em;
+  }
+}
