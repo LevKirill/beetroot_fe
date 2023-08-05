@@ -1,0 +1,29 @@
+//Colors
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorBrownDark: #35312d;
+$colorArrowInactive: #202020;
+$colorTomato: #c62100;
+$colorTomatoLight: #f16a50;
+$colorBrownLight: #f8f1ea;
+$colorDotInactive: rgba(248, 241, 234, 0.7);
+$colorDarkDotInactive: #cac2ba;
+
+//Action
+$transition: 0.2s easy-in;
+
+//Mixins
+@mixin font ($font_name, $file_name, $weight, $style: normal) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url('../fonts/#{$file_name}.eot');
+    src: url('../fonts/#{$file_name}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$file_name}.svg##{$file_name}') format('svg'),
+    url('../fonts/#{$file_name}.ttf') format('truetype'),
+    url('../fonts/#{$file_name}.woff') format('woff'),
+    url('../fonts/#{$file_name}.woff2') format('woff2');
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}

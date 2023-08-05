@@ -1,0 +1,25 @@
+//Colors
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorDarkBlue: #2c4058;
+$colorBlue: #55b7ff;
+$colorViolet: #7e5aff;
+$colorPlaceholder: #4B5562;
+
+// Fonts
+$fontMontserrat: 'Montserrat', sans-serif;
+$fontOpenSans: 'Open Sans', sans-serif;
+$fontSourceSansPro: 'Source Sans Pro', sans-serif;
+
+//burger menu
+$width: 30px; //Ширина Гамбургера
+$height: 22px; //Высота Гамбургера
+$spanHeight: 2px; //Высота одной полоски
+$topTwo: $height / 2 - $spanHeight + 1px; //Отступ второй полоски сверху
+$topThree: $height - $spanHeight; //Отступ третьей полоски сверху
+$hamburgerColor: $colorWhite; //Цвет полосок
+
+//Other
+$transition: 0.1s ease-in;
+$linkImg: '../img';
+$headerGradient: linear-gradient(251.06deg, $colorViolet -2.19%, $colorBlue 103.21%);
