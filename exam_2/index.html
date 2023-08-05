@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Monticello</title>
+		<link rel="shortcut icon" href="./img/favicon/favicon.png" type="image/x-icon">
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="./js/jquery-3.7.0.min.js"></script>
+		<script src="./js/swiper-bundle.min.js"></script>
+		<script src="./js/simplebox_util.js"></script>
+		<script src="./js/scrollspy.min.js"></script>
+		<script src="./js/jquery.validate.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="wrapper header__wrapper">
+				<a href="#aboutUs" class="logo"></a>
+				<nav class="header__menu">
+					<ul id="navMain">
+						<li><a href="#aboutUs" class="active">About us</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#news">News</a></li>
+						<li><a href="#contacts">Contact</a></li>
+					</ul>
+				</nav>
+				<nav class="social header__social">
+					<ul>
+						<li><a href="https://www.facebook.com/" class="iconfont-facebook" target="_blank"></a></li>
+						<li><a href="https://twitter.com/" class="iconfont-twitter" target="_blank"></a></li>
+						<li><a href="https://www.instagram.com/" class="iconfont-instagram" target="_blank"></a></li>
+					</ul>
+				</nav>
+				<div class="hamburger"><span class="hamburger__icon"></span></div>
+			</div>
+		</header>
+		<main class="main">
+			<section id="aboutUs" class="main_screen">
+				<div class="swiper main_screen__slider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<picture>
+								<source srcset="./img/background/back-main-screen-slider-1.webp" type="image/webp">
+								<img src="./img/background/back-main-screen-slider-1.jpg" alt="Slider">
+							</picture>
+							<div class="wrapper">
+								<h2 class="main_screen__slider--title">Simple & Modern&nbsp;1</h2>
+								<p class="main_screen__slider--desc">We make the world beautiful everyday</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<picture>
+								<source srcset="./img/background/back-main-screen-slider-2.webp" type="image/webp">
+								<img src="./img/background/back-main-screen-slider-2.jpg" alt="Slider">
+							</picture>
+							<div class="wrapper">
+								<h2 class="main_screen__slider--title">Simple & Modern&nbsp;2</h2>
+								<p class="main_screen__slider--desc">We make the world beautiful everyday</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<picture>
+								<source srcset="./img/background/back-main-screen-slider-3.webp" type="image/webp">
+								<img src="./img/background/back-main-screen-slider-3.jpg" alt="Slider">
+							</picture>
+							<div class="wrapper">
+								<h2 class="main_screen__slider--title">Simple & Modern&nbsp;3</h2>
+								<p class="main_screen__slider--desc">We make the world beautiful everyday</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<picture>
+								<source srcset="./img/background/back-main-screen-slider-3.webp" type="image/webp">
+								<img src="./img/background/back-main-screen-slider-3.jpg" alt="Slider">
+							</picture>
+							<div class="wrapper">
+								<h2 class="main_screen__slider--title">Simple & Modern&nbsp;4</h2>
+								<p class="main_screen__slider--desc">We make the world beautiful everyday</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<picture>
+								<source srcset="./img/background/back-main-screen-slider-5.webp" type="image/webp">
+								<img src="./img/background/back-main-screen-slider-5.jpg" alt="Slider">
+							</picture>
+							<div class="wrapper">
+								<h2 class="main_screen__slider--title">Simple & Modern&nbsp;5</h2>
+								<p class="main_screen__slider--desc">We make the world beautiful everyday</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<a href="#projects" class="main_screen__arrow iconfont-arrow-up"></a>
+			</section>
+			<section id="projects" class="projects">
+				<div class="wrapper projects__wrapper">
+					<h2 class="title">What we do</h2>
+					<div class="projects__items projects__items--left">
+						<picture class="projects__img projects__img--left">
+							<source srcset="./img/about-work/img-about-work-trade-center.webp" type="image/webp">
+							<img src="./img/about-work/img-about-work-trade-center.jpg" alt="Trade Center">
+						</picture>
+						<div class="projects__container projects__container--left">
+							<h2 class="projects__title">One World</h2>
+							<h3 class="projects__subtitle">Trade Center</h3>
+							<p class="projects__desc">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
+							<button class="projects__more">More Details</button>
+							<a href="https://goo.gl/maps/5Sce2AwG4ybWdczw6" class="projects__address iconfont-marker" target="_blank">New York City, United States - 1776 feet</a>
+						</div>
+					</div>
+					<div class="projects__items projects__items--right">
+						<picture class="projects__img projects__img--right">
+							<source srcset="./img/about-work/img-about-work-commerce-centre.webp" type="image/webp">
+							<img src="./img/about-work/img-about-work-commerce-centre.jpg" alt="Commerce Centre">
+						</picture>
+						<div class="projects__container projects__container--right">
+							<h2 class="projects__title">International</h2>
+							<h3 class="projects__subtitle">Commerce Centre</h3>
+							<p class="projects__desc">Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
+							<button class="projects__more">More Details</button>
+							<a href="https://goo.gl/maps/SJCbFFEtC7Ag9nDi8" class="projects__address iconfont-marker" target="_blank">Hong Kong - 1588 feet</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="news" class="news">
+				<div class="wrapper news__wrapper">
+					<h2 class="title title__white">Latest news</h2>
+					<div class="slider_container">
+						<div class="swiper news__slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-01.webp" type="image/webp">
+											<img src="./img/news/img-news-01.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">See the unmatched beauty of the great.</h3>
+											<p class="news__slide--desc">Free directories: directories are perfect for customers that are searching for...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-1.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-1.jpg" class="author__img" alt="Img News 1">
+												</picture>
+												<h4 class="author__name">Alja Brun</h4>
+												<time class="author__date" datetime="2020-01-20">20 Jan 2020</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-02.webp" type="image/webp">
+											<img src="./img/news/img-news-02.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">Effective advertising pointers.</h3>
+											<p class="news__slide--desc">Having a home based business is a wonderful asset to your life...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-2.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-2.jpg" class="author__img" alt="Img News 2">
+												</picture>
+												<h4 class="author__name">Dominic Freeman</h4>
+												<time class="author__date" datetime="2019-12-13">13 Dec 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-03.webp" type="image/webp">
+											<img src="./img/news/img-news-03.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">HYPNOTIZE YOURSELF INTO THE GHOST.</h3>
+											<p class="news__slide--desc">There are many things that are important to catalog design...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-3.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-3.jpg" class="author__img" alt="Img News 3">
+												</picture>
+												<h4 class="author__name">Alice Ward</h4>
+												<time class="author__date" datetime="2019-11-30">30 Nov 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-04.webp" type="image/webp">
+											<img src="./img/news/img-news-04.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">See the unmatched beauty of the great.</h3>
+											<p class="news__slide--desc">Free directories: directories are perfect for customers that are searching for...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-1.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-1.jpg" class="author__img" alt="Img News 1">
+												</picture>
+												<h4 class="author__name">Alja Brun</h4>
+												<time class="author__date" datetime="2020-01-20">20 Jan 2020</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-05.webp" type="image/webp">
+											<img src="./img/news/img-news-05.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">Effective advertising pointers.</h3>
+											<p class="news__slide--desc">Having a home based business is a wonderful asset to your life...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-2.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-2.jpg" class="author__img" alt="Img News 2">
+												</picture>
+												<h4 class="author__name">Dominic Freeman</h4>
+												<time class="author__date" datetime="2019-12-13">13 Dec 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-06.webp" type="image/webp">
+											<img src="./img/news/img-news-06.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">HYPNOTIZE YOURSELF INTO THE GHOST.</h3>
+											<p class="news__slide--desc">There are many things that are important to catalog design...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-3.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-3.jpg" class="author__img" alt="Img News 3">
+												</picture>
+												<h4 class="author__name">Alice Ward</h4>
+												<time class="author__date" datetime="2019-11-30">30 Nov 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-07.webp" type="image/webp">
+											<img src="./img/news/img-news-07.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">See the unmatched beauty of the great.</h3>
+											<p class="news__slide--desc">Free directories: directories are perfect for customers that are searching for...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-1.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-1.jpg" class="author__img" alt="Img News 1">
+												</picture>
+												<h4 class="author__name">Alja Brun</h4>
+												<time class="author__date" datetime="2020-01-20">20 Jan 2020</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-08.webp" type="image/webp">
+											<img src="./img/news/img-news-08.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">Effective advertising pointers.</h3>
+											<p class="news__slide--desc">Having a home based business is a wonderful asset to your life...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-2.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-2.jpg" class="author__img" alt="Img News 2">
+												</picture>
+												<h4 class="author__name">Dominic Freeman</h4>
+												<time class="author__date" datetime="2019-12-13">13 Dec 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-09.webp" type="image/webp">
+											<img src="./img/news/img-news-09.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">HYPNOTIZE YOURSELF INTO THE GHOST.</h3>
+											<p class="news__slide--desc">There are many things that are important to catalog design...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-3.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-3.jpg" class="author__img" alt="Img News 3">
+												</picture>
+												<h4 class="author__name">Alice Ward</h4>
+												<time class="author__date" datetime="2019-11-30">30 Nov 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-10.webp" type="image/webp">
+											<img src="./img/news/img-news-10.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">See the unmatched beauty of the great.</h3>
+											<p class="news__slide--desc">Free directories: directories are perfect for customers that are searching for...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-1.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-1.jpg" class="author__img" alt="Img News 1">
+												</picture>
+												<h4 class="author__name">Alja Brun</h4>
+												<time class="author__date" datetime="2020-01-20">20 Jan 2020</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-11.webp" type="image/webp">
+											<img src="./img/news/img-news-11.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">Effective advertising pointers.</h3>
+											<p class="news__slide--desc">Having a home based business is a wonderful asset to your life...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-2.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-2.jpg" class="author__img" alt="Img News 2">
+												</picture>
+												<h4 class="author__name">Dominic Freeman</h4>
+												<time class="author__date" datetime="2019-12-13">13 Dec 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="news__slide">
+										<picture>
+											<source srcset="./img/news/img-news-12.webp" type="image/webp">
+											<img src="./img/news/img-news-12.jpg" class="news__slide--img" alt="Img News 1">
+										</picture>
+										<div class="news__slide--container">
+											<h3 class="news__slide--title">HYPNOTIZE YOURSELF INTO THE GHOST.</h3>
+											<p class="news__slide--desc">There are many things that are important to catalog design...</p>
+											<div class="author">
+												<picture>
+													<source srcset="./img/news/author/img-news-author-3.webp" type="image/webp">
+													<img src="./img/news/author/img-news-author-3.jpg" class="author__img" alt="Img News 3">
+												</picture>
+												<h4 class="author__name">Alice Ward</h4>
+												<time class="author__date" datetime="2019-11-30">30 Nov 2019</time>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination news__pagination"></div>
+						</div>
+						<div class="block_pagination">
+							<div class="swiper-button swiper-button-prev iconfont-arrow-prev"></div>
+							<div class="swiper-button swiper-button-next iconfont-arrow-next"></div>
+						</div>
+					</div>
+				</div>
+				<picture>
+					<source srcset="./img/background/back-news.webp" type="image/webp">
+					<img src="./img/background/back-news.jpg" class="news__back" alt="Background News">
+				</picture>
+			</section>
+			<section class="gallery">
+				<div class="wrapper gallery__wrapper">
+					<h2 class="title">Gallery</h2>
+					<div class="gallery__container">
+						<a href="./img/gallery/full/img-gallery-1.jpg" class="gallery__container--img iconfont-loupe" rel="simplebox_group">
+							<picture>
+								<source srcset="./img/gallery/img-gallery-1.webp" type="image/webp">
+								<img src="./img/gallery/img-gallery-1.jpg" alt="Img Gallery 1"></picture>
+						</a>
+						<a href="./img/gallery/full/img-gallery-2.jpg" class="gallery__container--img iconfont-loupe" rel="simplebox_group">
+							<picture>
+								<source srcset="./img/gallery/img-gallery-2.webp" type="image/webp">
+								<img src="./img/gallery/img-gallery-2.jpg" alt="Img Gallery 2"></picture>
+						</a>
+						<a href="./img/gallery/full/img-gallery-3.jpg" class="gallery__container--img iconfont-loupe" rel="simplebox_group">
+							<picture>
+								<source srcset="./img/gallery/img-gallery-3.webp" type="image/webp">
+								<img src="./img/gallery/img-gallery-3.jpg" alt="Img Gallery 3"></picture>
+						</a>
+						<a href="./img/gallery/full/img-gallery-4.jpg" class="gallery__container--img iconfont-loupe" rel="simplebox_group">
+							<picture>
+								<source srcset="./img/gallery/img-gallery-4.webp" type="image/webp">
+								<img src="./img/gallery/img-gallery-4.jpg" alt="Img Gallery 4"></picture>
+						</a>
+						<a href="./img/gallery/full/img-gallery-5.jpg" class="gallery__container--img iconfont-loupe" rel="simplebox_group">
+							<picture>
+								<source srcset="./img/gallery/img-gallery-5.webp" type="image/webp">
+								<img src="./img/gallery/img-gallery-5.jpg" alt="Img Gallery 5"></picture>
+						</a>
+					</div>
+					<button class="gallery__see_more">See more</button>
+				</div>
+			</section>
+			<section id="contacts" class="contacts_map">
+				<section id="googleMap" class="google_map"></section>
+				<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFJodmAmzfK5m6SFjZtQOOdUE9NKkQVAE&callback=initMap"></script>
+				<section class="contacts">
+					<div class="wrapper">
+						<h2 class="title">Get in touch</h2>
+						<ul class="contacts__list">
+							<li class="iconfont-marker">91 Nolan Extensions Suite 670</li>
+							<li class="iconfont-phone"><a href="tel:+0013568682454">+001 356-868-2454</a></li>
+							<li class="iconfont-email"><a href="mailto:montichello@service.com">montichello@service.com</a></li>
+							<li class="iconfont-time">From 07:05AM to 19:30PM</li>
+						</ul>
+						<form action="" id="myForm" method="POST" class="contacts__form">
+							<div class="item_input">
+								<input type="text" name="name" minlength="3" maxlength="50" id="fullName" class="input input_name"
+											 placeholder="Full Name" required>
+							</div>
+							<div class="item_input">
+								<input type="email" name="email" minlength="5" maxlength="50" id="email" class="input input_email"
+											 placeholder="Email" required>
+							</div>
+							<input type="submit" class="submit" value="Submit">
+						</form>
+					</div>
+				</section>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="wrapper footer__wrapper">
+				<a href="#aboutUs" class="logo"></a>
+				<nav class="social footer__social">
+					<ul>
+						<li><a href="https://www.facebook.com/" class="iconfont-facebook"></a></li>
+						<li><a href="https://twitter.com/" class="iconfont-twitter"></a></li>
+						<li><a href="https://www.instagram.com/" class="iconfont-instagram"></a></li>
+					</ul>
+				</nav>
+				<p class="copyright">Copyrights © <span>2021</span> Montichello</p>
+			</div>
+		</footer>
+		<script src="./js/script.js"></script>
+	</body>
+</html>
