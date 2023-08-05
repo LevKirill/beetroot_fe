@@ -1,0 +1,87 @@
+@import 'vars';
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+body {
+  --brownLight: #f8f1ea;
+  --tomato: #c62100;
+  --black: #000;
+  --arrowInactive: #202020;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $colorBlack;
+}
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 3.125em;
+  font-weight: 700;
+  line-height: 1.22;
+  text-transform: uppercase;
+  text-align: center;
+  &__white {
+    color: $colorBrownLight;
+  }
+}
+.block_title {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.22;
+  text-transform: uppercase;
+}
+.menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 0.75em;
+  transition: $transition;
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorTomatoLight;
+  }
+}
+.product_desc {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.price {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.21;
+}
+.btn {
+  display: block;
+  font-size: 1.125em;
+  font-weight: 500;
+  line-height: 1.22;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid $colorBlack;
+  padding: 0.78em 0.5em;
+  max-width: 12.61em;
+  width: 100%;
+  transition: $transition;
+  margin: 0 auto;
+  &__white {
+    border-color: $colorBrownLight;
+    color: $colorWhite;
+  }
+  &:hover {
+    color: $colorWhite;
+    border-color: $colorTomatoLight;
+    background-color: $colorTomatoLight;
+  }
+}
