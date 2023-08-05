@@ -1,0 +1,60 @@
+@import "vars";
+
+.reviews {
+  padding: 3em 0;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    & > h2 {
+      font-size: 2em;
+      font-weight: 500;
+      padding-bottom: 0.5em;
+    }
+  }
+  .review {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    &__author {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      img {
+        width: 3em;
+        height: 3em;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .author__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+        h3 {
+          font-size: 1em;
+          font-weight: 400;
+          line-height: 1.25;
+          color: $colorWhite;
+        }
+        data {
+          font-size: 0.75em;
+          font-weight: 300;
+          line-height: 1.67;
+          color: $colorText;
+        }
+      }
+    }
+    &__content {
+      padding: 1.25em;
+      color: $colorText;
+      font-size: 0.875em;
+      line-height: 1.85;
+      background-color: $backReview;
+      border: 1px solid rgba($color: $colorWhite, $alpha: 0.05);
+      border-radius: 0.57em;
+      overflow-y: auto;
+      max-height: 180px;
+      @include scrollbar(14);
+    }
+  }
+}

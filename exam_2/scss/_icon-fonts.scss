@@ -1,0 +1,48 @@
+[class^="iconfont-"]:before, [class*=" iconfont-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconsfont' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-facebook:before {
+  content: "\e906";
+}
+.iconfont-twitter:before {
+  content: "\e90a";
+}
+.iconfont-instagram:before {
+  content: "\e90b";
+}
+.iconfont-arrow-up:before {
+  content: "\e90c";
+}
+.iconfont-arrow-next:before {
+  content: "\e90d";
+}
+.iconfont-arrow-prev:before {
+  content: "\e90e";
+}
+.iconfont-loupe:before {
+  content: "\e90f";
+}
+.iconfont-marker:before {
+  content: "\e910";
+}
+.iconfont-phone:before {
+  content: "\e911";
+}
+.iconfont-email:before {
+  content: "\e912";
+}
+.iconfont-time:before {
+  content: "\e913";
+}
