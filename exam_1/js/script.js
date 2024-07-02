@@ -66,13 +66,33 @@ if (time < 7 || time >= 19) {
 
 let switchingTopic = document.getElementById('switchingTopic');
 
+let currentTheme = localStorage.getItem('themeSolis');
+
+if (currentTheme === 'light') {
+  layout.classList.remove('layout__dark');
+  switchingTopic.textContent = 'Dark Theme';
+} else if (currentTheme === 'dark') {
+  console.log('Dark Theme');
+  layout.classList.add('layout__dark');
+  switchingTopic.textContent = 'Light Theme';
+}
+
 switchingTopic.onclick = function () {
-  layout.classList.toggle('layout__dark');
-  if (switchingTopic.textContent === 'Dark Theme') {
+  let clickCurrentTheme = localStorage.getItem('themeSolis');
+  if (clickCurrentTheme === 'light') {
+    localStorage.setItem('themeSolis', 'dark');
+    layout.classList.add('layout__dark');
     switchingTopic.textContent = 'Light Theme';
   } else {
+    localStorage.setItem('themeSolis', 'light');
+    layout.classList.remove('layout__dark');
     switchingTopic.textContent = 'Dark Theme';
   }
+  // if (switchingTopic.textContent === 'Light Theme') {
+  //   switchingTopic.textContent = 'Dark Theme';
+  // } else {
+  //   switchingTopic.textContent = 'Light Theme';
+  // }
 }
 
 // Плавная прокрутка к якорю
